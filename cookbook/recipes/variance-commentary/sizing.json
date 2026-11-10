@@ -1,0 +1,47 @@
+{
+  "questions": [
+    {
+      "id": "frequency",
+      "ask": "How often do you produce it?",
+      "options": [
+        "Weekly",
+        "Monthly",
+        "Quarterly"
+      ]
+    },
+    {
+      "id": "people",
+      "ask": "How many people touch it?",
+      "options": [
+        "1 to 2",
+        "3 to 5",
+        "6 or more"
+      ]
+    },
+    {
+      "id": "late_or_wrong",
+      "ask": "What happens when it is late or wrong?",
+      "multi": true,
+      "options": [
+        "Rework rounds",
+        "Contractors or overtime",
+        "Missed deadlines",
+        "Questions from the board or a regulator"
+      ]
+    }
+  ],
+  "spend_that_can_stop": [
+    "Contractor or temporary support",
+    "Overtime",
+    "External advisers"
+  ],
+  "measures": [
+    "Packs accepted at first review",
+    "Unsupported statements reaching review"
+  ],
+  "rules": [
+    "Cash appears only where real spend can stop.",
+    "Time saved is never turned into money.",
+    "A script does every sum."
+  ]
+}

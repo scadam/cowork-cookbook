@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-GB" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Cowork Cookbook: pictures</title>
+<style>
+:root{--bg:#f4f6f9;--surface:#ffffff;--text:#1b1f24;--muted:#5f6b7a;--border:#dde2e8}
+@media (prefers-color-scheme: dark){:root{--bg:#15171b;--surface:#1f2227;--text:#e8eaed;--muted:#a3acb9;--border:#343a42}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"Segoe UI",system-ui,-apple-system,Arial,sans-serif;line-height:1.5}
+main{max-inline-size:1000px;margin-inline:auto;padding:28px 20px 60px}
+h1{margin:0 0 6px;font-size:1.6rem}
+p.lede{color:var(--muted);margin:0 0 22px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
+figure{margin:0;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px}
+figure img{display:block;inline-size:100%;border-radius:8px}
+figcaption{font-size:.9rem;color:var(--muted);margin-block-start:8px}
+figcaption b{color:var(--text)}
+code{font-size:.8rem}
+</style>
+</head>
+<body>
+<main>
+  <h1>Cowork Cookbook: pictures</h1>
+  <p class="lede">Pictures that the Launchpad plugin shows in Cowork cards. All people, organisations and figures shown are invented.</p>
+  <div class="grid">
+    <figure>
+      <img src="assets/v1/launchpad-welcome-banner.png" alt="Welcome banner" loading="lazy">
+      <figcaption><b>Welcome banner</b><br>Used at the top of the welcome card.<br><code>assets/v1/launchpad-welcome-banner.png</code></figcaption>
+    </figure>
+    <figure>
+      <img src="assets/v1/launchpad-picture-menu.png" alt="Picture menu" loading="lazy">
+      <figcaption><b>Picture menu</b><br>What Launchpad could make for you: four kinds of work, each with a picture of the result.<br><code>assets/v1/launchpad-picture-menu.png</code></figcaption>
+    </figure>
+    <figure>
+      <img src="assets/v1/launchpad-variance-commentary-example.png" alt="Example output: variance commentary" loading="lazy">
+      <figcaption><b>Example output: variance commentary</b><br>A draft commentary in which every line carries an evidence status.<br><code>assets/v1/launchpad-variance-commentary-example.png</code></figcaption>
+    </figure>
+    <figure>
+      <img src="assets/v1/launchpad-budget-round-app-mock.png" alt="Example app: budget round" loading="lazy">
+      <figcaption><b>Example app: budget round</b><br>An app that replaces a shared tracker and status emails.<br><code>assets/v1/launchpad-budget-round-app-mock.png</code></figcaption>
+    </figure>
+  </div>
+</main>
+</body>
+</html>
