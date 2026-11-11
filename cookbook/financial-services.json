@@ -1,0 +1,1529 @@
+{
+ "name": "Cowork Cookbook: financial services",
+ "version": "2.1.1",
+ "as_of": "2026-11-11",
+ "sectors": {
+  "banking": "Banking",
+  "capital-markets": "Capital markets",
+  "asset-wealth": "Asset and wealth management",
+  "insurance": "Insurance",
+  "payments": "Payments and fintech",
+  "all": "All of financial services"
+ },
+ "films": {
+  "bids-and-questionnaires": "Tenders and questionnaires answered from your approved library",
+  "governance-and-value": "Board and committee papers, and the right technology for each task",
+  "case-and-matter-files": "Case files and chronologies assembled for a person's decision",
+  "customer-success-renewals": "Review and renewal packs across a whole book",
+  "audit-readiness": "The auditor's request list answered with evidence",
+  "access-recertification": "User access review evidence",
+  "procurement-exceptions": "Blocked invoice and supplier exception packs",
+  "product-concepts": "Consumer insight to product concepts, every claim checked"
+ },
+ "entries": [
+  {
+   "id": "client-questionnaires",
+   "title": "Client due diligence and security questionnaires",
+   "short": "Answer client questionnaires",
+   "choice_description": "From your approved library, every answer sourced",
+   "area": "vertical",
+   "sectors": [
+    "banking",
+    "capital-markets",
+    "payments"
+   ],
+   "function": "Client service and bids",
+   "roles": [
+    "Client due diligence analyst",
+    "Bid writer",
+    "Financial crime compliance officer",
+    "Relationship manager"
+   ],
+   "kind": "skill",
+   "icon": "ClipboardTask",
+   "what_you_get": "Every question answered from your approved library, each answer with its source and a confidence rating, and gaps routed to named experts.",
+   "what_changes": "Reviewers check answers rather than write them, so questionnaires go back on the client's deadline.",
+   "measure": "Questionnaires returned on time; answers accepted at first review",
+   "money": "Mandates won or kept that depend on the response; outside help at peaks that stops",
+   "fit": [
+    "A whole questionnaire answered from many approved sources, not one question",
+    "Every answer cites its source, so checking is quick",
+    "Your experts and compliance approve, and you send the response"
+   ],
+   "film": "bids-and-questionnaires",
+   "signals": {
+    "file_names": [
+     "questionnaire",
+     "ddq",
+     "due diligence",
+     "vendor risk",
+     "resilience questionnaire"
+    ],
+    "meeting_titles": [
+     "ddq",
+     "due diligence",
+     "questionnaire"
+    ],
+    "email_subjects": [
+     "questionnaire",
+     "ddq",
+     "due diligence"
+    ]
+   },
+   "design": {
+    "inputs": [
+     "The questionnaire as received",
+     "Your approved answer library and policies",
+     "Last year's responses"
+    ],
+    "outputs": [
+     "Completed questionnaire with a source and a confidence rating for every answer",
+     "Gaps and stale answers, each with a named expert",
+     "Draft cover note"
+    ],
+    "checks": [
+     "Stale or contradictory evidence is flagged, never used",
+     "No answer without a source"
+    ],
+    "who_decides": "The subject experts and compliance approve the answers. You send the response.",
+    "recipe": null,
+    "caution": null
+   }
+  },
+  {
+   "id": "treasury-rfp",
+   "title": "Treasury and transaction-banking RFP responses",
+   "short": "Draft an RFP response",
+   "choice_description": "Compliance matrix and first draft from your library",
+   "area": "vertical",
+   "sectors": [
+    "banking",
+    "payments"
+   ],
+   "function": "Client service and bids",
+   "roles": [
+    "Transaction-banking bid writer",
+    "Senior bid manager",
+    "Head of bids",
+    "Sales lead"
+   ],
+   "kind": "skill",
+   "icon": "DocumentBulletList",
+   "what_you_get": "A requirements register and compliance matrix, a bid or no-bid brief and a first-draft response from your bid library, every claim sourced.",
+   "what_changes": "The team answers bids it would otherwise turn away, and gaps against mandatory requirements show before submission.",
+   "measure": "Bids answered; mandatory requirements missed at submission",
+   "money": "Revenue from bids you can now answer",
+   "fit": [
+    "A whole pack built from many sources, not one question or one document",
+    "Every requirement is traced and every claim is sourced",
+    "The bid director decides whether to bid and signs off the response"
+   ],
+   "film": "bids-and-questionnaires",
+   "signals": {
+    "file_names": [
+     "rfp",
+     "rfq",
+     "tender",
+     "proposal",
+     "compliance matrix",
+     "bid response"
+    ],
+    "meeting_titles": [
+     "bid",
+     "rfp",
+     "pursuit",
+     "tender",
+     "proposal review"
+    ],
+    "email_subjects": [
+     "rfp",
+     "tender",
+     "bid",
+     "proposal"
+    ]
+   },
+   "design": {
+    "inputs": [
+     "The RFP or tender pack",
+     "Your bid library and past responses",
+     "Product and service descriptions"
+    ],
+    "outputs": [
+     "Requirements register and compliance matrix",
+     "Bid or no-bid brief",
+     "First-draft response by section"
+    ],
+    "checks": [
+     "Every mandatory requirement is traced to a response",
+     "Claims without a source are listed, never written"
+    ],
+    "who_decides": "The bid director decides whether to bid and approves the response.",
+    "recipe": null,
+    "caution": null
+   }
+  },
+  {
+   "id": "investor-questionnaires",
+   "title": "Consultant and investor due diligence questionnaires",
+   "short": "Answer investor questionnaires",
+   "choice_description": "From this month's fund documents, every figure dated",
+   "area": "vertical",
+   "sectors": [
+    "asset-wealth",
+    "capital-markets"
+   ],
+   "function": "Institutional client service",
+   "roles": [
+    "RFP and due diligence writer",
+    "Product specialist",
+    "Investment compliance officer",
+    "Head of institutional client service"
+   ],
+   "kind": "skill",
+   "icon": "ClipboardTask",
+   "what_you_get": "The questionnaire answered from this month's fund documents and prior responses, with a source and an as-at date for every figure.",
+   "what_changes": "Answers follow the latest fund documents, so product specialists and compliance review rather than rewrite.",
+   "measure": "Questionnaires returned on time; corrections after compliance review",
+   "money": "Mandates and platform listings that depend on timely, accurate responses",
+   "fit": [
+    "A whole questionnaire answered from fund documents that change every month",
+    "Every figure carries its source and its as-at date",
+    "Product specialists and compliance approve, and you send the response"
+   ],
+   "film": "bids-and-questionnaires",
+   "signals": {
+    "file_names": [
+     "ddq",
+     "rfp",
+     "consultant questionnaire",
+     "investor questionnaire",
+     "factsheet",
+     "fund update"
+    ],
+    "meeting_titles": [
+     "ddq",
+     "rfp",
+     "consultant"
+    ],
+    "email_subjects": [
+     "ddq",
+     "rfp",
+     "questionnaire"
+    ]
+   },
+   "design": {
+    "inputs": [
+     "The questionnaire",
+     "Current fund documents and factsheets",
+     "Prior responses"
+    ],
+    "outputs": [
+     "Completed questionnaire with sources and as-at dates",
+     "Stale and changed answers",
+     "Questions for product specialists"
+    ],
+    "checks": [
+     "Every figure carries its as-at date",
+     "Promotional wording goes to compliance"
+    ],
+    "who_decides": "Product specialists and compliance approve. You send the response.",
+    "recipe": null,
+    "caution": null
+   }
+  },
+  {
+   "id": "scheme-tenders",
+   "title": "Group insurance and employee benefits tenders",
+   "short": "Draft a scheme tender",
+   "choice_description": "Compliance matrix and first draft from your library",
+   "area": "vertical",
+   "sectors": [
+    "insurance"
+   ],
+   "function": "Group schemes and distribution",
+   "roles": [
+    "Group scheme tender writer",
+    "Underwriting lead",
+    "Head of group schemes",
+    "Broker consultant"
+   ],
+   "kind": "skill",
+   "icon": "DocumentBulletList",
+   "what_you_get": "A compliance matrix and first-draft tender response from your scheme library, with every mandatory requirement traced.",
+   "what_changes": "More tenders are answered inside the window, and pricing and underwriting questions reach the people who decide them early.",
+   "measure": "Tenders answered; requirements missed at submission",
+   "money": "Premium from schemes you can now tender for",
+   "fit": [
+    "A whole pack built from many sources, not one question or one document",
+    "Every mandatory requirement is traced to the response",
+    "Underwriting and pricing decide the terms"
+   ],
+   "film": "bids-and-questionnaires",
+   "signals": {
+    "file_names": [
+     "tender",
+     "scheme",
+     "group life",
+     "employee benefits",
+     "quote request"
+    ],
+    "meeting_titles": [
+     "tender",
+     "scheme",
+     "pursuit"
+    ],
+    "email_subjects": [
+     "tender",
+     "scheme",
+     "quote request"
+    ]
+   },
+   "design": {
+    "inputs": [
+     "The tender or broker request",
+     "Your scheme library and past tenders",
+     "Product terms"
+    ],
+    "outputs": [
+     "Compliance matrix",
+     "First-draft response",
+     "Questions for underwriting and pricing"
+    ],
+    "checks": [
+     "Pricing and terms are never drafted, only routed",
+     "Mandatory requirements are traced"
+    ],
+    "who_decides": "Underwriting and pricing decide terms. The head of group schemes approves the response.",
+    "recipe": null,
+    "caution": null
+   }
+  },
+  {
+   "id": "complaint-files",
+   "title": "Complaint case files for the handler's decision",
+   "short": "Prepare a complaint file",
+   "choice_description": "Timeline, evidence and a draft response",
+   "area": "vertical",
+   "sectors": [
+    "banking",
+    "insurance"
+   ],
+   "function": "Complaints",
+   "roles": [
+    "Complaint handler",
+    "Complaints team leader",
+    "Head of customer complaints"
+   ],
+   "kind": "skill",
+   "icon": "DocumentText",
+   "what_you_get": "A sourced timeline, the terms that apply, an evidence index, the issues and a draft response, with contradictions and missed commitments flagged.",
+   "what_changes": "Handlers start from an assembled file, so complex cases reach a decision inside the deadline.",
+   "measure": "Complex cases closed inside the deadline; cases sent back at review",
+   "money": "Redress and referral costs avoided when cases close on time",
+   "fit": [
+    "A whole case file from many records, not one document",
+    "Every timeline entry links to its source",
+    "The handler decides the outcome and any redress"
+   ],
+   "film": "case-and-matter-files",
+   "signals": {
+    "file_names": [
+     "complaint",
+     "case file",
+     "final response",
+     "timeline",
+     "chronology"
+    ],
+    "meeting_titles": [
+     "complaints",
+     "case review",
+     "quality review"
+    ],
+    "email_subjects": [
+     "complaint",
+     "final response"
+    ]
+   },
+   "design": {
+    "inputs": [
+     "Case notes and correspondence",
+     "Product terms and the policy position",
+     "Contact records"
+    ],
+    "outputs": [
+     "Sourced timeline and evidence index",
+     "Issues and the terms that apply",
+     "Draft response for the handler"
+    ],
+    "checks": [
+     "Contradictions and missed commitments are flagged",
+     "Signs of vulnerability are raised for the handler"
+    ],
+    "who_decides": "The handler decides liability, the outcome and any redress.",
+    "recipe": null,
+    "caution": "Start with past, decided cases with personal details removed."
+   }
+  },
+  {
+   "id": "claim-files",
+   "title": "Complex claim files",
+   "short": "Prepare a claim file",
+   "choice_description": "Chronology and heads of claim against the wording",
+   "area": "vertical",
+   "sectors": [
+    "insurance"
+   ],
+   "function": "Claims",
+   "roles": [
+    "Complex claims handler",
+    "Claims technical manager",
+    "Head of claims operations"
+   ],
+   "kind": "skill",
+   "icon": "DocumentText",
+   "what_you_get": "A chronology, the amounts and heads of claim mapped to the policy wording, and an evidence index, ready for the handler's decision.",
+   "what_changes": "Handlers spend their time on the decision, and files reach the technical manager complete.",
+   "measure": "Claims decided inside the service standard; files returned as incomplete",
+   "money": "Handling cost on files that are reworked",
+   "fit": [
+    "A whole claim file from many records, not one document",
+    "Every amount and date links to its source",
+    "The handler decides coverage, reserves and settlement"
+   ],
+   "film": "case-and-matter-files",
+   "signals": {
+    "file_names": [
+     "claim file",
+     "claim",
+     "loss adjuster",
+     "policy wording",
+     "large loss"
+    ],
+    "meeting_titles": [
+     "claims",
+     "large loss",
+     "claims review"
+    ],
+    "email_subjects": [
+     "claim",
+     "adjuster",
+     "large loss"
+    ]
+   },
+   "design": {
+    "inputs": [
+     "Claim notification and correspondence",
+     "Policy wording and endorsements",
+     "Adjuster and expert reports"
+    ],
+    "outputs": [
+     "Chronology with sources",
+     "Heads of claim mapped to the policy wording",
+     "Evidence index and open questions"
+    ],
+    "checks": [
+     "Coverage and reserves are never decided",
+     "Missing documents are listed"
+    ],
+    "who_decides": "The handler decides coverage, reserves and settlement.",
+    "recipe": null,
+    "caution": "Start with past, decided claims with personal details removed."
+   }
+  },
+  {
+   "id": "client-reviews",
+   "title": "Client review packs across a book of clients",
+   "short": "Prepare client reviews",
+   "choice_description": "A one-page pack per client, with a draft note",
+   "area": "vertical",
+   "sectors": [
+    "asset-wealth",
+    "banking"
+   ],
+   "function": "Wealth and relationship management",
+   "roles": [
+    "Relationship manager",
+    "Wealth adviser",
+    "Private banker",
+    "Client service team lead"
+   ],
+   "kind": "skill",
+   "icon": "People",
+   "what_you_get": "A one-page review pack for each client from your records, with the points to raise and a draft note for you to send.",
+   "what_changes": "Every client in the book gets a prepared review, not only the largest.",
+   "measure": "Reviews completed on schedule across the book",
+   "money": "Clients and assets retained through reviews that happen",
+   "fit": [
+    "A pack per client, built from several records, across the whole book",
+    "Every point cites the record it came from",
+    "The adviser decides the advice and sends the note"
+   ],
+   "film": "customer-success-renewals",
+   "signals": {
+    "file_names": [
+     "client review",
+     "annual review",
+     "review pack",
+     "portfolio review",
+     "suitability"
+    ],
+    "meeting_titles": [
+     "client review",
+     "annual review",
+     "portfolio review"
+    ],
+    "email_subjects": [
+     "annual review",
+     "client review"
+    ]
+   },
+   "design": {
+    "inputs": [
+     "Client records and holdings exports",
+     "Notes from the last review",
+     "Service and contact history"
+    ],
+    "outputs": [
+     "One-page review pack per client",
+     "Points to raise, each with its source",
+     "Draft note to the client, not sent"
+    ],
+    "checks": [
+     "Advice and suitability are never written as decisions",
+     "Every point cites a record"
+    ],
+    "who_decides": "The adviser decides the advice and sends the note.",
+    "recipe": null,
+    "caution": null
+   }
+  },
+  {
+   "id": "regulatory-change",
+   "title": "Regulatory change impact assessments",
+   "short": "Assess a new regulation",
+   "choice_description": "Obligations, mapping, paper and action plan",
+   "area": "vertical",
+   "sectors": [
+    "all"
+   ],
+   "function": "Risk and compliance",
+   "roles": [
+    "Regulatory affairs adviser",
+    "Compliance officer",
+    "Head of compliance advisory",
+    "Chief risk officer"
+   ],
+   "kind": "skill",
+   "icon": "ShieldCheckmark",
+   "what_you_get": "An obligations register, a map to your policies and controls, a draft impact paper and action plan, and a committee summary.",
+   "what_changes": "The assessment reaches approval with fewer review rounds, and first-line plans are checked against the regulator's dates.",
+   "measure": "Review rounds before approval; first-line plans inside the regulator's dates",
+   "money": "Outside gap-assessment spend that stops",
+   "fit": [
+    "A whole assessment built from the regulation, your policies and your controls",
+    "Every obligation cites its paragraph and every mapping its clause",
+    "Legal interprets, and the head of compliance approves"
+   ],
+   "film": null,
+   "signals": {
+    "file_names": [
+     "regulation",
+     "regulatory change",
+     "impact assessment",
+     "obligations register",
+     "consultation paper",
+     "gap analysis",
+     "policy mapping"
+    ],
+    "meeting_titles": [
+     "regulatory change",
+     "horizon scanning",
+     "compliance committee",
+     "risk committee"
+    ],
+    "email_subjects": [
+     "consultation",
+     "impact assessment",
+     "regulatory change"
+    ]
+   },
+   "design": {
+    "inputs": [
+     "The final regulation and the regulator's feedback statement",
+     "Your policy library and control library",
+     "First-line responses"
+    ],
+    "outputs": [
+     "Obligations register by paragraph",
+     "Policy and control mapping with the gaps",
+     "Impact paper, action plan and committee summary"
+    ],
+    "checks": [
+     "A script checks every date against its paragraph",
+     "Legal questions are listed, never answered"
+    ],
+    "who_decides": "Legal interprets. The head of compliance approves the assessment.",
+    "recipe": null,
+    "caution": null
+   }
+  },
+  {
+   "id": "regulator-requests",
+   "title": "Responses to regulator and supervisor requests",
+   "short": "Draft a regulator response",
+   "choice_description": "A sourced first draft with a citation check",
+   "area": "vertical",
+   "sectors": [
+    "all"
+   ],
+   "function": "Risk and compliance",
+   "roles": [
+    "Regulatory liaison lead",
+    "Legal counsel",
+    "Compliance officer"
+   ],
+   "kind": "skill",
+   "icon": "ShieldCheckmark",
+   "what_you_get": "A first-draft response assembled from your records, every statement traced to its source, followed by a separate citation check.",
+   "what_changes": "Responses reach sign-off with their evidence attached, so review is about substance.",
+   "measure": "Requests answered inside the regulator's deadline; statements corrected at review",
+   "money": "Outside counsel spend on first drafts",
+   "fit": [
+    "A whole response built from many records",
+    "Every statement is traced to a source and checked separately",
+    "Legal and the accountable executive approve and send"
+   ],
+   "film": null,
+   "signals": {
+    "file_names": [
+     "information request",
+     "regulator",
+     "supervisory",
+     "attestation",
+     "response to"
+    ],
+    "meeting_titles": [
+     "regulator",
+     "supervisor",
+     "regulatory liaison"
+    ],
+    "email_subjects": [
+     "information request",
+     "regulator",
+     "supervisory"
+    ]
+   },
+   "design": {
+    "inputs": [
+     "The request",
+     "Policies, minutes and management information",
+     "Earlier responses"
+    ],
+    "outputs": [
+     "First-draft response with sources",
+     "Citation check report",
+     "Open questions for owners"
+    ],
+    "checks": [
+     "A separate citation check before review",
+     "Unsupported statements are listed"
+    ],
+    "who_decides": "Legal and the accountable executive approve and send.",
+    "recipe": null,
+    "caution": null
+   }
+  },
+  {
+   "id": "promotions-audit",
+   "title": "Financial promotions and content drift audit",
+   "short": "Audit live promotions",
+   "choice_description": "Live content checked against approved wording",
+   "area": "vertical",
+   "sectors": [
+    "banking",
+    "asset-wealth",
+    "insurance"
+   ],
+   "function": "Marketing compliance",
+   "roles": [
+    "Financial promotions approver",
+    "Marketing compliance manager",
+    "Brand and content lead"
+   ],
+   "kind": "skill",
+   "icon": "Search",
+   "what_you_get": "A periodic audit of live content against approved wording and current product terms, each issue evidenced and routed to its owner.",
+   "what_changes": "Drift is found on a schedule rather than after a complaint.",
+   "measure": "Issues found and fixed per audit; repeat issues",
+   "money": "Remediation and agency rework avoided",
+   "fit": [
+    "A whole audit across many pages and documents",
+    "Each issue quotes the live wording and the approved wording",
+    "The approver decides each fix"
+   ],
+   "film": null,
+   "signals": {
+    "file_names": [
+     "financial promotion",
+     "promotions register",
+     "approved wording",
+     "content audit",
+     "disclosure"
+    ],
+    "meeting_titles": [
+     "financial promotions",
+     "marketing compliance",
+     "content review"
+    ],
+    "email_subjects": [
+     "promotion approval",
+     "financial promotion"
+    ]
+   },
+   "design": {
+    "inputs": [
+     "Live pages and documents",
+     "Approved wording and the promotions register",
+     "Current product terms"
+    ],
+    "outputs": [
+     "Audit report with evidence for each issue",
+     "Fix list by owner",
+     "Summary for the approver"
+    ],
+    "checks": [
+     "Each issue quotes both versions of the wording",
+     "No content is changed"
+    ],
+    "who_decides": "The approver decides each fix.",
+    "recipe": null,
+    "caution": null
+   }
+  },
+  {
+   "id": "reconciliation-breaks",
+   "title": "Evidence packs for reconciliation breaks",
+   "short": "Explain reconciliation breaks",
+   "choice_description": "Both sides, the likely cause and a drafted query",
+   "area": "vertical",
+   "sectors": [
+    "banking",
+    "capital-markets",
+    "asset-wealth",
+    "insurance",
+    "payments"
+   ],
+   "function": "Operations and finance control",
+   "roles": [
+    "Operations control analyst",
+    "Reconciliations lead",
+    "Financial controller"
+   ],
+   "kind": "skill",
+   "icon": "Table",
+   "what_you_get": "For each break left after matching, the records on both sides, the likely cause with its evidence and a drafted query to the owner.",
+   "what_changes": "Aged breaks fall because each one reaches the reviewer already evidenced.",
+   "measure": "Aged breaks; breaks cleared at first review",
+   "money": "Write-offs and funding costs on breaks left open",
+   "fit": [
+    "Each break needs several records assembled, after your system has done the matching",
+    "Both sides of every break are shown with their sources",
+    "The control owner accepts or rejects each explanation"
+   ],
+   "film": null,
+   "signals": {
+    "file_names": [
+     "reconciliation",
+     "recs",
+     "breaks",
+     "unmatched",
+     "suspense",
+     "nostro"
+    ],
+    "meeting_titles": [
+     "reconciliation",
+     "breaks review",
+     "control review"
+    ],
+    "email_subjects": [
+     "reconciliation",
+     "unmatched",
+     "breaks"
+    ]
+   },
+   "design": {
+    "inputs": [
+     "The break report from your reconciliation system",
+     "Ledger and statement extracts",
+     "Earlier explanations"
+    ],
+    "outputs": [
+     "Evidence pack per break",
+     "Likely cause, marked as a proposal",
+     "Drafted queries to owners, not sent"
+    ],
+    "checks": [
+     "Matching stays in your reconciliation system",
+     "Amounts are never changed"
+    ],
+    "who_decides": "The control owner accepts or rejects each explanation.",
+    "recipe": null,
+    "caution": null
+   }
+  },
+  {
+   "id": "committee-papers",
+   "title": "Board and committee papers right first time",
+   "short": "Draft a committee paper",
+   "choice_description": "A full draft, then a coaching review",
+   "area": "horizontal",
+   "sectors": [
+    "all"
+   ],
+   "function": "Governance",
+   "roles": [
+    "Paper author",
+    "Company secretary",
+    "Committee chair",
+    "Chief risk officer",
+    "Finance director"
+   ],
+   "kind": "skill",
+   "icon": "BuildingBank",
+   "what_you_get": "A full first draft in your committee's template, every figure with its source, then a coaching review against your paper standard.",
+   "what_changes": "Papers reach the committee first time, with fewer review rounds.",
+   "measure": "Papers reaching the committee first time; review rounds per paper",
+   "money": "Senior review rounds that no longer happen",
+   "fit": [
+    "A whole paper built from the author's evidence",
+    "Every figure carries its source and date",
+    "The author owns the paper, and the secretariat decides readiness"
+   ],
+   "film": "governance-and-value",
+   "signals": {
+    "file_names": [
+     "board paper",
+     "committee paper",
+     "risk committee",
+     "audit committee",
+     "exco paper",
+     "board pack"
+    ],
+    "meeting_titles": [
+     "board",
+     "audit committee",
+     "risk committee",
+     "exco",
+     "executive committee"
+    ],
+    "email_subjects": [
+     "board paper",
+     "committee paper",
+     "papers due"
+    ]
+   },
+   "design": {
+    "inputs": [
+     "Your evidence: reports, data and earlier papers",
+     "The committee template and paper standard",
+     "The decision you are asking for"
+    ],
+    "outputs": [
+     "Draft paper with a front sheet",
+     "Coaching review with findings anchored in the paper",
+     "Readiness note for the secretariat"
+    ],
+    "checks": [
+     "Every figure carries its source",
+     "The paper is never declared ready"
+    ],
+    "who_decides": "The author owns the paper. The secretariat decides readiness.",
+    "recipe": "committee-paper",
+    "caution": null
+   }
+  },
+  {
+   "id": "variance-commentary",
+   "title": "Month-end variance commentary",
+   "short": "Draft variance commentary",
+   "choice_description": "A sourced first draft in your house style",
+   "area": "horizontal",
+   "sectors": [
+    "all"
+   ],
+   "function": "Finance",
+   "roles": [
+    "Finance director",
+    "FP&A manager",
+    "Financial controller",
+    "Finance business partner"
+   ],
+   "kind": "skill",
+   "icon": "DataBarVertical",
+   "what_you_get": "A first draft for every material line, in your template, each with its source and an evidence status.",
+   "what_changes": "Packs are accepted at first review because every statement arrives with its source.",
+   "measure": "Packs accepted at first review; unsupported statements reaching review",
+   "money": "Contractor or overtime spend at the close",
+   "fit": [
+    "A whole pack built from the ledger, the forecast and owners' explanations",
+    "Every statement carries a source and an evidence status",
+    "The controller approves, and figures are never changed"
+   ],
+   "film": null,
+   "signals": {
+    "file_names": [
+     "variance",
+     "commentary",
+     "flux",
+     "management pack",
+     "management accounts",
+     "monthly pack"
+    ],
+    "meeting_titles": [
+     "month-end close",
+     "close review",
+     "results review"
+    ],
+    "email_subjects": [
+     "variance",
+     "commentary",
+     "pack comments"
+    ]
+   },
+   "design": {
+    "inputs": [
+     "Ledger and forecast exports",
+     "Owners' explanations",
+     "Last month's pack"
+    ],
+    "outputs": [
+     "Draft commentary in your template",
+     "Questions for owners, drafted not sent",
+     "Source register"
+    ],
+    "checks": [
+     "Figures are never changed",
+     "Unsupported statements are listed"
+    ],
+    "who_decides": "The controller approves the pack.",
+    "recipe": "variance-commentary",
+    "caution": null
+   }
+  },
+  {
+   "id": "audit-requests",
+   "title": "The auditor's request list answered with evidence",
+   "short": "Answer the audit list",
+   "choice_description": "Each request mapped to evidence, gaps flagged",
+   "area": "horizontal",
+   "sectors": [
+    "all"
+   ],
+   "function": "Finance and controls",
+   "roles": [
+    "Financial controller",
+    "IT control owner",
+    "Head of internal controls",
+    "Internal audit liaison"
+   ],
+   "kind": "skill",
+   "icon": "TaskListLtr",
+   "what_you_get": "Each request mapped to its evidence, gaps and out-of-period items flagged, a request tracker and drafted follow-ups to owners.",
+   "what_changes": "Requests are answered first time, so the audit closes without a second round.",
+   "measure": "Requests answered first time; follow-up requests from the auditor",
+   "money": "Audit overrun fees",
+   "fit": [
+    "A whole request list worked through against many evidence sources",
+    "Every request links to the evidence that answers it",
+    "Management reviews and releases the evidence"
+   ],
+   "film": "audit-readiness",
+   "signals": {
+    "file_names": [
+     "pbc",
+     "audit request",
+     "request list",
+     "audit evidence",
+     "sox",
+     "itgc",
+     "walkthrough"
+    ],
+    "meeting_titles": [
+     "external audit",
+     "audit fieldwork",
+     "sox",
+     "pbc"
+    ],
+    "email_subjects": [
+     "pbc",
+     "audit request",
+     "evidence request"
+    ]
+   },
+   "design": {
+    "inputs": [
+     "The auditor's request list",
+     "Evidence folders and prior-year responses",
+     "System extracts for sampled items"
+    ],
+    "outputs": [
+     "Request tracker with evidence for each request",
+     "Gaps, out-of-period items and missing approvals",
+     "Drafted follow-ups and a cover note"
+    ],
+    "checks": [
+     "Out-of-period evidence is flagged",
+     "Nothing is sent to the auditor"
+    ],
+    "who_decides": "Management reviews and releases evidence to the auditor.",
+    "recipe": null,
+    "caution": null
+   }
+  },
+  {
+   "id": "access-reviews",
+   "title": "Quarterly user access review evidence",
+   "short": "Prepare the access review",
+   "choice_description": "Attestation packs and an exception list",
+   "area": "horizontal",
+   "sectors": [
+    "all"
+   ],
+   "function": "Technology risk",
+   "roles": [
+    "Access governance analyst",
+    "Control owner",
+    "Head of IT risk",
+    "Internal auditor"
+   ],
+   "kind": "skill",
+   "icon": "ShieldCheckmark",
+   "what_you_get": "Entitlements reconciled to HR records, the role model and segregation-of-duties rules, with attestation packs for managers and an exception list.",
+   "what_changes": "Leavers, movers and conflicts are found before the audit rather than by it.",
+   "measure": "Reviews completed on time; exceptions found by audit",
+   "money": "Audit findings and remediation work avoided",
+   "fit": [
+    "A whole review built from HR, application and entitlement extracts",
+    "Every exception cites both records",
+    "Managers attest, and the control owner decides exceptions"
+   ],
+   "film": "access-recertification",
+   "signals": {
+    "file_names": [
+     "access review",
+     "recertification",
+     "entitlement",
+     "segregation of duties",
+     "user access",
+     "attestation"
+    ],
+    "meeting_titles": [
+     "access review",
+     "recertification",
+     "itgc"
+    ],
+    "email_subjects": [
+     "access review",
+     "attestation",
+     "recertification"
+    ]
+   },
+   "design": {
+    "inputs": [
+     "Entitlement extracts",
+     "The HR population",
+     "The role model and segregation-of-duties rules"
+    ],
+    "outputs": [
+     "Manager attestation packs",
+     "Exception list: leavers, movers, conflicts and ownerless accounts",
+     "Audit evidence file"
+    ],
+    "checks": [
+     "Access is never granted or removed",
+     "Every exception cites both records"
+    ],
+    "who_decides": "Managers attest. The control owner decides exceptions.",
+    "recipe": null,
+    "caution": null
+   }
+  },
+  {
+   "id": "invoice-exceptions",
+   "title": "Blocked invoice and supplier exception packs",
+   "short": "Resolve blocked invoices",
+   "choice_description": "Order, receipt, invoice and contract assembled",
+   "area": "horizontal",
+   "sectors": [
+    "all"
+   ],
+   "function": "Procurement and payables",
+   "roles": [
+    "Procure-to-pay analyst",
+    "Buyer",
+    "Procurement manager",
+    "Finance operations lead"
+   ],
+   "kind": "skill",
+   "icon": "Money",
+   "what_you_get": "For each complex exception, the order, receipt, invoice, contract and correspondence assembled, the cause explained and the buyer's options drafted.",
+   "what_changes": "Exceptions that need a person arrive ready to decide, so supplier queries and payment disputes fall.",
+   "measure": "Aged blocked invoices; exceptions resolved at first touch",
+   "money": "Late-payment charges and missed discounts",
+   "fit": [
+    "Each exception needs several records assembled, after automation has done the matching",
+    "Every finding cites the order, receipt, invoice or contract",
+    "The buyer decides, and nothing is paid or rejected"
+   ],
+   "film": "procurement-exceptions",
+   "signals": {
+    "file_names": [
+     "blocked invoice",
+     "exceptions",
+     "price variance",
+     "three-way match",
+     "supplier query"
+    ],
+    "meeting_titles": [
+     "payables",
+     "supplier review",
+     "exceptions"
+    ],
+    "email_subjects": [
+     "blocked invoice",
+     "invoice query",
+     "price variance"
+    ]
+   },
+   "design": {
+    "inputs": [
+     "Order, receipt and invoice extracts",
+     "The contract and price list",
+     "Supplier correspondence"
+    ],
+    "outputs": [
+     "Exception pack per supplier",
+     "Cause for each exception, with its evidence",
+     "The buyer's options, drafted"
+    ],
+    "checks": [
+     "Nothing is paid, rejected or changed",
+     "High-volume matching stays with automation"
+    ],
+    "who_decides": "The buyer decides each exception.",
+    "recipe": null,
+    "caution": null
+   }
+  },
+  {
+   "id": "disputes-chronology",
+   "title": "Disputes chronology and first-draft memo",
+   "short": "Build a disputes chronology",
+   "choice_description": "Sourced chronology, issues and a first memo",
+   "area": "horizontal",
+   "sectors": [
+    "all"
+   ],
+   "function": "Legal",
+   "roles": [
+    "In-house counsel",
+    "Litigation paralegal",
+    "Head of litigation",
+    "General counsel"
+   ],
+   "kind": "skill",
+   "icon": "DocumentBulletList",
+   "what_you_get": "A chronology with a source link for every entry, an issues list and a first-draft advice memo, followed by a separate citation check.",
+   "what_changes": "Supervising lawyers review a checked draft, and more early work stays in house.",
+   "measure": "Matters with a chronology in the first week; citation errors found at review",
+   "money": "Outside counsel spend on first drafts",
+   "fit": [
+    "A whole matter bundle worked through into several documents",
+    "Every entry links to its source, and citations are checked separately",
+    "The supervising lawyer reviews and gives the advice"
+   ],
+   "film": "case-and-matter-files",
+   "signals": {
+    "file_names": [
+     "chronology",
+     "bundle",
+     "matter",
+     "litigation",
+     "dispute",
+     "witness statement"
+    ],
+    "meeting_titles": [
+     "litigation",
+     "disputes",
+     "matter review"
+    ],
+    "email_subjects": [
+     "matter",
+     "bundle",
+     "dispute"
+    ]
+   },
+   "design": {
+    "inputs": [
+     "The matter bundle",
+     "Correspondence and contracts",
+     "Authorities relied on"
+    ],
+    "outputs": [
+     "Chronology with a source for every entry",
+     "Issues list and first-draft memo",
+     "Citation check report"
+    ],
+    "checks": [
+     "A separate citation check before review",
+     "No advice goes to a client without supervision"
+    ],
+    "who_decides": "The supervising lawyer reviews and gives the advice.",
+    "recipe": null,
+    "caution": null
+   }
+  },
+  {
+   "id": "technology-choice",
+   "title": "Which technology for which task, and what it costs",
+   "short": "Sort candidate use cases",
+   "choice_description": "Each task sorted, costed and given a measure",
+   "area": "horizontal",
+   "sectors": [
+    "all"
+   ],
+   "function": "AI programme and operations",
+   "roles": [
+    "AI programme lead",
+    "Chief operating officer",
+    "Head of change",
+    "Transformation lead"
+   ],
+   "kind": "skill",
+   "icon": "Target",
+   "what_you_get": "Your candidate tasks sorted by the least costly technology that does the job, a cost per outcome for the Cowork ones and a measurement plan.",
+   "what_changes": "Budget goes to the tasks where an owner's queue, spend or deadline will move.",
+   "measure": "Use cases with a named owner, a measure and a cost per outcome",
+   "money": "Spend avoided on tasks that belong elsewhere",
+   "fit": [
+    "A whole backlog assessed against the same rules",
+    "Every verdict shows the rule that decided it",
+    "The sponsor decides what to fund"
+   ],
+   "film": "governance-and-value",
+   "signals": {
+    "file_names": [
+     "use cases",
+     "use case",
+     "ai roadmap",
+     "business case",
+     "prioritisation",
+     "backlog"
+    ],
+    "meeting_titles": [
+     "ai steering",
+     "use case review",
+     "steering committee",
+     "design authority"
+    ],
+    "email_subjects": [
+     "use case",
+     "business case"
+    ]
+   },
+   "design": {
+    "inputs": [
+     "Your list of candidate tasks",
+     "Volumes and who owns each task",
+     "Your price per credit"
+    ],
+    "outputs": [
+     "Each task sorted by technology, with the reason",
+     "Cost per outcome for the Cowork tasks",
+     "Measurement plan"
+    ],
+    "checks": [
+     "Tasks with no owner or measure are marked, not recommended",
+     "Every sum comes from a script"
+    ],
+    "who_decides": "The sponsor decides which tasks to fund.",
+    "recipe": null,
+    "caution": null
+   }
+  },
+  {
+   "id": "renewal-packs",
+   "title": "Renewal and account review packs for every account",
+   "short": "Prepare renewal packs",
+   "choice_description": "A health summary and outreach per account",
+   "area": "horizontal",
+   "sectors": [
+    "payments",
+    "capital-markets",
+    "all"
+   ],
+   "function": "Account management",
+   "roles": [
+    "Account manager",
+    "Customer success manager",
+    "Head of client service"
+   ],
+   "kind": "skill",
+   "icon": "People",
+   "what_you_get": "Overnight, a one-page health summary per account from your records, risk and growth signals each cited, and drafted outreach.",
+   "what_changes": "Accounts nobody had time to review get a prepared pack before renewal.",
+   "measure": "Accounts reviewed before renewal; renewals at risk found early",
+   "money": "Renewals kept among accounts that were not being reviewed",
+   "fit": [
+    "A pack per account from several systems, across the whole book",
+    "Every signal cites the record it came from",
+    "The account manager reviews and sends"
+   ],
+   "film": "customer-success-renewals",
+   "signals": {
+    "file_names": [
+     "renewal",
+     "account review",
+     "qbr",
+     "account plan",
+     "health summary"
+    ],
+    "meeting_titles": [
+     "renewal review",
+     "qbr",
+     "account review"
+    ],
+    "email_subjects": [
+     "renewal",
+     "qbr"
+    ]
+   },
+   "design": {
+    "inputs": [
+     "Account, support and usage exports",
+     "Contract and renewal dates",
+     "Notes from the last review"
+    ],
+    "outputs": [
+     "One-page health summary per account",
+     "Risk and growth signals, each cited",
+     "Drafted outreach, not sent"
+    ],
+    "checks": [
+     "Forecasts are never produced",
+     "Every signal cites a record"
+    ],
+    "who_decides": "The account manager reviews and sends.",
+    "recipe": null,
+    "caution": null
+   }
+  },
+  {
+   "id": "tracker-app",
+   "title": "An app in place of a shared tracker",
+   "short": "Build a tracker app",
+   "choice_description": "Owners update their own lines",
+   "area": "horizontal",
+   "sectors": [
+    "all"
+   ],
+   "function": "Any team running a round of submissions",
+   "roles": [
+    "Programme manager",
+    "Finance director",
+    "Chief of staff",
+    "Operations lead"
+   ],
+   "kind": "app",
+   "icon": "Apps",
+   "what_you_get": "An app built from your tracker's own columns: owners update their own line, and you see who is late without chasing.",
+   "what_changes": "One version of the truth for a round of submissions, with chasers drafted for you.",
+   "measure": "Submissions in on time; chasers sent",
+   "money": null,
+   "fit": [
+    "A tracker many people edit, plus status emails, shows work an app does better",
+    "The app starts from your tracker's own columns and rows",
+    "You decide who can use it, and nothing is shared without your OK"
+   ],
+   "film": null,
+   "signals": {
+    "file_names": [
+     "tracker",
+     "submissions",
+     "status report",
+     "register",
+     "action log",
+     "raid log"
+    ],
+    "meeting_titles": [
+     "check-in",
+     "status",
+     "stand-up",
+     "progress review"
+    ],
+    "email_subjects": [
+     "status",
+     "chaser",
+     "reminder",
+     "overdue",
+     "update please"
+    ]
+   },
+   "design": {
+    "inputs": [
+     "Your tracker spreadsheet",
+     "The status emails you send",
+     "Who owns each line"
+    ],
+    "outputs": [
+     "An app with one line per owner",
+     "An overdue list with drafted chasers",
+     "A weekly summary"
+    ],
+    "checks": [
+     "Your spreadsheet is left as it is",
+     "Chasers are drafted, never sent"
+    ],
+    "who_decides": "You decide who can use the app.",
+    "recipe": "budget-round-app",
+    "caution": null
+   }
+  },
+  {
+   "id": "review-brief",
+   "title": "A brief the evening before each business review",
+   "short": "Brief me before reviews",
+   "choice_description": "One page, the evening before",
+   "area": "horizontal",
+   "sectors": [
+    "all"
+   ],
+   "function": "Any leader preparing for a recurring review",
+   "roles": [
+    "Finance director",
+    "Business unit head",
+    "Chief of staff",
+    "Chief operating officer"
+   ],
+   "kind": "routine",
+   "icon": "CalendarLtr",
+   "what_you_get": "One page: what moved since last time, the questions to put to each business and the open actions.",
+   "what_changes": "You walk in with the questions ready.",
+   "measure": "Questions answered before the meeting",
+   "money": null,
+   "fit": [
+    "A brief built from the pack, the forecast and last time's actions",
+    "Every movement cites the file it came from",
+    "You decide what to ask"
+   ],
+   "film": null,
+   "signals": {
+    "file_names": [
+     "business review",
+     "mbr",
+     "qbr",
+     "review pack",
+     "forecast"
+    ],
+    "meeting_titles": [
+     "mbr",
+     "monthly business review",
+     "qbr",
+     "business review",
+     "performance review",
+     "forecast review"
+    ],
+    "email_subjects": [
+     "mbr",
+     "business review",
+     "pre-read"
+    ]
+   },
+   "design": {
+    "inputs": [
+     "The review pack and forecast files",
+     "Last time's actions",
+     "The meeting in your calendar"
+    ],
+    "outputs": [
+     "A one-page brief",
+     "Questions for each business",
+     "Open actions"
+    ],
+    "checks": [
+     "Movements are worked out by a script",
+     "Nothing is sent"
+    ],
+    "who_decides": "You decide what to ask.",
+    "recipe": "mbr-brief",
+    "caution": null
+   }
+  },
+  {
+   "id": "market-pack",
+   "title": "A market evidence pack for a named decision",
+   "short": "Build a market pack",
+   "choice_description": "Cited evidence for one decision",
+   "area": "horizontal",
+   "sectors": [
+    "all"
+   ],
+   "function": "Strategy and product",
+   "roles": [
+    "Strategy manager",
+    "Product manager",
+    "Chief of staff"
+   ],
+   "kind": "skill",
+   "icon": "Search",
+   "what_you_get": "A bounded evidence pack on competitors, pricing or regulation for one decision, every point cited, with what is not known stated.",
+   "what_changes": "The decision meeting starts from checked evidence.",
+   "measure": "Decisions taken at the first meeting",
+   "money": "Outside research spend",
+   "fit": [
+    "A whole pack for one decision, from many public and internal sources",
+    "Every point is cited, and gaps are stated",
+    "The decision owner decides"
+   ],
+   "film": null,
+   "signals": {
+    "file_names": [
+     "market intelligence",
+     "competitor",
+     "landscape",
+     "benchmark",
+     "market update"
+    ],
+    "meeting_titles": [
+     "strategy",
+     "competitor review",
+     "pricing committee",
+     "product committee"
+    ],
+    "email_subjects": [
+     "competitor",
+     "market update"
+    ]
+   },
+   "design": {
+    "inputs": [
+     "The decision and its deadline",
+     "Public sources and your own research",
+     "Earlier packs"
+    ],
+    "outputs": [
+     "Evidence pack with citations",
+     "What is not known",
+     "Options for the decision owner"
+    ],
+    "checks": [
+     "Every point is cited",
+     "No recommendation is presented as a decision"
+    ],
+    "who_decides": "The decision owner decides.",
+    "recipe": null,
+    "caution": null
+   }
+  }
+ ]
+}

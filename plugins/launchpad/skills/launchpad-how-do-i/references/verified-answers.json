@@ -1,0 +1,238 @@
+{
+  "name": "Verified answers",
+  "checked_on": "November 2026",
+  "source": "Microsoft Learn",
+  "about": "Answers checked against Microsoft Learn in November 2026. Use them to check a live answer, and as a dated fallback only when the Microsoft Learn connector is not available. The live page always wins.",
+  "answers": [
+    {
+      "id": "share-skill",
+      "question": "How do I share a skill?",
+      "match": [
+        "share a skill",
+        "share my skill",
+        "share this skill",
+        "share it with my team",
+        "re-share",
+        "give my team the skill"
+      ],
+      "steps": [
+        "Open Customize, then the skill's detail page.",
+        "Select Share, choose Specific users in your organization and add their names.",
+        "Select Apply.",
+        "When you change the skill later, select Re-share so everyone gets the latest version."
+      ],
+      "learn_url": "https://learn.microsoft.com/copilot/cowork/cowork-customize#share-skills-and-plugins",
+      "learn_title": "Share skills and plugins",
+      "can_do": null,
+      "next": [
+        {
+          "label": "Upload a plugin",
+          "description": "How do I upload a plugin package?"
+        },
+        {
+          "label": "Run it every month",
+          "description": "Can Cowork run this on a schedule?"
+        },
+        {
+          "label": "Start it from an email",
+          "description": "Can it run when a matching email arrives?"
+        }
+      ]
+    },
+    {
+      "id": "schedule-prompt",
+      "question": "How do I run something on a schedule?",
+      "match": [
+        "schedule",
+        "every month",
+        "every week",
+        "every morning",
+        "run it every",
+        "recurring",
+        "automations page",
+        "pause a schedule"
+      ],
+      "steps": [
+        "Say what you want and when, for example: Draft the variance commentary on the 5th of every month.",
+        "Cowork sets up the schedule and asks you to approve it.",
+        "Manage it on the Automations page, where you can edit, pause, resume or delete it.",
+        "You can have up to 25 scheduled prompts."
+      ],
+      "learn_url": "https://learn.microsoft.com/copilot/cowork/use-cowork#schedule-prompts",
+      "learn_title": "Schedule prompts",
+      "can_do": {
+        "text": "I can set this up for you now, and you approve it on Cowork's own card.",
+        "question": "Set up a schedule now?",
+        "label": "Set it up now",
+        "description": "You approve it on Cowork's own card",
+        "route": "launchpad-routines"
+      },
+      "next": [
+        {
+          "label": "Pause a schedule",
+          "description": "How do I pause or stop a schedule?"
+        },
+        {
+          "label": "Start it from an email",
+          "description": "Can it run when a matching email arrives?"
+        },
+        {
+          "label": "Share a skill",
+          "description": "How do I share a skill with my team?"
+        }
+      ]
+    },
+    {
+      "id": "event-trigger",
+      "question": "How do I start a task when an email arrives?",
+      "match": [
+        "when an email arrives",
+        "when the email arrives",
+        "trigger",
+        "event",
+        "when a teams message",
+        "when i receive",
+        "whenever"
+      ],
+      "steps": [
+        "Describe what to watch for and what to do, for example: When the ledger-locked email arrives, draft the commentary for my review.",
+        "Cowork shows a Set up trigger? card with when it runs, where it runs and what it does.",
+        "Check the permissions it needs, then select Set up.",
+        "By default it drafts and asks for your approval before anything is sent."
+      ],
+      "learn_url": "https://learn.microsoft.com/copilot/cowork/use-cowork#set-up-event-driven-tasks",
+      "learn_title": "Set up event-driven tasks",
+      "can_do": {
+        "text": "I can set this up for you now, and you approve it on Cowork's own card.",
+        "question": "Set up the trigger now?",
+        "label": "Set it up now",
+        "description": "You approve it on Cowork's own card",
+        "route": "launchpad-routines"
+      },
+      "next": [
+        {
+          "label": "Run it every month",
+          "description": "Can Cowork run this on a schedule?"
+        },
+        {
+          "label": "Find my automations",
+          "description": "Where do I see my schedules and triggers?"
+        },
+        {
+          "label": "Create a skill",
+          "description": "How do I create a skill of my own?"
+        }
+      ]
+    },
+    {
+      "id": "create-skill",
+      "question": "How do I create a skill?",
+      "match": [
+        "create a skill",
+        "make a skill",
+        "build a skill",
+        "new skill",
+        "skill builder"
+      ],
+      "steps": [
+        "Open Customize, then the Skills tab.",
+        "Select Add, then Create new.",
+        "Answer the questions about the name, description, category and instructions.",
+        "Confirm in chat. Cowork saves it to your skills folder, ready from your next conversation."
+      ],
+      "learn_url": "https://learn.microsoft.com/copilot/cowork/use-cowork#create-custom-skills",
+      "learn_title": "Create custom skills",
+      "can_do": {
+        "text": "I can build one with you from work you already do.",
+        "question": "Build one with me now?",
+        "label": "Build one with me",
+        "description": "From a document you make often",
+        "route": "launchpad-cookbook"
+      },
+      "next": [
+        {
+          "label": "Share a skill",
+          "description": "How do I share a skill with my team?"
+        },
+        {
+          "label": "Run it every month",
+          "description": "Can Cowork run this on a schedule?"
+        },
+        {
+          "label": "Upload a plugin",
+          "description": "How do I upload a plugin package?"
+        }
+      ]
+    },
+    {
+      "id": "upload-plugin",
+      "question": "How do I upload a plugin?",
+      "match": [
+        "upload a plugin",
+        "install a plugin",
+        "add a plugin",
+        "plugin package",
+        "sideload"
+      ],
+      "steps": [
+        "Open Customize, then the Plugins tab.",
+        "Select Upload plugin and choose the plugin package, a .zip file.",
+        "In the Share dialog, choose Only you or Specific users in your organization.",
+        "Select Apply."
+      ],
+      "learn_url": "https://learn.microsoft.com/copilot/cowork/cowork-customize#upload-a-plugin-package",
+      "learn_title": "Upload a plugin package",
+      "can_do": null,
+      "next": [
+        {
+          "label": "Deploy it for everyone",
+          "description": "How does an admin deploy a plugin?"
+        },
+        {
+          "label": "Share a skill",
+          "description": "How do I share a skill with my team?"
+        },
+        {
+          "label": "Create a skill",
+          "description": "How do I create a skill of my own?"
+        }
+      ]
+    },
+    {
+      "id": "admin-deploy",
+      "question": "How does an admin deploy a plugin?",
+      "match": [
+        "admin",
+        "deploy",
+        "whole organisation",
+        "whole organization",
+        "everyone in the company",
+        "admin center",
+        "admin centre"
+      ],
+      "steps": [
+        "In the Microsoft 365 admin center, open Manage apps, then Upload custom app.",
+        "Select the ellipsis, then Add agent, and upload the .zip package.",
+        "Choose who can use it.",
+        "In Cowork, it appears under Plugins in the Discover section."
+      ],
+      "learn_url": "https://learn.microsoft.com/copilot/cowork/cowork-plugin-development#step-8-publish-to-your-tenant",
+      "learn_title": "Publish to your tenant",
+      "can_do": null,
+      "next": [
+        {
+          "label": "Upload a plugin",
+          "description": "How do I upload a plugin package?"
+        },
+        {
+          "label": "Share a skill",
+          "description": "How do I share a skill with my team?"
+        },
+        {
+          "label": "Run it every month",
+          "description": "Can Cowork run this on a schedule?"
+        }
+      ]
+    }
+  ]
+}

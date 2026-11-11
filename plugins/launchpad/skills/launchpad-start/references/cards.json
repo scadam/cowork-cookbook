@@ -1,0 +1,1190 @@
+{
+ "name": "Card templates for launchpad-start",
+ "version": "2.0.0",
+ "picture_prefix": "https://scott-adams.ai/cowork-cookbook/docs/assets/",
+ "icons": [
+  "Apps",
+  "ArrowRight",
+  "ArrowSync",
+  "Book",
+  "BuildingBank",
+  "Calendar",
+  "CalendarLtr",
+  "CheckmarkCircle",
+  "Circle",
+  "ClipboardTask",
+  "Clock",
+  "DataBarVertical",
+  "Delete",
+  "DocumentBulletList",
+  "DocumentText",
+  "Edit",
+  "Eye",
+  "Flash",
+  "Info",
+  "Lightbulb",
+  "Mail",
+  "Money",
+  "Open",
+  "People",
+  "Person",
+  "QuestionCircle",
+  "Rocket",
+  "Save",
+  "Search",
+  "ShieldCheckmark",
+  "Sparkle",
+  "Table",
+  "Target",
+  "TaskListLtr",
+  "Warning",
+  "Wrench"
+ ],
+ "pictures": {
+  "banner": {
+   "url": "https://scott-adams.ai/cowork-cookbook/docs/assets/v2/launchpad-welcome-banner-mono.png",
+   "alt": "Launchpad for Cowork banner"
+  },
+  "menu": {
+   "url": "https://scott-adams.ai/cowork-cookbook/docs/assets/v2/launchpad-picture-menu-mono.png",
+   "alt": "What I could make for you: variance commentary, budget round app, MBR brief and committee paper"
+  },
+  "variance": {
+   "url": "https://scott-adams.ai/cowork-cookbook/docs/assets/v1/launchpad-variance-commentary-example.png",
+   "alt": "Example: October variance commentary, a draft for review with an evidence status on every material line and two questions drafted for owners, not sent"
+  },
+  "budget_app": {
+   "url": "https://scott-adams.ai/cowork-cookbook/docs/assets/v1/launchpad-budget-round-app-mock.png",
+   "alt": "Example app: a budget round with tiles for submitted, in review, overdue and gap to target, and a table of cost centres by owner and status"
+  },
+  "mbr": {
+   "url": "https://scott-adams.ai/cowork-cookbook/docs/assets/v2/launchpad-mbr-brief-example.png",
+   "alt": "Example: one-page MBR brief for November, with what moved since last month, questions for each business and open actions from last time"
+  },
+  "committee": {
+   "url": "https://scott-adams.ai/cowork-cookbook/docs/assets/v2/launchpad-committee-paper-example.png",
+   "alt": "Example: committee paper front sheet with decision sought, recommendation, risks and next steps, beside a coaching review with one mandatory and two recommended findings"
+  }
+ },
+ "templates": {
+  "welcome": {
+   "about": "The welcome, shown before anything is read.",
+   "required": [],
+   "card": {
+    "type": "AdaptiveCard",
+    "version": "1.6",
+    "body": [
+     {
+      "type": "Image",
+      "url": "{pictures.banner.url}",
+      "altText": "{pictures.banner.alt}",
+      "size": "Stretch"
+     },
+     {
+      "$if": "first_name",
+      "do": [
+       {
+        "type": "TextBlock",
+        "text": "Hello {first_name}",
+        "wrap": true,
+        "size": "Large",
+        "weight": "Bolder",
+        "spacing": "Medium"
+       }
+      ],
+      "else": [
+       {
+        "type": "TextBlock",
+        "text": "Hello",
+        "wrap": true,
+        "size": "Large",
+        "weight": "Bolder",
+        "spacing": "Medium"
+       }
+      ]
+     },
+     {
+      "type": "ColumnSet",
+      "spacing": "Small",
+      "columns": [
+       {
+        "type": "Column",
+        "width": "auto",
+        "items": [
+         {
+          "type": "Icon",
+          "name": "Sparkle",
+          "size": "Small",
+          "color": "Default"
+         }
+        ]
+       },
+       {
+        "type": "Column",
+        "width": "stretch",
+        "items": [
+         {
+          "type": "TextBlock",
+          "text": "I find work Cowork can take off your plate, show you what it would make, and build the first one with you.",
+          "wrap": true
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "ColumnSet",
+      "spacing": "Small",
+      "columns": [
+       {
+        "type": "Column",
+        "width": "auto",
+        "items": [
+         {
+          "type": "Icon",
+          "name": "Eye",
+          "size": "Small",
+          "color": "Default"
+         }
+        ]
+       },
+       {
+        "type": "Column",
+        "width": "stretch",
+        "items": [
+         {
+          "type": "TextBlock",
+          "text": "With your OK, I look at the titles of your meetings, the subjects of mail you sent and the names of files you edited. Nothing else.",
+          "wrap": true
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "ColumnSet",
+      "spacing": "Small",
+      "columns": [
+       {
+        "type": "Column",
+        "width": "auto",
+        "items": [
+         {
+          "type": "Icon",
+          "name": "ShieldCheckmark",
+          "size": "Small",
+          "color": "Default"
+         }
+        ]
+       },
+       {
+        "type": "Column",
+        "width": "stretch",
+        "items": [
+         {
+          "type": "TextBlock",
+          "text": "I keep nothing unless you say so, and I send nothing.",
+          "wrap": true
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "Accordion",
+      "spacing": "Medium",
+      "pages": [
+       {
+        "type": "AccordionPage",
+        "headerTitle": "What I look at and keep",
+        "headerIconName": "Info",
+        "isExpanded": false,
+        "items": [
+         {
+          "type": "FactSet",
+          "facts": [
+           {
+            "title": "Calendar",
+            "value": "Meeting titles and how many people attend, two weeks back and two weeks ahead"
+           },
+           {
+            "title": "Sent mail",
+            "value": "Subjects only, from the last two weeks"
+           },
+           {
+            "title": "Files",
+            "value": "Names of files you edited in the last 30 days, and spreadsheets several people edit"
+           },
+           {
+            "title": "Never read",
+            "value": "Message bodies, attachments, file contents, and anything private, confidential, personal, HR or medical"
+           },
+           {
+            "title": "A whole file",
+            "value": "Only one at a time, and only after you say yes to that file"
+           },
+           {
+            "title": "Kept",
+            "value": "Nothing, unless you choose to save your profile or a skill"
+           },
+           {
+            "title": "Sent",
+            "value": "Nothing. Anything to send stays a draft for you"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "TextBlock",
+      "text": "Choose below, or type what you need.",
+      "wrap": true,
+      "isSubtle": true,
+      "size": "Small",
+      "spacing": "Medium"
+     }
+    ]
+   },
+   "questions": [
+    {
+     "header": "Help with",
+     "question": "What would help most?",
+     "multiSelect": true,
+     "options": [
+      {
+       "label": "My work",
+       "description": "Skills and apps for the work you do"
+      },
+      {
+       "label": "My priorities",
+       "description": "A Monday view of what matters this week"
+      },
+      {
+       "label": "My day",
+       "description": "A morning brief and meeting preparation"
+      }
+     ]
+    },
+    {
+     "header": "Your OK",
+     "question": "May I look at your recent work?",
+     "multiSelect": false,
+     "options": [
+      {
+       "label": "Have a look",
+       "description": "Calendar titles, email subjects and file names, recent weeks only"
+      },
+      {
+       "label": "Show me sample data first",
+       "description": "Invented examples; nothing of yours is read"
+      },
+      {
+       "label": "Ask me instead",
+       "description": "Three quick questions; nothing is read"
+      }
+     ]
+    }
+   ]
+  },
+  "your_work": {
+   "about": "Is this your work? Merge ranked.json from rank.py.",
+   "required": [
+    "groups",
+    "suggestions",
+    "source_line"
+   ],
+   "card": {
+    "type": "AdaptiveCard",
+    "version": "1.6",
+    "body": [
+     {
+      "type": "ColumnSet",
+      "columns": [
+       {
+        "type": "Column",
+        "width": "stretch",
+        "items": [
+         {
+          "type": "TextBlock",
+          "text": "Is this your work?",
+          "wrap": true,
+          "size": "Large",
+          "weight": "Bolder"
+         },
+         {
+          "type": "TextBlock",
+          "text": "{source_line}",
+          "wrap": true,
+          "isSubtle": true,
+          "spacing": "None"
+         }
+        ]
+       },
+       {
+        "$if": "sample",
+        "do": [
+         {
+          "type": "Column",
+          "width": "auto",
+          "items": [
+           {
+            "type": "Badge",
+            "text": "Invented sample data",
+            "appearance": "Tint",
+            "shape": "Rounded",
+            "size": "Medium",
+            "style": "Warning",
+            "tooltip": "The organisation, people and figures are made up."
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "Container",
+      "spacing": "Medium",
+      "items": [
+       {
+        "type": "TextBlock",
+        "text": "Documents you make",
+        "wrap": true,
+        "weight": "Bolder"
+       },
+       {
+        "$for": "groups.documents",
+        "as": "w",
+        "$limit": 3,
+        "do": [
+         {
+          "type": "ColumnSet",
+          "spacing": "Small",
+          "columns": [
+           {
+            "type": "Column",
+            "width": "auto",
+            "verticalContentAlignment": "Center",
+            "items": [
+             {
+              "type": "Icon",
+              "name": "{w.icon}",
+              "size": "Small",
+              "color": "Default"
+             }
+            ]
+           },
+           {
+            "type": "Column",
+            "width": "stretch",
+            "items": [
+             {
+              "type": "TextBlock",
+              "text": "{w.work}",
+              "wrap": true,
+              "weight": "Bolder"
+             },
+             {
+              "type": "TextBlock",
+              "text": "{w.evidence}",
+              "wrap": true,
+              "isSubtle": true,
+              "size": "Small",
+              "spacing": "None"
+             }
+            ]
+           },
+           {
+            "type": "Column",
+            "width": "auto",
+            "verticalContentAlignment": "Center",
+            "items": [
+             {
+              "type": "Badge",
+              "text": "{w.badge}",
+              "appearance": "Tint",
+              "shape": "Rounded",
+              "size": "Medium",
+              "style": "{w.badge_style}"
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "$if": "!groups.documents",
+        "do": [
+         {
+          "type": "TextBlock",
+          "text": "Nothing found yet.",
+          "wrap": true,
+          "isSubtle": true,
+          "size": "Small"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "Container",
+      "spacing": "Medium",
+      "items": [
+       {
+        "type": "TextBlock",
+        "text": "Things you run",
+        "wrap": true,
+        "weight": "Bolder"
+       },
+       {
+        "$for": "groups.running",
+        "as": "w",
+        "$limit": 3,
+        "do": [
+         {
+          "type": "ColumnSet",
+          "spacing": "Small",
+          "columns": [
+           {
+            "type": "Column",
+            "width": "auto",
+            "verticalContentAlignment": "Center",
+            "items": [
+             {
+              "type": "Icon",
+              "name": "{w.icon}",
+              "size": "Small",
+              "color": "Default"
+             }
+            ]
+           },
+           {
+            "type": "Column",
+            "width": "stretch",
+            "items": [
+             {
+              "type": "TextBlock",
+              "text": "{w.work}",
+              "wrap": true,
+              "weight": "Bolder"
+             },
+             {
+              "type": "TextBlock",
+              "text": "{w.evidence}",
+              "wrap": true,
+              "isSubtle": true,
+              "size": "Small",
+              "spacing": "None"
+             }
+            ]
+           },
+           {
+            "type": "Column",
+            "width": "auto",
+            "verticalContentAlignment": "Center",
+            "items": [
+             {
+              "type": "Badge",
+              "text": "{w.badge}",
+              "appearance": "Tint",
+              "shape": "Rounded",
+              "size": "Medium",
+              "style": "{w.badge_style}"
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "$if": "!groups.running",
+        "do": [
+         {
+          "type": "TextBlock",
+          "text": "Nothing found yet.",
+          "wrap": true,
+          "isSubtle": true,
+          "size": "Small"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "Container",
+      "spacing": "Medium",
+      "items": [
+       {
+        "type": "TextBlock",
+        "text": "Meetings you prepare for",
+        "wrap": true,
+        "weight": "Bolder"
+       },
+       {
+        "$for": "groups.meetings",
+        "as": "w",
+        "$limit": 3,
+        "do": [
+         {
+          "type": "ColumnSet",
+          "spacing": "Small",
+          "columns": [
+           {
+            "type": "Column",
+            "width": "auto",
+            "verticalContentAlignment": "Center",
+            "items": [
+             {
+              "type": "Icon",
+              "name": "{w.icon}",
+              "size": "Small",
+              "color": "Default"
+             }
+            ]
+           },
+           {
+            "type": "Column",
+            "width": "stretch",
+            "items": [
+             {
+              "type": "TextBlock",
+              "text": "{w.work}",
+              "wrap": true,
+              "weight": "Bolder"
+             },
+             {
+              "type": "TextBlock",
+              "text": "{w.evidence}",
+              "wrap": true,
+              "isSubtle": true,
+              "size": "Small",
+              "spacing": "None"
+             }
+            ]
+           },
+           {
+            "type": "Column",
+            "width": "auto",
+            "verticalContentAlignment": "Center",
+            "items": [
+             {
+              "type": "Badge",
+              "text": "{w.badge}",
+              "appearance": "Tint",
+              "shape": "Rounded",
+              "size": "Medium",
+              "style": "{w.badge_style}"
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "$if": "!groups.meetings",
+        "do": [
+         {
+          "type": "TextBlock",
+          "text": "Nothing found yet.",
+          "wrap": true,
+          "isSubtle": true,
+          "size": "Small"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "$if": "skipped_line",
+      "do": [
+       {
+        "type": "ColumnSet",
+        "spacing": "Medium",
+        "columns": [
+         {
+          "type": "Column",
+          "width": "auto",
+          "items": [
+           {
+            "type": "Icon",
+            "name": "ShieldCheckmark",
+            "size": "Small",
+            "color": "Default"
+           }
+          ]
+         },
+         {
+          "type": "Column",
+          "width": "stretch",
+          "items": [
+           {
+            "type": "TextBlock",
+            "text": "{skipped_line}",
+            "wrap": true,
+            "isSubtle": true,
+            "size": "Small"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "TextBlock",
+      "text": "What I could make for you",
+      "wrap": true,
+      "weight": "Bolder",
+      "spacing": "Large"
+     },
+     {
+      "type": "Image",
+      "url": "{pictures.menu.url}",
+      "altText": "{pictures.menu.alt}",
+      "size": "Stretch"
+     },
+     {
+      "type": "TextBlock",
+      "text": "Variance commentary, a budget round app, an MBR brief and committee papers. Not right? Tell me what to change before anything else.",
+      "wrap": true,
+      "isSubtle": true,
+      "size": "Small"
+     }
+    ]
+   },
+   "questions": [
+    {
+     "header": "Your work",
+     "question": "Which would you like help with?",
+     "multiSelect": true,
+     "options": [
+      {
+       "$for": "suggestions",
+       "as": "s",
+       "$limit": 4,
+       "do": [
+        {
+         "label": "{s.label}",
+         "description": "{s.description}"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "profile": {
+   "about": "Is this you? mode=propose (before saving) or mode=show (saved profile).",
+   "required": [
+    "mode",
+    "role",
+    "industry",
+    "deliverables",
+    "rhythms",
+    "as_of_text"
+   ],
+   "card": {
+    "type": "AdaptiveCard",
+    "version": "1.6",
+    "body": [
+     {
+      "$if": "mode==show",
+      "do": [
+       {
+        "type": "ColumnSet",
+        "columns": [
+         {
+          "type": "Column",
+          "width": "auto",
+          "verticalContentAlignment": "Center",
+          "items": [
+           {
+            "type": "Icon",
+            "name": "Person",
+            "size": "Medium",
+            "color": "Default"
+           }
+          ]
+         },
+         {
+          "type": "Column",
+          "width": "stretch",
+          "items": [
+           {
+            "type": "TextBlock",
+            "text": "Your Launchpad profile",
+            "wrap": true,
+            "size": "Large",
+            "weight": "Bolder"
+           },
+           {
+            "type": "TextBlock",
+            "text": "As of {as_of_text}.",
+            "wrap": true,
+            "isSubtle": true,
+            "spacing": "None"
+           }
+          ]
+         }
+        ]
+       }
+      ],
+      "else": [
+       {
+        "type": "ColumnSet",
+        "columns": [
+         {
+          "type": "Column",
+          "width": "auto",
+          "verticalContentAlignment": "Center",
+          "items": [
+           {
+            "type": "Icon",
+            "name": "Person",
+            "size": "Medium",
+            "color": "Default"
+           }
+          ]
+         },
+         {
+          "type": "Column",
+          "width": "stretch",
+          "items": [
+           {
+            "type": "TextBlock",
+            "text": "Is this you?",
+            "wrap": true,
+            "size": "Large",
+            "weight": "Bolder"
+           },
+           {
+            "type": "TextBlock",
+            "text": "As of {as_of_text}. Please check every line.",
+            "wrap": true,
+            "isSubtle": true,
+            "spacing": "None"
+           }
+          ]
+         },
+         {
+          "$if": "sample",
+          "do": [
+           {
+            "type": "Column",
+            "width": "auto",
+            "items": [
+             {
+              "type": "Badge",
+              "text": "Invented sample data",
+              "appearance": "Tint",
+              "shape": "Rounded",
+              "size": "Medium",
+              "style": "Warning",
+              "tooltip": "The organisation, people and figures are made up."
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "FactSet",
+      "spacing": "Medium",
+      "facts": [
+       {
+        "title": "Role",
+        "value": "{role}"
+       },
+       {
+        "title": "Industry",
+        "value": "{industry}"
+       }
+      ]
+     },
+     {
+      "type": "TextBlock",
+      "text": "Work you do again and again",
+      "wrap": true,
+      "weight": "Bolder",
+      "spacing": "Medium"
+     },
+     {
+      "$if": "deliverables",
+      "do": [
+       {
+        "type": "Table",
+        "firstRowAsHeaders": true,
+        "showGridLines": true,
+        "spacing": "Small",
+        "columns": [
+         {
+          "width": 30
+         },
+         {
+          "width": 18
+         },
+         {
+          "width": 24
+         },
+         {
+          "width": 28
+         }
+        ],
+        "rows": [
+         {
+          "type": "TableRow",
+          "cells": [
+           {
+            "type": "TableCell",
+            "items": [
+             {
+              "type": "TextBlock",
+              "text": "What",
+              "wrap": true,
+              "size": "Small",
+              "weight": "Bolder"
+             }
+            ]
+           },
+           {
+            "type": "TableCell",
+            "items": [
+             {
+              "type": "TextBlock",
+              "text": "How often",
+              "wrap": true,
+              "size": "Small",
+              "weight": "Bolder"
+             }
+            ]
+           },
+           {
+            "type": "TableCell",
+            "items": [
+             {
+              "type": "TextBlock",
+              "text": "For whom",
+              "wrap": true,
+              "size": "Small",
+              "weight": "Bolder"
+             }
+            ]
+           },
+           {
+            "type": "TableCell",
+            "items": [
+             {
+              "type": "TextBlock",
+              "text": "Where the inputs live",
+              "wrap": true,
+              "size": "Small",
+              "weight": "Bolder"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "$for": "deliverables",
+          "as": "d",
+          "$limit": 5,
+          "do": [
+           {
+            "type": "TableRow",
+            "cells": [
+             {
+              "type": "TableCell",
+              "items": [
+               {
+                "type": "TextBlock",
+                "text": "{d.what}",
+                "wrap": true,
+                "size": "Small"
+               }
+              ]
+             },
+             {
+              "type": "TableCell",
+              "items": [
+               {
+                "type": "TextBlock",
+                "text": "{d.how_often}",
+                "wrap": true,
+                "size": "Small"
+               }
+              ]
+             },
+             {
+              "type": "TableCell",
+              "items": [
+               {
+                "type": "TextBlock",
+                "text": "{d.for_whom}",
+                "wrap": true,
+                "size": "Small"
+               }
+              ]
+             },
+             {
+              "type": "TableCell",
+              "items": [
+               {
+                "type": "TextBlock",
+                "text": "{d.inputs}",
+                "wrap": true,
+                "size": "Small"
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ],
+      "else": [
+       {
+        "type": "TextBlock",
+        "text": "Not found yet.",
+        "wrap": true,
+        "isSubtle": true,
+        "size": "Small"
+       }
+      ]
+     },
+     {
+      "type": "TextBlock",
+      "text": "Your rhythms",
+      "wrap": true,
+      "weight": "Bolder",
+      "spacing": "Medium"
+     },
+     {
+      "$for": "rhythms",
+      "as": "r",
+      "$limit": 5,
+      "do": [
+       {
+        "type": "ColumnSet",
+        "spacing": "Small",
+        "columns": [
+         {
+          "type": "Column",
+          "width": "auto",
+          "items": [
+           {
+            "type": "Icon",
+            "name": "CalendarLtr",
+            "size": "Small",
+            "color": "Default"
+           }
+          ]
+         },
+         {
+          "type": "Column",
+          "width": "stretch",
+          "items": [
+           {
+            "type": "TextBlock",
+            "text": "{r}",
+            "wrap": true,
+            "size": "Small"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "$if": "!rhythms",
+      "do": [
+       {
+        "type": "TextBlock",
+        "text": "Not found yet.",
+        "wrap": true,
+        "isSubtle": true,
+        "size": "Small"
+       }
+      ]
+     },
+     {
+      "$if": "mode==show",
+      "do": [
+       {
+        "type": "TextBlock",
+        "text": "Kept in your Cowork folder. Change a line or delete it whenever you like.",
+        "wrap": true,
+        "isSubtle": true,
+        "size": "Small",
+        "spacing": "Medium"
+       }
+      ],
+      "else": [
+       {
+        "type": "TextBlock",
+        "text": "I save this only if you say so. It does not give me permission to read anything later.",
+        "wrap": true,
+        "isSubtle": true,
+        "size": "Small",
+        "spacing": "Medium"
+       }
+      ]
+     }
+    ]
+   },
+   "questions": [
+    {
+     "$if": "mode==show",
+     "do": [
+      {
+       "header": "Profile",
+       "question": "What would you like to do with your profile?",
+       "multiSelect": false,
+       "options": [
+        {
+         "label": "Change a line",
+         "description": "Tell me which line and what it should say"
+        },
+        {
+         "label": "Delete my profile",
+         "description": "I ask you to confirm first"
+        },
+        {
+         "label": "Keep it as it is",
+         "description": "Nothing changes"
+        }
+       ]
+      }
+     ],
+     "else": [
+      {
+       "header": "Profile",
+       "question": "Save this profile to your Cowork folder?",
+       "multiSelect": false,
+       "options": [
+        {
+         "label": "Save my profile",
+         "description": "Kept in your Cowork folder; change or delete it any time"
+        },
+        {
+         "label": "Not now",
+         "description": "Nothing is kept; we carry on"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "profile_delete_confirm": {
+   "about": "Question only: confirm before deleting the profile.",
+   "required": [],
+   "questions": [
+    {
+     "header": "Delete",
+     "question": "Delete your Launchpad profile? This cannot be undone.",
+     "multiSelect": false,
+     "options": [
+      {
+       "label": "Delete it",
+       "description": "Removed from your Cowork folder"
+      },
+      {
+       "label": "Keep it",
+       "description": "Nothing changes"
+      }
+     ]
+    }
+   ]
+  },
+  "ask_me": {
+   "about": "Question only: the Ask-me route, three free-text questions.",
+   "required": [],
+   "questions": [
+    {
+     "header": "Role",
+     "question": "What is your role, in a line?",
+     "options": []
+    },
+    {
+     "header": "Document",
+     "question": "Which document or report do you make every week or month?",
+     "options": []
+    },
+    {
+     "header": "Meeting",
+     "question": "Which meeting do you prepare for?",
+     "options": []
+    }
+   ]
+  },
+  "profile_md": {
+   "about": "The profile file saved to Launchpad/profile.md, only with OK.",
+   "kind": "markdown",
+   "required": [
+    "role",
+    "industry",
+    "deliverables",
+    "rhythms",
+    "as_of_text",
+    "chosen"
+   ],
+   "must_end_with": "This profile does not give permission for future reads.",
+   "lines": [
+    "# Launchpad profile",
+    "",
+    "As of: {as_of_text}",
+    "Kept with your OK. Made from the titles of your meetings, the subjects of mail you sent, the names of files you edited and what you told me.",
+    "",
+    "## Role",
+    "{role}",
+    "",
+    "## Industry",
+    "{industry}",
+    "",
+    "## Work you do again and again",
+    "| What | How often | For whom | Where the inputs live |",
+    "|---|---|---|---|",
+    {
+     "$for": "deliverables",
+     "as": "d",
+     "$limit": 5,
+     "do": [
+      "| {d.what|cell} | {d.how_often|cell} | {d.for_whom|cell} | {d.inputs|cell} |"
+     ]
+    },
+    "",
+    "## Your rhythms",
+    {
+     "$for": "rhythms",
+     "as": "r",
+     "$limit": 5,
+     "do": [
+      "- {r}"
+     ]
+    },
+    "",
+    "## Help you chose",
+    {
+     "$for": "chosen",
+     "as": "c",
+     "do": [
+      "- {c}"
+     ]
+    },
+    "",
+    "This profile does not give permission for future reads."
+   ]
+  }
+ }
+}

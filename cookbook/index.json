@@ -1,7 +1,7 @@
 {
-  "version": "0.1.0",
-  "as_of": "2026-11-10",
-  "picture_base": "https://scadam.github.io/cowork-cookbook/assets/v1/",
+  "version": "0.2.0",
+  "as_of": "2026-11-11",
+  "picture_base": "https://scott-adams.ai/cowork-cookbook/docs/assets/",
   "recipes": [
     {
       "id": "variance-commentary",
@@ -33,7 +33,7 @@
       },
       "makes": "skill",
       "output": "Commentary in the house template. Every statement has a source and an evidence status. Questions to owners are drafted, not sent.",
-      "preview_picture": "launchpad-variance-commentary-example.png",
+      "preview_picture": "v1/launchpad-variance-commentary-example.png",
       "pack": "recipes/variance-commentary/"
     },
     {
@@ -65,7 +65,7 @@
       },
       "makes": "app",
       "output": "An app built from the tracker's own columns, plus a weekly routine that drafts the summary.",
-      "preview_picture": "launchpad-budget-round-app-mock.png",
+      "preview_picture": "v1/launchpad-budget-round-app-mock.png",
       "pack": "recipes/budget-round-app/"
     },
     {
@@ -88,7 +88,7 @@
       },
       "makes": "routine",
       "output": "A one-page brief: what moved since last month, and the questions to put to each business.",
-      "preview_picture": null,
+      "preview_picture": "v2/launchpad-mbr-brief-example.png",
       "pack": "recipes/mbr-brief/"
     },
     {
@@ -117,7 +117,7 @@
       },
       "makes": "skill",
       "output": "A draft in the committee template, with a front sheet stating the decision sought and a coaching review against the paper standard.",
-      "preview_picture": null,
+      "preview_picture": "v2/launchpad-committee-paper-example.png",
       "pack": "recipes/committee-paper/"
     }
   ]

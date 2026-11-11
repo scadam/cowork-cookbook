@@ -1,0 +1,409 @@
+{
+ "name": "Card templates for launchpad-how-do-i",
+ "version": "2.0.0",
+ "picture_prefix": "https://scott-adams.ai/cowork-cookbook/docs/assets/",
+ "icons": [
+  "Apps",
+  "ArrowRight",
+  "ArrowSync",
+  "Book",
+  "BuildingBank",
+  "Calendar",
+  "CalendarLtr",
+  "CheckmarkCircle",
+  "Circle",
+  "ClipboardTask",
+  "Clock",
+  "DataBarVertical",
+  "Delete",
+  "DocumentBulletList",
+  "DocumentText",
+  "Edit",
+  "Eye",
+  "Flash",
+  "Info",
+  "Lightbulb",
+  "Mail",
+  "Money",
+  "Open",
+  "People",
+  "Person",
+  "QuestionCircle",
+  "Rocket",
+  "Save",
+  "Search",
+  "ShieldCheckmark",
+  "Sparkle",
+  "Table",
+  "Target",
+  "TaskListLtr",
+  "Warning",
+  "Wrench"
+ ],
+ "pictures": {
+  "banner": {
+   "url": "https://scott-adams.ai/cowork-cookbook/docs/assets/v2/launchpad-welcome-banner-mono.png",
+   "alt": "Launchpad for Cowork banner"
+  },
+  "menu": {
+   "url": "https://scott-adams.ai/cowork-cookbook/docs/assets/v2/launchpad-picture-menu-mono.png",
+   "alt": "What I could make for you: variance commentary, budget round app, MBR brief and committee paper"
+  },
+  "variance": {
+   "url": "https://scott-adams.ai/cowork-cookbook/docs/assets/v1/launchpad-variance-commentary-example.png",
+   "alt": "Example: October variance commentary, a draft for review with an evidence status on every material line and two questions drafted for owners, not sent"
+  },
+  "budget_app": {
+   "url": "https://scott-adams.ai/cowork-cookbook/docs/assets/v1/launchpad-budget-round-app-mock.png",
+   "alt": "Example app: a budget round with tiles for submitted, in review, overdue and gap to target, and a table of cost centres by owner and status"
+  },
+  "mbr": {
+   "url": "https://scott-adams.ai/cowork-cookbook/docs/assets/v2/launchpad-mbr-brief-example.png",
+   "alt": "Example: one-page MBR brief for November, with what moved since last month, questions for each business and open actions from last time"
+  },
+  "committee": {
+   "url": "https://scott-adams.ai/cowork-cookbook/docs/assets/v2/launchpad-committee-paper-example.png",
+   "alt": "Example: committee paper front sheet with decision sought, recommendation, risks and next steps, beside a coaching review with one mandatory and two recommended findings"
+  }
+ },
+ "templates": {
+  "answer": {
+   "about": "The answer card. Steps come only from Microsoft Learn.",
+   "required": [
+    "question",
+    "steps",
+    "learn_url",
+    "learn_title",
+    "next"
+   ],
+   "card": {
+    "type": "AdaptiveCard",
+    "version": "1.6",
+    "body": [
+     {
+      "type": "ColumnSet",
+      "columns": [
+       {
+        "type": "Column",
+        "width": "auto",
+        "verticalContentAlignment": "Center",
+        "items": [
+         {
+          "type": "Icon",
+          "name": "QuestionCircle",
+          "size": "Medium",
+          "color": "Default"
+         }
+        ]
+       },
+       {
+        "type": "Column",
+        "width": "stretch",
+        "items": [
+         {
+          "type": "TextBlock",
+          "text": "{question}",
+          "wrap": true,
+          "size": "Large",
+          "weight": "Bolder"
+         },
+         {
+          "type": "TextBlock",
+          "text": "From Microsoft Learn, the official documentation.",
+          "wrap": true,
+          "isSubtle": true,
+          "spacing": "None"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "$for": "steps",
+      "as": "s",
+      "$limit": 4,
+      "do": [
+       {
+        "type": "ColumnSet",
+        "spacing": "Small",
+        "columns": [
+         {
+          "type": "Column",
+          "width": "auto",
+          "items": [
+           {
+            "type": "TextBlock",
+            "text": "{$index}.",
+            "wrap": true,
+            "weight": "Bolder"
+           }
+          ]
+         },
+         {
+          "type": "Column",
+          "width": "stretch",
+          "items": [
+           {
+            "type": "TextBlock",
+            "text": "{s}",
+            "wrap": true
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "$if": "note",
+      "do": [
+       {
+        "type": "TextBlock",
+        "text": "{note}",
+        "wrap": true,
+        "isSubtle": true,
+        "size": "Small",
+        "spacing": "Small"
+       }
+      ]
+     },
+     {
+      "$if": "can_do",
+      "do": [
+       {
+        "type": "Container",
+        "style": "emphasis",
+        "roundedCorners": true,
+        "spacing": "Medium",
+        "items": [
+         {
+          "type": "ColumnSet",
+          "spacing": "None",
+          "columns": [
+           {
+            "type": "Column",
+            "width": "auto",
+            "items": [
+             {
+              "type": "Icon",
+              "name": "Sparkle",
+              "size": "Small",
+              "color": "Default"
+             }
+            ]
+           },
+           {
+            "type": "Column",
+            "width": "stretch",
+            "items": [
+             {
+              "type": "TextBlock",
+              "text": "{can_do.text}",
+              "wrap": true
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "ColumnSet",
+      "spacing": "Medium",
+      "selectAction": {
+       "type": "Action.OpenUrl",
+       "url": "{learn_url}",
+       "title": "Read on Microsoft Learn"
+      },
+      "columns": [
+       {
+        "type": "Column",
+        "width": "auto",
+        "verticalContentAlignment": "Center",
+        "items": [
+         {
+          "type": "Icon",
+          "name": "Open",
+          "size": "Small",
+          "color": "Default"
+         }
+        ]
+       },
+       {
+        "type": "Column",
+        "width": "stretch",
+        "items": [
+         {
+          "type": "TextBlock",
+          "text": "Read on Microsoft Learn: {learn_title}",
+          "wrap": true,
+          "color": "Default",
+          "weight": "Bolder"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "questions": [
+    {
+     "$if": "can_do",
+     "do": [
+      {
+       "header": "Do it now",
+       "question": "{can_do.question}",
+       "multiSelect": false,
+       "options": [
+        {
+         "label": "{can_do.label}",
+         "description": "{can_do.description}"
+        },
+        {
+         "label": "Not now",
+         "description": "Nothing is set up or changed"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "header": "Ask next",
+     "question": "Questions people ask next. Which would help?",
+     "multiSelect": false,
+     "options": [
+      {
+       "$for": "next",
+       "as": "n",
+       "$limit": 3,
+       "do": [
+        {
+         "label": "{n.label}",
+         "description": "{n.description}"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "not_found": {
+   "about": "When Microsoft Learn has no answer: say so, never guess.",
+   "required": [
+    "question",
+    "learn_url",
+    "learn_title",
+    "next"
+   ],
+   "card": {
+    "type": "AdaptiveCard",
+    "version": "1.6",
+    "body": [
+     {
+      "type": "ColumnSet",
+      "columns": [
+       {
+        "type": "Column",
+        "width": "auto",
+        "verticalContentAlignment": "Center",
+        "items": [
+         {
+          "type": "Icon",
+          "name": "QuestionCircle",
+          "size": "Medium",
+          "color": "Default"
+         }
+        ]
+       },
+       {
+        "type": "Column",
+        "width": "stretch",
+        "items": [
+         {
+          "type": "TextBlock",
+          "text": "{question}",
+          "wrap": true,
+          "size": "Large",
+          "weight": "Bolder"
+         },
+         {
+          "type": "TextBlock",
+          "text": "Microsoft Learn does not answer this yet, so I will not guess.",
+          "wrap": true,
+          "isSubtle": true,
+          "spacing": "None"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "TextBlock",
+      "text": "Try asking it another way, or look on Microsoft Learn yourself.",
+      "wrap": true,
+      "spacing": "Medium"
+     },
+     {
+      "type": "ColumnSet",
+      "spacing": "Medium",
+      "selectAction": {
+       "type": "Action.OpenUrl",
+       "url": "{learn_url}",
+       "title": "Read on Microsoft Learn"
+      },
+      "columns": [
+       {
+        "type": "Column",
+        "width": "auto",
+        "verticalContentAlignment": "Center",
+        "items": [
+         {
+          "type": "Icon",
+          "name": "Open",
+          "size": "Small",
+          "color": "Default"
+         }
+        ]
+       },
+       {
+        "type": "Column",
+        "width": "stretch",
+        "items": [
+         {
+          "type": "TextBlock",
+          "text": "Read on Microsoft Learn: {learn_title}",
+          "wrap": true,
+          "color": "Default",
+          "weight": "Bolder"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "questions": [
+    {
+     "header": "Ask next",
+     "question": "Would one of these help?",
+     "multiSelect": false,
+     "options": [
+      {
+       "$for": "next",
+       "as": "n",
+       "$limit": 3,
+       "do": [
+        {
+         "label": "{n.label}",
+         "description": "{n.description}"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

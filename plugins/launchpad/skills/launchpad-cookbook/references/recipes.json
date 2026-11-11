@@ -1,0 +1,284 @@
+{
+  "name": "Launchpad for Cowork recipe index",
+  "version": "2.1.1",
+  "as_of": "2026-11-11",
+  "note": "Weights order the recipes and are never shown. Credit figures are planning ranges, not quotes.",
+  "picture_prefix": "https://scott-adams.ai/cowork-cookbook/docs/assets/",
+  "price_per_credit_default": 0.01,
+  "price_currency_default": "USD",
+  "runs_per_year": {"Weekly": 52, "Monthly": 12, "Quarterly": 4},
+  "kinds": {
+    "skill": {"badge": "Skill", "badge_style": "Default"},
+    "app": {"badge": "App", "badge_style": "Default"},
+    "routine": {"badge": "Routine", "badge_style": "Default"}
+  },
+  "spend_kinds": {
+    "contractors": {"label": "Contractor or temporary support", "words": ["contractor", "contractors", "temporary", "temp", "temps", "agency", "interim", "contract staff"]},
+    "overtime": {"label": "Overtime", "words": ["overtime", "extra hours paid", "weekend working"]},
+    "advisers": {"label": "Outside advisers", "words": ["adviser", "advisers", "advisor", "advisors", "consultant", "consultants", "consultancy", "outside firm", "external firm"]}
+  },
+  "not_money_words": ["hour", "hours", "fte", "headcount", "salary", "salaries", "staff time", "people time", "minutes", "days of effort", "time"],
+  "recipes": [
+    {
+      "id": "variance-commentary",
+      "title": "Month-end variance commentary",
+      "short_title": "Variance commentary",
+      "kind": "skill",
+      "function": "Finance",
+      "roles": ["Finance director", "FP&A manager", "Financial controller", "Finance business partner"],
+      "job_to_be_done": "As someone who closes the month, I want a sourced first draft of the variance commentary in my house style so that review starts from evidence, not a blank page.",
+      "signals": {
+        "file_names": ["variance", "commentary", "flux", "management pack", "management accounts", "month-end pack", "month end pack", "monthly pack", "results pack", "p&l", "pnl", "mgmt pack", "finance pack"],
+        "meeting_titles": ["month-end close", "month end close", "close review", "close meeting", "results review", "pack review", "variance review", "flash review"],
+        "email_subjects": ["variance", "variances", "commentary", "explanation", "explanations", "flux", "pack comments", "close"],
+        "other": []
+      },
+      "icon": "DataBarVertical",
+      "what_you_get": "A first draft for every material line, in your template, each with its source and an evidence status.",
+      "why_you_template": "Why you: {evidence}.",
+      "why_you_if": "For you if you write the monthly variance commentary.",
+      "choice_label": "Draft my variance commentary",
+      "choice_description": "A sourced first draft in your house style",
+      "example_picture": "https://scott-adams.ai/cowork-cookbook/docs/assets/v1/launchpad-variance-commentary-example.png",
+      "example_alt": "Example: October variance commentary, a draft for review with an evidence status on every material line and two questions drafted for owners, not sent",
+      "would_you_like": [
+        "A draft of every material line in your house style, each with its source and an evidence status.",
+        "Questions to owners drafted and grouped by owner, ready for you to send or not."
+      ],
+      "steps": [
+        "Register the inputs for the period and tie them out to the control totals.",
+        "Apply your materiality rule to the variance table worked out by the script.",
+        "Draft one entry per material line in your house style, with its source.",
+        "Give every entry an evidence status: Supported, Partly supported, Not supported or Awaiting owner.",
+        "Draft one question per gap, grouped by owner, and send nothing.",
+        "Assemble the draft in your template, marked as a draft for review."
+      ],
+      "inputs": ["Locked-period ledger extract or trial balance", "Approved budget and forecast", "The variance workbook, if you keep one", "Last month's pack", "Explanations from budget owners"],
+      "outputs": ["Draft commentary in your template", "A list of open questions by owner, drafted not sent", "A register of the sources used"],
+      "who_decides": ["You confirm the inputs.", "Budget owners confirm their explanations.", "The reviewer approves the pack.", "Cowork sends and releases nothing."],
+      "evidence_statuses": ["Supported", "Partly supported", "Not supported", "Awaiting owner"],
+      "measures": ["Packs accepted at first review", "Unsupported statements reaching review"],
+      "sizing": {
+        "questions": ["frequency", "people", "late_or_wrong", "outside_spend"],
+        "default_frequency": "Monthly",
+        "spend_that_can_stop": ["contractors", "overtime"],
+        "credits_per_run": {"low": 134000, "high": 230000, "label": "planning range", "basis": "Planning range from comparable designs. Replace it with your own measured runs."},
+        "measure_map": {
+          "Rework rounds": "Packs accepted at first review",
+          "Missed deadlines": "Packs ready on the planned day",
+          "Questions from the board or a regulator": "Unsupported statements reaching review",
+          "Contractors or overtime": "Contractor and overtime spend at month-end"
+        }
+      },
+      "blueprint": {
+        "main": {"template": "variance-commentary/main", "default_name": "monthly-variance-commentary", "suffix": "commentary", "scripts": ["variance_table.py"]},
+        "helpers": [
+          {"template": "variance-commentary/close-inputs-check", "name": "close-inputs-check", "role": "helper_inputs", "scripts": ["variance_table.py"], "purpose": "Registers and ties out the inputs"},
+          {"template": "variance-commentary/variance-owner-questions", "name": "variance-owner-questions", "role": "helper_questions", "scripts": ["variance_table.py"], "purpose": "One question per gap, grouped by owner, drafted not sent"}
+        ],
+        "run_prompt": "Draft the {next_period} commentary",
+        "cadence": "monthly"
+      },
+      "test_approach": "Run the new skill on last period's inputs and compare it line by line with the commentary that was actually sent: lines covered, the same, different with reasons, questions it would have sent, and figures changed, which must be none.",
+      "weight": 0.9
+    },
+    {
+      "id": "budget-round-app",
+      "title": "Budget round app",
+      "short_title": "Budget round app",
+      "kind": "app",
+      "function": "Finance",
+      "roles": ["Finance director", "FP&A manager", "Budget coordinator", "Finance business partner"],
+      "job_to_be_done": "As someone running a round of submissions from a shared tracker and status emails, I want each owner to update their own line so that I can see who is late without chasing anyone.",
+      "signals": {
+        "file_names": ["budget submissions", "submissions", "submission tracker", "tracker", "budget round", "budget template", "returns", "forecast submissions", "status tracker"],
+        "meeting_titles": ["budget round", "budget review", "budget check-in", "submission review", "budget catch-up"],
+        "email_subjects": ["status", "chaser", "reminder", "overdue", "outstanding", "submission", "submissions", "deadline", "budget"],
+        "other": ["shared_tracker", "status_emails"]
+      },
+      "icon": "Apps",
+      "what_you_get": "An app built from your tracker's own columns: owners update their own line, and you see who is late without chasing.",
+      "why_you_template": "Why you: {evidence}.",
+      "why_you_if": "For you if you run a round of submissions from a shared spreadsheet.",
+      "choice_label": "Build my budget round app",
+      "choice_description": "Owners update their own lines; you see who is late",
+      "example_picture": "https://scott-adams.ai/cowork-cookbook/docs/assets/v1/launchpad-budget-round-app-mock.png",
+      "example_alt": "Example app: a budget round with tiles for submitted, in review, overdue and gap to target, and a table of cost centres by owner and status",
+      "would_you_like": [
+        "One app built from your tracker's own columns, where each owner updates their own line.",
+        "Tiles for submitted, in review, overdue and gap to target, a drafted chaser per overdue owner, and a Friday summary."
+      ],
+      "steps": [
+        "Read the tracker's columns and rows, with your OK for that one file.",
+        "Map the columns: cost centre, owner, status, submitted date and value against target.",
+        "Give Cowork's App skill a precise brief built from your columns.",
+        "Show summary tiles and the overdue list, worked out by a script.",
+        "Draft one chaser per overdue owner and send nothing.",
+        "Set up a Friday summary that drafts itself for you to check."
+      ],
+      "inputs": ["The shared tracker", "Who owns each line", "The round's deadline"],
+      "outputs": ["An app built from the tracker", "One drafted chaser per overdue owner, not sent", "A Friday summary, drafted for you"],
+      "who_decides": ["You decide who can use the app.", "Owners own their numbers.", "You decide when chasers go.", "Cowork sends nothing."],
+      "app_brief": {
+        "columns": ["Cost centre", "Owner", "Status", "Submitted date", "Value against target"],
+        "statuses": ["Not started", "In progress", "Submitted", "In review", "Overdue"],
+        "tiles": ["Submitted", "In review", "Overdue", "Gap to target"],
+        "views": ["All lines", "Overdue", "By owner", "My lines"],
+        "weekly_summary": "Every Friday: submitted, in review, overdue and gap to target, with the overdue owners listed, drafted for you to check."
+      },
+      "measures": ["Submissions on time", "Chasers sent"],
+      "sizing": {
+        "questions": ["frequency", "people", "late_or_wrong", "outside_spend"],
+        "default_frequency": "Weekly",
+        "spend_that_can_stop": ["contractors", "overtime"],
+        "credits_per_run": null,
+        "credits_basis": "No planning range yet. Measure a few weekly summaries first.",
+        "measure_map": {
+          "Rework rounds": "Submissions accepted first time",
+          "Missed deadlines": "Submissions on time",
+          "Questions from the board or a regulator": "Lines with a confirmed owner and date",
+          "Contractors or overtime": "Contractor and overtime spend during the round"
+        }
+      },
+      "blueprint": {
+        "main": {"template": "budget-round-app/weekly-summary", "default_name": "budget-round-weekly-summary", "suffix": "weekly-summary", "scripts": ["tracker_summary.py"]},
+        "helpers": [],
+        "run_prompt": "Draft this week's budget round summary",
+        "cadence": "weekly"
+      },
+      "test_approach": "Run the weekly summary on last week's tracker and compare it with the status email you actually sent: owners covered, the same, different with reasons, and figures changed, which must be none.",
+      "weight": 0.6
+    },
+    {
+      "id": "mbr-brief",
+      "title": "Monthly business review brief",
+      "short_title": "MBR brief",
+      "kind": "routine",
+      "function": "Finance and executive",
+      "roles": ["Finance director", "Chief of staff", "Chief financial officer", "Business unit lead"],
+      "job_to_be_done": "As someone preparing for the monthly business review, I want a one-page brief the evening before so that I go in with the right questions.",
+      "signals": {
+        "file_names": ["mbr", "business review", "forecast", "kpi pack", "performance pack", "monthly review", "pre-read", "pre read"],
+        "meeting_titles": ["mbr", "monthly business review", "business review", "qbr", "quarterly business review", "forecast review", "monthly review", "results review", "exco", "leadership review", "operating review"],
+        "email_subjects": ["mbr", "business review", "pre-read", "pre read", "forecast"],
+        "other": []
+      },
+      "icon": "CalendarLtr",
+      "what_you_get": "A one-page brief the evening before: what moved since last month, the questions to put to each business, and open actions from last time.",
+      "why_you_template": "Why you: {evidence}.",
+      "why_you_if": "For you if you prepare for a monthly business review.",
+      "choice_label": "Brief me before the MBR",
+      "choice_description": "One page the evening before, with the questions to ask",
+      "example_picture": "https://scott-adams.ai/cowork-cookbook/docs/assets/v2/launchpad-mbr-brief-example.png",
+      "example_alt": "Example: one-page MBR brief for November, with what moved since last month, questions for each business and open actions from last time",
+      "would_you_like": [
+        "A one-page brief the evening before each monthly business review.",
+        "What moved since last month, the questions to put to each business, and open actions from last time."
+      ],
+      "steps": [
+        "Find this month's and last month's pack and forecast files by name, then read them with your OK.",
+        "Work out what moved since last month with a script.",
+        "Draft the questions to put to each business.",
+        "List the open actions from last time.",
+        "Put it on one page, ready the evening before.",
+        "You decide what to ask; nothing is sent."
+      ],
+      "inputs": ["This month's pack", "Last month's pack", "The latest forecast", "Last meeting's actions or notes"],
+      "outputs": ["A one-page brief", "Questions for each business", "Open actions from last time"],
+      "who_decides": ["You decide what to ask.", "Business leads own their numbers.", "Cowork sends nothing."],
+      "measures": ["Questions answered before the meeting"],
+      "sizing": {
+        "questions": ["frequency", "people", "late_or_wrong", "outside_spend"],
+        "default_frequency": "Monthly",
+        "spend_that_can_stop": [],
+        "credits_per_run": null,
+        "credits_basis": "No planning range yet. Measure a few briefs first.",
+        "measure_map": {
+          "Rework rounds": "Questions answered before the meeting",
+          "Missed deadlines": "Briefs ready the evening before",
+          "Questions from the board or a regulator": "Questions answered before the meeting",
+          "Contractors or overtime": "Questions answered before the meeting"
+        }
+      },
+      "blueprint": {
+        "main": {"template": "mbr-brief/main", "default_name": "mbr-brief", "suffix": "brief", "scripts": ["movements.py"]},
+        "helpers": [],
+        "run_prompt": "Prepare my brief for the {next_period} business review",
+        "cadence": "monthly"
+      },
+      "test_approach": "Prepare last month's brief from last month's files and compare it with what was discussed or the notes you kept: questions covered, the same, different with reasons, and figures changed, which must be none.",
+      "weight": 0.55
+    },
+    {
+      "id": "committee-paper",
+      "title": "Committee paper",
+      "short_title": "Committee paper",
+      "kind": "skill",
+      "function": "Governance",
+      "roles": ["Paper author", "Company secretary", "Finance director", "Risk lead"],
+      "job_to_be_done": "As a paper author, I want a full first draft in the committee's template so that the paper reaches the committee first time.",
+      "signals": {
+        "file_names": ["paper", "board paper", "committee paper", "board pack", "front sheet", "cover paper", "cover sheet", "committee pack"],
+        "meeting_titles": ["committee", "audit committee", "risk committee", "board", "board meeting", "exco", "executive committee", "steering committee", "investment committee"],
+        "email_subjects": ["paper", "papers", "board pack", "committee", "pre-read", "deadline for papers"],
+        "other": []
+      },
+      "icon": "BuildingBank",
+      "what_you_get": "A full first draft in your committee's template, then a coaching review against your paper standard.",
+      "why_you_template": "Why you: {evidence}.",
+      "why_you_if": "For you if you write papers for a board or committee.",
+      "choice_label": "Draft my committee paper",
+      "choice_description": "A full first draft, then a coaching review",
+      "example_picture": "https://scott-adams.ai/cowork-cookbook/docs/assets/v2/launchpad-committee-paper-example.png",
+      "example_alt": "Example: committee paper front sheet with decision sought, recommendation, risks and next steps, beside a coaching review with one mandatory and two recommended findings",
+      "would_you_like": [
+        "A full first draft in your committee's template: decision sought, recommendation, background, risks and next steps.",
+        "Every figure with its source and as-at date, then a coaching review with mandatory and recommended findings."
+      ],
+      "steps": [
+        "Confirm the committee, the meeting date and the decision sought, asking once.",
+        "Read the template, the paper standard and the evidence you name, with your OK for each file.",
+        "Draft the front sheet first: decision sought, recommendation, background, risks and next steps.",
+        "Give every figure its source and as-at date, and write not stated where evidence is missing.",
+        "Coach the draft against your paper standard: mandatory and recommended findings, each anchored to a place in the paper.",
+        "You decide. It never declares a paper ready and never submits it."
+      ],
+      "inputs": ["The committee's template", "Your paper standard or guidance", "The evidence for this paper", "Last cycle's paper, if this is an update"],
+      "outputs": ["A full draft in the template", "A coaching review with mandatory and recommended findings", "A list of figures with sources and as-at dates"],
+      "who_decides": ["You decide what the paper says.", "The sponsor agrees the recommendation.", "The committee decides.", "Cowork never submits a paper."],
+      "measures": ["Papers reaching the committee first time", "Review rounds per paper"],
+      "sizing": {
+        "questions": ["frequency", "people", "late_or_wrong", "outside_spend"],
+        "default_frequency": "Monthly",
+        "spend_that_can_stop": ["advisers"],
+        "credits_per_run": {"low": 1700, "high": 3500, "label": "planning range", "basis": "Planning range per paper from a comparable design. Replace it with your own measured runs."},
+        "measure_map": {
+          "Rework rounds": "Review rounds per paper",
+          "Missed deadlines": "Papers in the pack by the deadline",
+          "Questions from the board or a regulator": "Papers reaching the committee first time",
+          "Contractors or overtime": "Outside drafting and advisory spend"
+        }
+      },
+      "blueprint": {
+        "main": {"template": "committee-paper/main", "default_name": "committee-paper", "suffix": "paper", "scripts": ["figures_check.py"]},
+        "helpers": [
+          {"template": "committee-paper/paper-coaching-review", "name": "paper-coaching-review", "role": "helper_review", "scripts": ["figures_check.py"], "purpose": "Coaching review against the paper standard"}
+        ],
+        "run_prompt": "Draft the paper for the {next_period} committee",
+        "cadence": "monthly"
+      },
+      "test_approach": "Draft last cycle's paper from the evidence it used and compare it with the paper that went to the committee: sections covered, the same, different with reasons, not stated gaps, and figures changed, which must be none.",
+      "weight": 0.75
+    }
+  ],
+  "generic_blueprint": {
+    "id": "generic",
+    "title": "Your own recurring document",
+    "kind": "skill",
+    "main": {"template": "generic/main", "default_name": "recurring-draft", "suffix": "draft", "scripts": ["figures_check.py"]},
+    "helpers": [],
+    "run_prompt": "Draft the {next_period} {document_title}",
+    "measures": ["Drafts accepted at first review"],
+    "sizing": {"default_frequency": "Monthly", "spend_that_can_stop": ["contractors", "overtime", "advisers"], "credits_per_run": null, "credits_basis": "No planning range yet. Measure a few runs first.", "measure_map": {"Rework rounds": "Drafts accepted at first review", "Missed deadlines": "Drafts ready on the planned day", "Questions from the board or a regulator": "Unsupported statements reaching review", "Contractors or overtime": "Contractor and overtime spend"}}
+  }
+}

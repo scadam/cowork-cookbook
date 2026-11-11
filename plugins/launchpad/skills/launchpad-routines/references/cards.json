@@ -1,0 +1,784 @@
+{
+ "name": "Card templates for launchpad-routines",
+ "version": "2.0.0",
+ "picture_prefix": "https://scott-adams.ai/cowork-cookbook/docs/assets/",
+ "icons": [
+  "Apps",
+  "ArrowRight",
+  "ArrowSync",
+  "Book",
+  "BuildingBank",
+  "Calendar",
+  "CalendarLtr",
+  "CheckmarkCircle",
+  "Circle",
+  "ClipboardTask",
+  "Clock",
+  "DataBarVertical",
+  "Delete",
+  "DocumentBulletList",
+  "DocumentText",
+  "Edit",
+  "Eye",
+  "Flash",
+  "Info",
+  "Lightbulb",
+  "Mail",
+  "Money",
+  "Open",
+  "People",
+  "Person",
+  "QuestionCircle",
+  "Rocket",
+  "Save",
+  "Search",
+  "ShieldCheckmark",
+  "Sparkle",
+  "Table",
+  "Target",
+  "TaskListLtr",
+  "Warning",
+  "Wrench"
+ ],
+ "pictures": {
+  "banner": {
+   "url": "https://scott-adams.ai/cowork-cookbook/docs/assets/v2/launchpad-welcome-banner-mono.png",
+   "alt": "Launchpad for Cowork banner"
+  },
+  "menu": {
+   "url": "https://scott-adams.ai/cowork-cookbook/docs/assets/v2/launchpad-picture-menu-mono.png",
+   "alt": "What I could make for you: variance commentary, budget round app, MBR brief and committee paper"
+  },
+  "variance": {
+   "url": "https://scott-adams.ai/cowork-cookbook/docs/assets/v1/launchpad-variance-commentary-example.png",
+   "alt": "Example: October variance commentary, a draft for review with an evidence status on every material line and two questions drafted for owners, not sent"
+  },
+  "budget_app": {
+   "url": "https://scott-adams.ai/cowork-cookbook/docs/assets/v1/launchpad-budget-round-app-mock.png",
+   "alt": "Example app: a budget round with tiles for submitted, in review, overdue and gap to target, and a table of cost centres by owner and status"
+  },
+  "mbr": {
+   "url": "https://scott-adams.ai/cowork-cookbook/docs/assets/v2/launchpad-mbr-brief-example.png",
+   "alt": "Example: one-page MBR brief for November, with what moved since last month, questions for each business and open actions from last time"
+  },
+  "committee": {
+   "url": "https://scott-adams.ai/cowork-cookbook/docs/assets/v2/launchpad-committee-paper-example.png",
+   "alt": "Example: committee paper front sheet with decision sought, recommendation, risks and next steps, beside a coaching review with one mandatory and two recommended findings"
+  }
+ },
+ "templates": {
+  "offer": {
+   "about": "The routines offer. Merge the offers list from references/routines.json.",
+   "required": [
+    "routines"
+   ],
+   "card": {
+    "type": "AdaptiveCard",
+    "version": "1.6",
+    "body": [
+     {
+      "type": "ColumnSet",
+      "columns": [
+       {
+        "type": "Column",
+        "width": "auto",
+        "verticalContentAlignment": "Center",
+        "items": [
+         {
+          "type": "Icon",
+          "name": "CalendarLtr",
+          "size": "Medium",
+          "color": "Default"
+         }
+        ]
+       },
+       {
+        "type": "Column",
+        "width": "stretch",
+        "items": [
+         {
+          "type": "TextBlock",
+          "text": "Stay on top of your priorities and your day",
+          "wrap": true,
+          "size": "Large",
+          "weight": "Bolder"
+         },
+         {
+          "type": "TextBlock",
+          "text": "Each routine drafts for you. Nothing is sent.",
+          "wrap": true,
+          "isSubtle": true,
+          "spacing": "None"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "$for": "routines",
+      "as": "r",
+      "$limit": 5,
+      "do": [
+       {
+        "type": "ColumnSet",
+        "spacing": "Medium",
+        "columns": [
+         {
+          "type": "Column",
+          "width": "auto",
+          "verticalContentAlignment": "Center",
+          "items": [
+           {
+            "type": "Icon",
+            "name": "{r.icon}",
+            "size": "Small",
+            "color": "Default"
+           }
+          ]
+         },
+         {
+          "type": "Column",
+          "width": "stretch",
+          "items": [
+           {
+            "type": "TextBlock",
+            "text": "{r.name}",
+            "wrap": true,
+            "weight": "Bolder"
+           },
+           {
+            "type": "TextBlock",
+            "text": "{r.when}. {r.what}",
+            "wrap": true,
+            "size": "Small",
+            "spacing": "None"
+           }
+          ]
+         },
+         {
+          "type": "Column",
+          "width": "auto",
+          "verticalContentAlignment": "Center",
+          "items": [
+           {
+            "type": "Badge",
+            "text": "{r.badge}",
+            "appearance": "Tint",
+            "shape": "Rounded",
+            "size": "Medium",
+            "style": "{r.badge_style}"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "$if": "used_text",
+      "do": [
+       {
+        "type": "TextBlock",
+        "text": "{used_text}",
+        "wrap": true,
+        "isSubtle": true,
+        "size": "Small",
+        "spacing": "Medium"
+       }
+      ]
+     },
+     {
+      "type": "Accordion",
+      "spacing": "Medium",
+      "pages": [
+       {
+        "type": "AccordionPage",
+        "headerTitle": "How routines work",
+        "headerIconName": "Info",
+        "isExpanded": false,
+        "items": [
+         {
+          "type": "FactSet",
+          "facts": [
+           {
+            "title": "Your OK",
+            "value": "You approve each one on Cowork's own card"
+           },
+           {
+            "title": "Pause or stop",
+            "value": "Any time, on the Automations page"
+           },
+           {
+            "title": "Limit",
+            "value": "Up to 25 schedules"
+           },
+           {
+            "title": "One at a time",
+            "value": "A conversation holds one schedule, so I set up one here and give you a starter line for each of the others"
+           },
+           {
+            "title": "Sends",
+            "value": "Nothing. Results are drafts for you"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "questions": [
+    {
+     "header": "Routines",
+     "question": "Which would you like?",
+     "multiSelect": true,
+     "options": [
+      {
+       "$for": "routines",
+       "as": "r",
+       "$limit": 5,
+       "do": [
+        {
+         "label": "{r.label}",
+         "description": "{r.description}"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "preview": {
+   "about": "What will be set up. Cowork's own approval card follows; no question card.",
+   "required": [
+    "name",
+    "facts"
+   ],
+   "card": {
+    "type": "AdaptiveCard",
+    "version": "1.6",
+    "body": [
+     {
+      "type": "ColumnSet",
+      "columns": [
+       {
+        "type": "Column",
+        "width": "auto",
+        "verticalContentAlignment": "Center",
+        "items": [
+         {
+          "type": "Icon",
+          "name": "Clock",
+          "size": "Medium",
+          "color": "Default"
+         }
+        ]
+       },
+       {
+        "type": "Column",
+        "width": "stretch",
+        "items": [
+         {
+          "type": "TextBlock",
+          "text": "{name}",
+          "wrap": true,
+          "size": "Large",
+          "weight": "Bolder"
+         },
+         {
+          "type": "TextBlock",
+          "text": "Here is what I will set up. Cowork asks you to approve it next.",
+          "wrap": true,
+          "isSubtle": true,
+          "spacing": "None"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "FactSet",
+      "spacing": "Medium",
+      "facts": [
+       {
+        "$for": "facts",
+        "as": "f",
+        "do": [
+         {
+          "title": "{f.title}",
+          "value": "{f.value}"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "ColumnSet",
+      "spacing": "Medium",
+      "columns": [
+       {
+        "type": "Column",
+        "width": "auto",
+        "items": [
+         {
+          "type": "Icon",
+          "name": "ShieldCheckmark",
+          "size": "Small",
+          "color": "Default"
+         }
+        ]
+       },
+       {
+        "type": "Column",
+        "width": "stretch",
+        "items": [
+         {
+          "type": "TextBlock",
+          "text": "It drafts for you and sends nothing. Pause or stop it on the Automations page.",
+          "wrap": true,
+          "isSubtle": true,
+          "size": "Small"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  },
+  "done": {
+   "about": "What was set up, and starter lines for the others.",
+   "required": [
+    "set_up"
+   ],
+   "card": {
+    "type": "AdaptiveCard",
+    "version": "1.6",
+    "body": [
+     {
+      "type": "ColumnSet",
+      "columns": [
+       {
+        "type": "Column",
+        "width": "auto",
+        "verticalContentAlignment": "Center",
+        "items": [
+         {
+          "type": "Icon",
+          "name": "CheckmarkCircle",
+          "size": "Medium",
+          "color": "Default"
+         }
+        ]
+       },
+       {
+        "type": "Column",
+        "width": "stretch",
+        "items": [
+         {
+          "type": "TextBlock",
+          "text": "Your routines",
+          "wrap": true,
+          "size": "Large",
+          "weight": "Bolder"
+         },
+         {
+          "type": "TextBlock",
+          "text": "Pause, change or stop them on the Automations page.",
+          "wrap": true,
+          "isSubtle": true,
+          "spacing": "None"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "$if": "set_up",
+      "do": [
+       {
+        "type": "Table",
+        "firstRowAsHeaders": true,
+        "showGridLines": true,
+        "spacing": "Medium",
+        "columns": [
+         {
+          "width": 40
+         },
+         {
+          "width": 40
+         },
+         {
+          "width": 20
+         }
+        ],
+        "rows": [
+         {
+          "type": "TableRow",
+          "cells": [
+           {
+            "type": "TableCell",
+            "items": [
+             {
+              "type": "TextBlock",
+              "text": "Routine",
+              "wrap": true,
+              "size": "Small",
+              "weight": "Bolder"
+             }
+            ]
+           },
+           {
+            "type": "TableCell",
+            "items": [
+             {
+              "type": "TextBlock",
+              "text": "When",
+              "wrap": true,
+              "size": "Small",
+              "weight": "Bolder"
+             }
+            ]
+           },
+           {
+            "type": "TableCell",
+            "items": [
+             {
+              "type": "TextBlock",
+              "text": "State",
+              "wrap": true,
+              "size": "Small",
+              "weight": "Bolder"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "$for": "set_up",
+          "as": "s",
+          "do": [
+           {
+            "type": "TableRow",
+            "cells": [
+             {
+              "type": "TableCell",
+              "items": [
+               {
+                "type": "TextBlock",
+                "text": "{s.name}",
+                "wrap": true,
+                "size": "Small"
+               }
+              ]
+             },
+             {
+              "type": "TableCell",
+              "items": [
+               {
+                "type": "TextBlock",
+                "text": "{s.when}",
+                "wrap": true,
+                "size": "Small"
+               }
+              ]
+             },
+             {
+              "type": "TableCell",
+              "items": [
+               {
+                "type": "TextBlock",
+                "text": "{s.state}",
+                "wrap": true,
+                "size": "Small"
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ],
+      "else": [
+       {
+        "type": "TextBlock",
+        "text": "Nothing was set up yet.",
+        "wrap": true,
+        "isSubtle": true,
+        "size": "Small",
+        "spacing": "Medium"
+       }
+      ]
+     },
+     {
+      "$if": "starters",
+      "do": [
+       {
+        "type": "TextBlock",
+        "text": "To add the others, start a new conversation and say:",
+        "wrap": true,
+        "weight": "Bolder",
+        "spacing": "Medium"
+       },
+       {
+        "$for": "starters",
+        "as": "s",
+        "do": [
+         {
+          "type": "ColumnSet",
+          "spacing": "Small",
+          "columns": [
+           {
+            "type": "Column",
+            "width": "auto",
+            "items": [
+             {
+              "type": "Icon",
+              "name": "Sparkle",
+              "size": "Small",
+              "color": "Default"
+             }
+            ]
+           },
+           {
+            "type": "Column",
+            "width": "stretch",
+            "items": [
+             {
+              "type": "TextBlock",
+              "text": "“{s.line}”",
+              "wrap": true,
+              "size": "Small"
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "questions": [
+    {
+     "header": "Next step",
+     "question": "What next?",
+     "multiSelect": false,
+     "options": [
+      {
+       "label": "Help with my work",
+       "description": "Find work Cowork can take off your plate"
+      },
+      {
+       "label": "Show my routines",
+       "description": "Every schedule and trigger you have"
+      },
+      {
+       "label": "Done for now",
+       "description": "Nothing else is set up"
+      }
+     ]
+    }
+   ]
+  },
+  "list": {
+   "about": "Show my routines.",
+   "required": [
+    "items"
+   ],
+   "card": {
+    "type": "AdaptiveCard",
+    "version": "1.6",
+    "body": [
+     {
+      "type": "ColumnSet",
+      "columns": [
+       {
+        "type": "Column",
+        "width": "auto",
+        "verticalContentAlignment": "Center",
+        "items": [
+         {
+          "type": "Icon",
+          "name": "CalendarLtr",
+          "size": "Medium",
+          "color": "Default"
+         }
+        ]
+       },
+       {
+        "type": "Column",
+        "width": "stretch",
+        "items": [
+         {
+          "type": "TextBlock",
+          "text": "Your routines",
+          "wrap": true,
+          "size": "Large",
+          "weight": "Bolder"
+         },
+         {
+          "type": "TextBlock",
+          "text": "{count_text}",
+          "wrap": true,
+          "isSubtle": true,
+          "spacing": "None"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "$if": "items",
+      "do": [
+       {
+        "type": "Table",
+        "firstRowAsHeaders": true,
+        "showGridLines": true,
+        "spacing": "Medium",
+        "columns": [
+         {
+          "width": 45
+         },
+         {
+          "width": 35
+         },
+         {
+          "width": 20
+         }
+        ],
+        "rows": [
+         {
+          "type": "TableRow",
+          "cells": [
+           {
+            "type": "TableCell",
+            "items": [
+             {
+              "type": "TextBlock",
+              "text": "Routine",
+              "wrap": true,
+              "size": "Small",
+              "weight": "Bolder"
+             }
+            ]
+           },
+           {
+            "type": "TableCell",
+            "items": [
+             {
+              "type": "TextBlock",
+              "text": "When",
+              "wrap": true,
+              "size": "Small",
+              "weight": "Bolder"
+             }
+            ]
+           },
+           {
+            "type": "TableCell",
+            "items": [
+             {
+              "type": "TextBlock",
+              "text": "State",
+              "wrap": true,
+              "size": "Small",
+              "weight": "Bolder"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "$for": "items",
+          "as": "s",
+          "$limit": 25,
+          "do": [
+           {
+            "type": "TableRow",
+            "cells": [
+             {
+              "type": "TableCell",
+              "items": [
+               {
+                "type": "TextBlock",
+                "text": "{s.name}",
+                "wrap": true,
+                "size": "Small"
+               }
+              ]
+             },
+             {
+              "type": "TableCell",
+              "items": [
+               {
+                "type": "TextBlock",
+                "text": "{s.when}",
+                "wrap": true,
+                "size": "Small"
+               }
+              ]
+             },
+             {
+              "type": "TableCell",
+              "items": [
+               {
+                "type": "TextBlock",
+                "text": "{s.state}",
+                "wrap": true,
+                "size": "Small"
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ],
+      "else": [
+       {
+        "type": "TextBlock",
+        "text": "You have no routines yet.",
+        "wrap": true,
+        "isSubtle": true,
+        "size": "Small",
+        "spacing": "Medium"
+       }
+      ]
+     },
+     {
+      "type": "TextBlock",
+      "text": "Pause, resume, change or delete them on the Automations page.",
+      "wrap": true,
+      "isSubtle": true,
+      "size": "Small",
+      "spacing": "Medium"
+     }
+    ]
+   },
+   "questions": [
+    {
+     "header": "Next step",
+     "question": "What next?",
+     "multiSelect": false,
+     "options": [
+      {
+       "label": "Add a routine",
+       "description": "Monday priorities, morning brief and more"
+      },
+      {
+       "label": "Done for now",
+       "description": "Nothing changes"
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

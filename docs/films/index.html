@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en-GB" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Cowork Cookbook: films</title>
+<style>
+:root{--bg:#f4f4f4;--surface:#ffffff;--text:#111111;--muted:#5d5d5d;--border:#e1e1e1}
+@media (prefers-color-scheme: dark){:root{--bg:#0f0f10;--surface:#19191b;--text:#ededed;--muted:#a3a3a3;--border:#323236}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"Segoe UI",system-ui,-apple-system,Arial,sans-serif;line-height:1.5}
+main{max-inline-size:900px;margin-inline:auto;padding:28px 20px 60px}
+h1{margin:0 0 6px;font-size:1.6rem} h2{font-size:1.15rem;margin:0 0 10px}
+p.lede{color:var(--muted);margin:0 0 22px}
+section{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px;margin:0 0 20px;scroll-margin-top:16px}
+section:target{border-color:var(--text)}
+video{display:block;inline-size:100%;border-radius:10px;background:#000}
+ul{margin:4px 0 0;padding-inline-start:20px;color:var(--muted);font-size:.92rem} p{margin:10px 0 0;font-size:.92rem;color:var(--muted)}
+</style>
+</head>
+<body>
+<main>
+  <h1>Cowork Cookbook: films</h1>
+  <p class="lede">Short films of Copilot Cowork doing the work, on invented sample data.</p>
+  <section id="bids-and-questionnaires">
+    <h2>Tenders and questionnaires answered from your approved library</h2>
+    <video controls preload="metadata" src="bids-and-questionnaires.mp4"></video>
+    <p class="missing" hidden>This film is not here yet.</p>
+    <p>Shown for:</p><ul><li>Client due diligence and security questionnaires</li><li>Treasury and transaction-banking RFP responses</li><li>Consultant and investor due diligence questionnaires</li><li>Group insurance and employee benefits tenders</li></ul>
+  </section>
+  <section id="governance-and-value">
+    <h2>Board and committee papers, and the right technology for each task</h2>
+    <video controls preload="metadata" src="governance-and-value.mp4"></video>
+    <p class="missing" hidden>This film is not here yet.</p>
+    <p>Shown for:</p><ul><li>Board and committee papers right first time</li><li>Which technology for which task, and what it costs</li></ul>
+  </section>
+  <section id="case-and-matter-files">
+    <h2>Case files and chronologies assembled for a person&#x27;s decision</h2>
+    <video controls preload="metadata" src="case-and-matter-files.mp4"></video>
+    <p class="missing" hidden>This film is not here yet.</p>
+    <p>Shown for:</p><ul><li>Complaint case files for the handler&#x27;s decision</li><li>Complex claim files</li><li>Disputes chronology and first-draft memo</li></ul>
+  </section>
+  <section id="customer-success-renewals">
+    <h2>Review and renewal packs across a whole book</h2>
+    <video controls preload="metadata" src="customer-success-renewals.mp4"></video>
+    <p class="missing" hidden>This film is not here yet.</p>
+    <p>Shown for:</p><ul><li>Client review packs across a book of clients</li><li>Renewal and account review packs for every account</li></ul>
+  </section>
+  <section id="audit-readiness">
+    <h2>The auditor&#x27;s request list answered with evidence</h2>
+    <video controls preload="metadata" src="audit-readiness.mp4"></video>
+    <p class="missing" hidden>This film is not here yet.</p>
+    <p>Shown for:</p><ul><li>The auditor&#x27;s request list answered with evidence</li></ul>
+  </section>
+  <section id="access-recertification">
+    <h2>User access review evidence</h2>
+    <video controls preload="metadata" src="access-recertification.mp4"></video>
+    <p class="missing" hidden>This film is not here yet.</p>
+    <p>Shown for:</p><ul><li>Quarterly user access review evidence</li></ul>
+  </section>
+  <section id="procurement-exceptions">
+    <h2>Blocked invoice and supplier exception packs</h2>
+    <video controls preload="metadata" src="procurement-exceptions.mp4"></video>
+    <p class="missing" hidden>This film is not here yet.</p>
+    <p>Shown for:</p><ul><li>Blocked invoice and supplier exception packs</li></ul>
+  </section>
+  <section id="product-concepts">
+    <h2>Consumer insight to product concepts, every claim checked</h2>
+    <video controls preload="metadata" src="product-concepts.mp4"></video>
+    <p class="missing" hidden>This film is not here yet.</p>
+    
+  </section>
+</main>
+<script>
+document.querySelectorAll("video").forEach(function (v) {
+  v.addEventListener("error", function () { v.hidden = true; v.parentElement.querySelector(".missing").hidden = false; });
+});
+</script>
+</body>
+</html>

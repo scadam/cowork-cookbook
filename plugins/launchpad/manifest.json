@@ -1,0 +1,61 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/teams/v1.29/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.29",
+  "version": "2.1.1",
+  "id": "ea8e58e9-fdf8-4ee7-afc2-acd724ab540f",
+  "developer": {
+    "name": "Cowork and Agents GBB",
+    "websiteUrl": "https://github.com/scadam/cowork-cookbook",
+    "privacyUrl": "https://privacy.microsoft.com/privacystatement",
+    "termsOfUseUrl": "https://www.microsoft.com/legal/terms-of-use"
+  },
+  "name": {
+    "short": "Launchpad for Cowork",
+    "full": "Launchpad for Cowork: your first skills, from the Cowork Cookbook"
+  },
+  "description": {
+    "short": "Find work Cowork can take off your plate, and keep it as a skill.",
+    "full": "Launchpad for Cowork helps you find work that Cowork can take off your plate, see what it would make, and keep it as a skill that runs on your own files. To begin, start a new Cowork conversation and say \"Get me started\".\n\nWhat it reads. It starts with a welcome and asks before it looks at anything. With your OK, it reads only the titles of your meetings (two weeks back and two weeks ahead) and how many people attend, the subjects of mail you sent in the last two weeks, and the names of files you edited in the last 30 days. It does not read message bodies, attachments or file contents for this look, and it leaves out anything private, confidential, personal, HR or medical. Reading a whole file always needs your OK for that one file. You can also try it on invented sample data, or answer three quick questions instead, and nothing of yours is read.\n\nWhat it does. It shows the work it found and asks \"Is this your work?\", then suggests recipes from the Cowork Cookbook: month-end variance commentary, a budget round app, a monthly business review brief and committee papers, and from the wider cookbook of work that people in roles like yours hand to Cowork, each with a short film. It learns from one example you choose, builds your skill with a script for every figure, tests it on a past period where you know the answer, and keeps it in your skills folder when you say so. It can also show whether the work is worth it, outcomes first, with money only where real spend can stop; set up routines for your priorities and your day with Cowork's own schedules and triggers; and answer \"How do I...?\" questions about Cowork.\n\nWhat it keeps. Nothing without your OK. Your profile and your skills are saved to your Cowork folder only when you say so, and you can show, change or delete your profile at any time. It sends, posts, shares and schedules nothing without your approval of that exact action; questions to colleagues are drafted, never sent.\n\nThe Microsoft Learn connector searches Microsoft's official public documentation to answer questions about Cowork. It is read-only and needs no sign-in. Pictures in cards come from scott-adams.ai, the site of the Cowork Cookbook; every card makes sense without them."
+  },
+  "icons": {
+    "color": "color.png",
+    "outline": "outline.png"
+  },
+  "accentColor": "#1A1A1A",
+  "agentSkills": [
+    {
+      "folder": "./skills/launchpad-start"
+    },
+    {
+      "folder": "./skills/launchpad-cookbook"
+    },
+    {
+      "folder": "./skills/launchpad-business-case"
+    },
+    {
+      "folder": "./skills/launchpad-routines"
+    },
+    {
+      "folder": "./skills/launchpad-how-do-i"
+    }
+  ],
+  "agentConnectors": [
+    {
+      "id": "microsoft-learn",
+      "displayName": "Microsoft Learn",
+      "description": "Search Microsoft's official public documentation. Read-only, no sign-in.",
+      "toolSource": {
+        "remoteMcpServer": {
+          "mcpServerUrl": "https://learn.microsoft.com/api/mcp",
+          "authorization": {
+            "type": "None"
+          }
+        }
+      }
+    }
+  ],
+  "validDomains": [
+    "scott-adams.ai",
+    "scadam.github.io"
+  ]
+}

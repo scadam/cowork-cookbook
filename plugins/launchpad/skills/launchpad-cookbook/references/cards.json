@@ -1,0 +1,1906 @@
+{
+ "name": "Card templates for launchpad-cookbook",
+ "version": "2.0.0",
+ "picture_prefix": "https://scott-adams.ai/cowork-cookbook/docs/assets/",
+ "icons": [
+  "Apps",
+  "ArrowRight",
+  "ArrowSync",
+  "Book",
+  "BuildingBank",
+  "Calendar",
+  "CalendarLtr",
+  "CheckmarkCircle",
+  "Circle",
+  "ClipboardTask",
+  "Clock",
+  "DataBarVertical",
+  "Delete",
+  "DocumentBulletList",
+  "DocumentText",
+  "Edit",
+  "Eye",
+  "Flash",
+  "Info",
+  "Lightbulb",
+  "Mail",
+  "Money",
+  "Open",
+  "People",
+  "Person",
+  "QuestionCircle",
+  "Rocket",
+  "Save",
+  "Search",
+  "ShieldCheckmark",
+  "Sparkle",
+  "Table",
+  "Target",
+  "TaskListLtr",
+  "Warning",
+  "Wrench"
+ ],
+ "pictures": {
+  "banner": {
+   "url": "https://scott-adams.ai/cowork-cookbook/docs/assets/v2/launchpad-welcome-banner-mono.png",
+   "alt": "Launchpad for Cowork banner"
+  },
+  "menu": {
+   "url": "https://scott-adams.ai/cowork-cookbook/docs/assets/v2/launchpad-picture-menu-mono.png",
+   "alt": "What I could make for you: variance commentary, budget round app, MBR brief and committee paper"
+  },
+  "variance": {
+   "url": "https://scott-adams.ai/cowork-cookbook/docs/assets/v1/launchpad-variance-commentary-example.png",
+   "alt": "Example: October variance commentary, a draft for review with an evidence status on every material line and two questions drafted for owners, not sent"
+  },
+  "budget_app": {
+   "url": "https://scott-adams.ai/cowork-cookbook/docs/assets/v1/launchpad-budget-round-app-mock.png",
+   "alt": "Example app: a budget round with tiles for submitted, in review, overdue and gap to target, and a table of cost centres by owner and status"
+  },
+  "mbr": {
+   "url": "https://scott-adams.ai/cowork-cookbook/docs/assets/v2/launchpad-mbr-brief-example.png",
+   "alt": "Example: one-page MBR brief for November, with what moved since last month, questions for each business and open actions from last time"
+  },
+  "committee": {
+   "url": "https://scott-adams.ai/cowork-cookbook/docs/assets/v2/launchpad-committee-paper-example.png",
+   "alt": "Example: committee paper front sheet with decision sought, recommendation, risks and next steps, beside a coaching review with one mandatory and two recommended findings"
+  }
+ },
+ "templates": {
+  "offer": {
+   "about": "Offer up to four recipes. Merge ranked.json from rank.py.",
+   "required": [
+    "offers",
+    "heading",
+    "subtitle"
+   ],
+   "card": {
+    "type": "AdaptiveCard",
+    "version": "1.6",
+    "body": [
+     {
+      "type": "ColumnSet",
+      "columns": [
+       {
+        "type": "Column",
+        "width": "stretch",
+        "items": [
+         {
+          "type": "TextBlock",
+          "text": "{heading}",
+          "wrap": true,
+          "size": "Large",
+          "weight": "Bolder"
+         },
+         {
+          "type": "TextBlock",
+          "text": "{subtitle}",
+          "wrap": true,
+          "isSubtle": true,
+          "spacing": "None"
+         }
+        ]
+       },
+       {
+        "$if": "sample",
+        "do": [
+         {
+          "type": "Column",
+          "width": "auto",
+          "items": [
+           {
+            "type": "Badge",
+            "text": "Invented sample data",
+            "appearance": "Tint",
+            "shape": "Rounded",
+            "size": "Medium",
+            "style": "Warning",
+            "tooltip": "The organisation, people and figures are made up."
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "$for": "offers",
+      "as": "o",
+      "$limit": 4,
+      "do": [
+       {
+        "type": "Container",
+        "roundedCorners": true,
+        "showBorder": true,
+        "spacing": "Medium",
+        "items": [
+         {
+          "type": "ColumnSet",
+          "columns": [
+           {
+            "type": "Column",
+            "width": "auto",
+            "verticalContentAlignment": "Center",
+            "items": [
+             {
+              "type": "Icon",
+              "name": "{o.icon}",
+              "size": "Medium",
+              "color": "Default"
+             }
+            ]
+           },
+           {
+            "type": "Column",
+            "width": "stretch",
+            "items": [
+             {
+              "type": "TextBlock",
+              "text": "{o.title}",
+              "wrap": true,
+              "weight": "Bolder"
+             },
+             {
+              "type": "TextBlock",
+              "text": "{o.what_you_get}",
+              "wrap": true,
+              "size": "Small",
+              "spacing": "None"
+             },
+             {
+              "type": "TextBlock",
+              "text": "{o.why_line}",
+              "wrap": true,
+              "isSubtle": true,
+              "size": "Small",
+              "spacing": "Small"
+             }
+            ]
+           },
+           {
+            "type": "Column",
+            "width": "auto",
+            "items": [
+             {
+              "type": "Badge",
+              "text": "{o.badge}",
+              "appearance": "Tint",
+              "shape": "Rounded",
+              "size": "Medium",
+              "style": "{o.badge_style}"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "$if": "o.example_picture",
+          "do": [
+           {
+            "type": "Accordion",
+            "spacing": "Small",
+            "pages": [
+             {
+              "type": "AccordionPage",
+              "headerTitle": "See an example",
+              "headerIconName": "Eye",
+              "isExpanded": false,
+              "items": [
+               {
+                "type": "Image",
+                "url": "{o.example_picture}",
+                "altText": "{o.example_alt}"
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "Container",
+      "style": "emphasis",
+      "roundedCorners": true,
+      "spacing": "Medium",
+      "items": [
+       {
+        "type": "ColumnSet",
+        "columns": [
+         {
+          "type": "Column",
+          "width": "auto",
+          "verticalContentAlignment": "Center",
+          "items": [
+           {
+            "type": "Icon",
+            "name": "Lightbulb",
+            "size": "Medium",
+            "color": "Default"
+           }
+          ]
+         },
+         {
+          "type": "Column",
+          "width": "stretch",
+          "items": [
+           {
+            "type": "TextBlock",
+            "text": "Something else",
+            "wrap": true,
+            "weight": "Bolder"
+           },
+           {
+            "type": "TextBlock",
+            "text": "Show me a document you make often, drop in a picture of one, or describe it.",
+            "wrap": true,
+            "size": "Small",
+            "spacing": "None"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "TextBlock",
+      "text": "Pick one or more below, or say keep looking.",
+      "wrap": true,
+      "isSubtle": true,
+      "size": "Small",
+      "spacing": "Small"
+     }
+    ]
+   },
+   "questions": [
+    {
+     "header": "Pick",
+     "question": "Which would you like?",
+     "multiSelect": true,
+     "options": [
+      {
+       "$for": "offers",
+       "as": "o",
+       "$limit": 4,
+       "do": [
+        {
+         "label": "{o.label}",
+         "description": "{o.description}"
+        }
+       ]
+      },
+      {
+       "label": "Keep looking",
+       "description": "Show me other things you could make"
+      }
+     ]
+    }
+   ]
+  },
+  "would_you_like": {
+   "about": "Would you like this? Merge rank.py --recipe ID output.",
+   "required": [
+    "title",
+    "icon",
+    "badge",
+    "badge_style",
+    "lines",
+    "why_line"
+   ],
+   "card": {
+    "type": "AdaptiveCard",
+    "version": "1.6",
+    "body": [
+     {
+      "type": "ColumnSet",
+      "columns": [
+       {
+        "type": "Column",
+        "width": "auto",
+        "verticalContentAlignment": "Center",
+        "items": [
+         {
+          "type": "Icon",
+          "name": "{icon}",
+          "size": "Medium",
+          "color": "Default"
+         }
+        ]
+       },
+       {
+        "type": "Column",
+        "width": "stretch",
+        "items": [
+         {
+          "type": "TextBlock",
+          "text": "{title}",
+          "wrap": true,
+          "size": "Large",
+          "weight": "Bolder"
+         },
+         {
+          "type": "TextBlock",
+          "text": "Would you like this?",
+          "wrap": true,
+          "isSubtle": true,
+          "spacing": "None"
+         }
+        ]
+       },
+       {
+        "type": "Column",
+        "width": "auto",
+        "items": [
+         {
+          "type": "Badge",
+          "text": "{badge}",
+          "appearance": "Tint",
+          "shape": "Rounded",
+          "size": "Medium",
+          "style": "{badge_style}"
+         },
+         {
+          "$if": "sample",
+          "do": [
+           {
+            "type": "Badge",
+            "text": "Invented sample data",
+            "appearance": "Tint",
+            "shape": "Rounded",
+            "size": "Medium",
+            "style": "Warning",
+            "tooltip": "The organisation, people and figures are made up."
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "$if": "example_picture",
+      "do": [
+       {
+        "type": "Image",
+        "url": "{example_picture}",
+        "altText": "{example_alt}",
+        "size": "Stretch",
+        "spacing": "Medium"
+       }
+      ]
+     },
+     {
+      "$for": "lines",
+      "as": "line",
+      "$limit": 2,
+      "do": [
+       {
+        "type": "ColumnSet",
+        "spacing": "Small",
+        "columns": [
+         {
+          "type": "Column",
+          "width": "auto",
+          "items": [
+           {
+            "type": "Icon",
+            "name": "CheckmarkCircle",
+            "size": "Small",
+            "color": "Default"
+           }
+          ]
+         },
+         {
+          "type": "Column",
+          "width": "stretch",
+          "items": [
+           {
+            "type": "TextBlock",
+            "text": "{line}",
+            "wrap": true
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "TextBlock",
+      "text": "{why_line}",
+      "wrap": true,
+      "isSubtle": true,
+      "size": "Small",
+      "spacing": "Medium"
+     }
+    ]
+   },
+   "questions": [
+    {
+     "header": "Your call",
+     "question": "Would you like this?",
+     "multiSelect": false,
+     "options": [
+      {
+       "$if": "sample",
+       "do": [
+        {
+         "label": "Yes, make it mine",
+         "description": "I build it on the invented sample, then test it"
+        }
+       ],
+       "else": [
+        {
+         "label": "Yes, make it mine",
+         "description": "I learn from one of your files, then build it"
+        }
+       ]
+      },
+      {
+       "label": "Show the next one first",
+       "description": "See the next suggestion before deciding"
+      },
+      {
+       "label": "Not now",
+       "description": "Nothing is built or kept"
+      }
+     ]
+    }
+   ]
+  },
+  "app_mockup": {
+   "about": "App recipe with the person's own tracker: a mock-up from its real columns. Merge tracker_summary.py output.",
+   "required": [
+    "tracker_name",
+    "noticed",
+    "tiles",
+    "columns",
+    "rows",
+    "progress",
+    "changes",
+    "build_facts"
+   ],
+   "card": {
+    "type": "AdaptiveCard",
+    "version": "1.6",
+    "body": [
+     {
+      "type": "ColumnSet",
+      "columns": [
+       {
+        "type": "Column",
+        "width": "auto",
+        "verticalContentAlignment": "Center",
+        "items": [
+         {
+          "type": "Icon",
+          "name": "Apps",
+          "size": "Medium",
+          "color": "Default"
+         }
+        ]
+       },
+       {
+        "type": "Column",
+        "width": "stretch",
+        "items": [
+         {
+          "type": "TextBlock",
+          "text": "Your {tracker_name}, as an app",
+          "wrap": true,
+          "size": "Large",
+          "weight": "Bolder"
+         },
+         {
+          "type": "TextBlock",
+          "text": "You run it from a spreadsheet and your inbox. Here is what it could look like.",
+          "wrap": true,
+          "isSubtle": true,
+          "spacing": "None"
+         }
+        ]
+       },
+       {
+        "type": "Column",
+        "width": "auto",
+        "items": [
+         {
+          "type": "Badge",
+          "text": "Mock-up",
+          "appearance": "Tint",
+          "shape": "Rounded",
+          "size": "Medium",
+          "style": "Default",
+          "tooltip": "Built from your tracker's own columns and first rows."
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "Container",
+      "spacing": "Medium",
+      "items": [
+       {
+        "type": "TextBlock",
+        "text": "What I noticed",
+        "wrap": true,
+        "weight": "Bolder"
+       },
+       {
+        "$for": "noticed",
+        "as": "n",
+        "$limit": 3,
+        "do": [
+         {
+          "type": "ColumnSet",
+          "spacing": "Small",
+          "columns": [
+           {
+            "type": "Column",
+            "width": "auto",
+            "items": [
+             {
+              "type": "Icon",
+              "name": "{n.icon}",
+              "size": "Small",
+              "color": "Default"
+             }
+            ]
+           },
+           {
+            "type": "Column",
+            "width": "stretch",
+            "items": [
+             {
+              "type": "TextBlock",
+              "text": "{n.text}",
+              "wrap": true,
+              "size": "Small"
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "Container",
+      "style": "emphasis",
+      "roundedCorners": true,
+      "showBorder": true,
+      "spacing": "Medium",
+      "items": [
+       {
+        "type": "TextBlock",
+        "text": "{tracker_name}",
+        "wrap": true,
+        "size": "Medium",
+        "weight": "Bolder"
+       },
+       {
+        "type": "ColumnSet",
+        "spacing": "Small",
+        "columns": [
+         {
+          "$for": "tiles",
+          "as": "t",
+          "$limit": 4,
+          "do": [
+           {
+            "type": "Column",
+            "width": "stretch",
+            "items": [
+             {
+              "type": "TextBlock",
+              "text": "{t.label}",
+              "wrap": true,
+              "isSubtle": true,
+              "size": "Small",
+              "horizontalAlignment": "Center"
+             },
+             {
+              "type": "TextBlock",
+              "text": "{t.value}",
+              "wrap": true,
+              "size": "Large",
+              "weight": "Bolder",
+              "horizontalAlignment": "Center",
+              "spacing": "None"
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "type": "ProgressBar",
+        "value": {
+         "$value": "progress.value"
+        },
+        "max": {
+         "$value": "progress.max"
+        },
+        "spacing": "Small"
+       },
+       {
+        "type": "Table",
+        "firstRowAsHeaders": true,
+        "showGridLines": true,
+        "spacing": "Medium",
+        "columns": [
+         {
+          "$for": "columns",
+          "as": "c",
+          "$limit": 5,
+          "do": [
+           {
+            "width": 1
+           }
+          ]
+         }
+        ],
+        "rows": [
+         {
+          "type": "TableRow",
+          "cells": [
+           {
+            "$for": "columns",
+            "as": "c",
+            "$limit": 5,
+            "do": [
+             {
+              "type": "TableCell",
+              "items": [
+               {
+                "type": "TextBlock",
+                "text": "{c}",
+                "wrap": true,
+                "size": "Small",
+                "weight": "Bolder"
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "$for": "rows",
+          "as": "r",
+          "$limit": 5,
+          "do": [
+           {
+            "type": "TableRow",
+            "cells": [
+             {
+              "$for": "r",
+              "as": "cell",
+              "$limit": 5,
+              "do": [
+               {
+                "type": "TableCell",
+                "items": [
+                 {
+                  "type": "TextBlock",
+                  "text": "{cell}",
+                  "wrap": true,
+                  "size": "Small"
+                 }
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "type": "ColumnSet",
+        "spacing": "Medium",
+        "columns": [
+         {
+          "type": "Column",
+          "width": "auto",
+          "items": [
+           {
+            "type": "Badge",
+            "text": "A chaser drafted per overdue owner",
+            "appearance": "Tint",
+            "shape": "Rounded",
+            "size": "Medium",
+            "style": "Default",
+            "icon": "Mail"
+           }
+          ]
+         },
+         {
+          "type": "Column",
+          "width": "auto",
+          "items": [
+           {
+            "type": "Badge",
+            "text": "Friday summary, drafted for you",
+            "appearance": "Tint",
+            "shape": "Rounded",
+            "size": "Medium",
+            "style": "Default",
+            "icon": "DocumentText"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "Container",
+      "spacing": "Medium",
+      "items": [
+       {
+        "type": "TextBlock",
+        "text": "What changes for you",
+        "wrap": true,
+        "weight": "Bolder"
+       },
+       {
+        "$for": "changes",
+        "as": "c",
+        "$limit": 3,
+        "do": [
+         {
+          "type": "ColumnSet",
+          "spacing": "Small",
+          "columns": [
+           {
+            "type": "Column",
+            "width": "auto",
+            "items": [
+             {
+              "type": "Icon",
+              "name": "CheckmarkCircle",
+              "size": "Small",
+              "color": "Default"
+             }
+            ]
+           },
+           {
+            "type": "Column",
+            "width": "stretch",
+            "items": [
+             {
+              "type": "TextBlock",
+              "text": "{c}",
+              "wrap": true,
+              "size": "Small"
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "Accordion",
+      "spacing": "Medium",
+      "pages": [
+       {
+        "type": "AccordionPage",
+        "headerTitle": "How I would build it",
+        "headerIconName": "Wrench",
+        "isExpanded": false,
+        "items": [
+         {
+          "type": "FactSet",
+          "facts": [
+           {
+            "$for": "build_facts",
+            "as": "f",
+            "do": [
+             {
+              "title": "{f.title}",
+              "value": "{f.value}"
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "questions": [
+    {
+     "header": "Your call",
+     "question": "Would you like this?",
+     "multiSelect": false,
+     "options": [
+      {
+       "label": "Build it",
+       "description": "Cowork's App skill builds it from your tracker"
+      },
+      {
+       "label": "Show the next one first",
+       "description": "See the next suggestion before deciding"
+      },
+      {
+       "label": "Not now",
+       "description": "Your spreadsheet stays exactly as it is"
+      }
+     ]
+    }
+   ]
+  },
+  "good_looks_like": {
+   "about": "Show me what good looks like: pick one example file (picking it is the OK to read it).",
+   "required": [
+    "recipe_title",
+    "files"
+   ],
+   "card": {
+    "type": "AdaptiveCard",
+    "version": "1.6",
+    "body": [
+     {
+      "type": "ColumnSet",
+      "columns": [
+       {
+        "type": "Column",
+        "width": "auto",
+        "verticalContentAlignment": "Center",
+        "items": [
+         {
+          "type": "Icon",
+          "name": "Eye",
+          "size": "Medium",
+          "color": "Default"
+         }
+        ]
+       },
+       {
+        "type": "Column",
+        "width": "stretch",
+        "items": [
+         {
+          "type": "TextBlock",
+          "text": "Show me what good looks like",
+          "wrap": true,
+          "size": "Large",
+          "weight": "Bolder"
+         },
+         {
+          "type": "TextBlock",
+          "text": "For your {recipe_title}",
+          "wrap": true,
+          "isSubtle": true,
+          "spacing": "None"
+         }
+        ]
+       },
+       {
+        "$if": "sample",
+        "do": [
+         {
+          "type": "Column",
+          "width": "auto",
+          "items": [
+           {
+            "type": "Badge",
+            "text": "Invented sample data",
+            "appearance": "Tint",
+            "shape": "Rounded",
+            "size": "Medium",
+            "style": "Warning",
+            "tooltip": "The organisation, people and figures are made up."
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "TextBlock",
+      "text": "I learn from one example you are happy with. The latest version you sent is usually best.",
+      "wrap": true,
+      "spacing": "Medium"
+     },
+     {
+      "type": "FactSet",
+      "spacing": "Medium",
+      "facts": [
+       {
+        "title": "Sections",
+        "value": "The headings, in order"
+       },
+       {
+        "title": "Tone",
+        "value": "How each line is worded"
+       },
+       {
+        "title": "Thresholds",
+        "value": "What counts as material"
+       },
+       {
+        "title": "Template",
+        "value": "The layout to follow"
+       },
+       {
+        "title": "Sign-off",
+        "value": "Who prepares it and who approves it"
+       }
+      ]
+     },
+     {
+      "type": "ColumnSet",
+      "spacing": "Medium",
+      "columns": [
+       {
+        "type": "Column",
+        "width": "auto",
+        "items": [
+         {
+          "type": "Icon",
+          "name": "ShieldCheckmark",
+          "size": "Small",
+          "color": "Default"
+         }
+        ]
+       },
+       {
+        "type": "Column",
+        "width": "stretch",
+        "items": [
+         {
+          "type": "TextBlock",
+          "text": "I read only the file you pick, and only after you pick it.",
+          "wrap": true,
+          "isSubtle": true,
+          "size": "Small"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "questions": [
+    {
+     "header": "Example",
+     "question": "Which one shows what good looks like? I will read only that file.",
+     "multiSelect": false,
+     "options": [
+      {
+       "$for": "files",
+       "as": "f",
+       "$limit": 4,
+       "do": [
+        {
+         "label": "{f.label}",
+         "description": "{f.description}"
+        }
+       ]
+      },
+      {
+       "$if": "!files",
+       "do": [
+        {
+         "label": "Look at my file names",
+         "description": "Names only, then you pick one to read"
+        },
+        {
+         "label": "Attach it here",
+         "description": "Drop the file into the conversation"
+        }
+       ]
+      },
+      {
+       "label": "A picture or a description",
+       "description": "Drop in a picture of a page, or describe it"
+      }
+     ]
+    }
+   ]
+  },
+  "building": {
+   "about": "Progress card after make_skill.py. Merge the card object from its output.",
+   "required": [
+    "skill_title",
+    "progress",
+    "steps",
+    "learned",
+    "built",
+    "test_label",
+    "test_description"
+   ],
+   "card": {
+    "type": "AdaptiveCard",
+    "version": "1.6",
+    "body": [
+     {
+      "type": "ColumnSet",
+      "columns": [
+       {
+        "type": "Column",
+        "width": "auto",
+        "verticalContentAlignment": "Center",
+        "items": [
+         {
+          "type": "Icon",
+          "name": "Wrench",
+          "size": "Medium",
+          "color": "Default"
+         }
+        ]
+       },
+       {
+        "type": "Column",
+        "width": "stretch",
+        "items": [
+         {
+          "type": "TextBlock",
+          "text": "Building your skill",
+          "wrap": true,
+          "size": "Large",
+          "weight": "Bolder"
+         },
+         {
+          "type": "TextBlock",
+          "text": "{skill_title}",
+          "wrap": true,
+          "isSubtle": true,
+          "spacing": "None"
+         }
+        ]
+       },
+       {
+        "$if": "sample",
+        "do": [
+         {
+          "type": "Column",
+          "width": "auto",
+          "items": [
+           {
+            "type": "Badge",
+            "text": "Invented sample data",
+            "appearance": "Tint",
+            "shape": "Rounded",
+            "size": "Medium",
+            "style": "Warning",
+            "tooltip": "The organisation, people and figures are made up."
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "ProgressBar",
+      "value": {
+       "$value": "progress.done"
+      },
+      "max": {
+       "$value": "progress.total"
+      },
+      "spacing": "Medium"
+     },
+     {
+      "type": "TextBlock",
+      "text": "{progress.done} of {progress.total} steps done",
+      "wrap": true,
+      "isSubtle": true,
+      "size": "Small",
+      "spacing": "Small"
+     },
+     {
+      "$for": "steps",
+      "as": "s",
+      "do": [
+       {
+        "type": "ColumnSet",
+        "spacing": "Small",
+        "columns": [
+         {
+          "type": "Column",
+          "width": "auto",
+          "items": [
+           {
+            "type": "Icon",
+            "name": "{s.icon}",
+            "size": "Small",
+            "color": "Default"
+           }
+          ]
+         },
+         {
+          "type": "Column",
+          "width": "stretch",
+          "items": [
+           {
+            "type": "TextBlock",
+            "text": "{s.text}",
+            "wrap": true,
+            "size": "Small"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "Accordion",
+      "spacing": "Medium",
+      "pages": [
+       {
+        "type": "AccordionPage",
+        "headerTitle": "What I took from your example",
+        "headerIconName": "Eye",
+        "isExpanded": false,
+        "items": [
+         {
+          "type": "FactSet",
+          "facts": [
+           {
+            "$for": "learned",
+            "as": "f",
+            "do": [
+             {
+              "title": "{f.title}",
+              "value": "{f.value}"
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "type": "AccordionPage",
+        "headerTitle": "What I built",
+        "headerIconName": "Wrench",
+        "isExpanded": false,
+        "items": [
+         {
+          "type": "FactSet",
+          "facts": [
+           {
+            "$for": "built",
+            "as": "f",
+            "do": [
+             {
+              "title": "{f.title}",
+              "value": "{f.value}"
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "questions": [
+    {
+     "header": "Test",
+     "question": "Test it on a past period, where you know the answer?",
+     "multiSelect": false,
+     "options": [
+      {
+       "label": "{test_label}",
+       "description": "{test_description}"
+      },
+      {
+       "label": "Change something first",
+       "description": "Tell me what to change before the test"
+      }
+     ]
+    }
+   ]
+  },
+  "test_result": {
+   "about": "Test on a period with a known answer. Merge test_compare.py output.",
+   "required": [
+    "period_text",
+    "covered_text",
+    "same",
+    "different_count",
+    "questions_count",
+    "figures_ok"
+   ],
+   "card": {
+    "type": "AdaptiveCard",
+    "version": "1.6",
+    "body": [
+     {
+      "type": "ColumnSet",
+      "columns": [
+       {
+        "type": "Column",
+        "width": "auto",
+        "verticalContentAlignment": "Center",
+        "items": [
+         {
+          "type": "Icon",
+          "name": "ShieldCheckmark",
+          "size": "Medium",
+          "color": "Default"
+         }
+        ]
+       },
+       {
+        "type": "Column",
+        "width": "stretch",
+        "items": [
+         {
+          "type": "TextBlock",
+          "text": "Tested on {period_text}",
+          "wrap": true,
+          "size": "Large",
+          "weight": "Bolder"
+         },
+         {
+          "type": "TextBlock",
+          "text": "Compared line by line with what you actually sent.",
+          "wrap": true,
+          "isSubtle": true,
+          "spacing": "None"
+         }
+        ]
+       },
+       {
+        "$if": "sample",
+        "do": [
+         {
+          "type": "Column",
+          "width": "auto",
+          "items": [
+           {
+            "type": "Badge",
+            "text": "Invented sample data",
+            "appearance": "Tint",
+            "shape": "Rounded",
+            "size": "Medium",
+            "style": "Warning",
+            "tooltip": "The organisation, people and figures are made up."
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "ColumnSet",
+      "spacing": "Medium",
+      "columns": [
+       {
+        "type": "Column",
+        "width": "stretch",
+        "items": [
+         {
+          "type": "TextBlock",
+          "text": "Lines covered",
+          "wrap": true,
+          "isSubtle": true,
+          "size": "Small",
+          "horizontalAlignment": "Center"
+         },
+         {
+          "type": "TextBlock",
+          "text": "{covered_text}",
+          "wrap": true,
+          "size": "Large",
+          "weight": "Bolder",
+          "horizontalAlignment": "Center",
+          "spacing": "None"
+         }
+        ]
+       },
+       {
+        "type": "Column",
+        "width": "stretch",
+        "items": [
+         {
+          "type": "TextBlock",
+          "text": "Same as approved",
+          "wrap": true,
+          "isSubtle": true,
+          "size": "Small",
+          "horizontalAlignment": "Center"
+         },
+         {
+          "type": "TextBlock",
+          "text": "{same}",
+          "wrap": true,
+          "size": "Large",
+          "weight": "Bolder",
+          "horizontalAlignment": "Center",
+          "spacing": "None"
+         }
+        ]
+       },
+       {
+        "type": "Column",
+        "width": "stretch",
+        "items": [
+         {
+          "type": "TextBlock",
+          "text": "Different",
+          "wrap": true,
+          "isSubtle": true,
+          "size": "Small",
+          "horizontalAlignment": "Center"
+         },
+         {
+          "type": "TextBlock",
+          "text": "{different_count}",
+          "wrap": true,
+          "size": "Large",
+          "weight": "Bolder",
+          "horizontalAlignment": "Center",
+          "spacing": "None"
+         }
+        ]
+       },
+       {
+        "type": "Column",
+        "width": "stretch",
+        "items": [
+         {
+          "type": "TextBlock",
+          "text": "Questions it would send",
+          "wrap": true,
+          "isSubtle": true,
+          "size": "Small",
+          "horizontalAlignment": "Center"
+         },
+         {
+          "type": "TextBlock",
+          "text": "{questions_count}",
+          "wrap": true,
+          "size": "Large",
+          "weight": "Bolder",
+          "horizontalAlignment": "Center",
+          "spacing": "None"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "$if": "figures_ok",
+      "do": [
+       {
+        "type": "ColumnSet",
+        "spacing": "Medium",
+        "columns": [
+         {
+          "type": "Column",
+          "width": "auto",
+          "items": [
+           {
+            "type": "Icon",
+            "name": "ShieldCheckmark",
+            "size": "Small",
+            "color": "Default"
+           }
+          ]
+         },
+         {
+          "type": "Column",
+          "width": "stretch",
+          "items": [
+           {
+            "type": "TextBlock",
+            "text": "Figures changed: none. Every figure came from the script.",
+            "wrap": true,
+            "weight": "Bolder"
+           }
+          ]
+         }
+        ]
+       }
+      ],
+      "else": [
+       {
+        "type": "ColumnSet",
+        "spacing": "Medium",
+        "columns": [
+         {
+          "type": "Column",
+          "width": "auto",
+          "items": [
+           {
+            "type": "Icon",
+            "name": "Warning",
+            "size": "Small",
+            "color": "Default"
+           }
+          ]
+         },
+         {
+          "type": "Column",
+          "width": "stretch",
+          "items": [
+           {
+            "type": "TextBlock",
+            "text": "Figures changed: {figures_changed_count}. I will not keep it until this is fixed.",
+            "wrap": true,
+            "weight": "Bolder"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "$for": "figures_changed",
+        "as": "f",
+        "do": [
+         {
+          "type": "TextBlock",
+          "text": "{f.line}: {f.draft} in the draft, {f.source} in the source.",
+          "wrap": true,
+          "size": "Small"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "$if": "different",
+      "do": [
+       {
+        "type": "TextBlock",
+        "text": "Different, and why",
+        "wrap": true,
+        "weight": "Bolder",
+        "spacing": "Medium"
+       },
+       {
+        "$for": "different",
+        "as": "d",
+        "do": [
+         {
+          "type": "ColumnSet",
+          "spacing": "Small",
+          "columns": [
+           {
+            "type": "Column",
+            "width": "auto",
+            "items": [
+             {
+              "type": "Badge",
+              "text": "Different",
+              "appearance": "Tint",
+              "shape": "Rounded",
+              "size": "Medium",
+              "style": "Warning"
+             }
+            ]
+           },
+           {
+            "type": "Column",
+            "width": "stretch",
+            "items": [
+             {
+              "type": "TextBlock",
+              "text": "{d.line}",
+              "wrap": true,
+              "weight": "Bolder",
+              "size": "Small"
+             },
+             {
+              "type": "TextBlock",
+              "text": "{d.reasons_text}",
+              "wrap": true,
+              "isSubtle": true,
+              "size": "Small",
+              "spacing": "None"
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "$if": "missing",
+      "do": [
+       {
+        "type": "TextBlock",
+        "text": "Not covered: {missing_text}.",
+        "wrap": true,
+        "size": "Small",
+        "spacing": "Small"
+       }
+      ]
+     },
+     {
+      "$if": "questions",
+      "do": [
+       {
+        "type": "Accordion",
+        "spacing": "Medium",
+        "pages": [
+         {
+          "type": "AccordionPage",
+          "headerTitle": "Questions it would have drafted, not sent",
+          "headerIconName": "Mail",
+          "isExpanded": false,
+          "items": [
+           {
+            "$for": "questions",
+            "as": "q",
+            "do": [
+             {
+              "type": "TextBlock",
+              "text": "{q.owner}: {q.question}",
+              "wrap": true,
+              "size": "Small"
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "TextBlock",
+      "text": "{verdict_text}",
+      "wrap": true,
+      "isSubtle": true,
+      "size": "Small",
+      "spacing": "Medium"
+     }
+    ]
+   },
+   "questions": [
+    {
+     "$if": "figures_ok",
+     "do": [
+      {
+       "header": "Keep it?",
+       "question": "Keep this skill?",
+       "multiSelect": false,
+       "options": [
+        {
+         "label": "Keep it",
+         "description": "Saved to your skills, ready next conversation"
+        },
+        {
+         "label": "Fix something",
+         "description": "Tell me what to change, then I test again"
+        },
+        {
+         "label": "Try another period",
+         "description": "Test on a different month"
+        }
+       ]
+      }
+     ],
+     "else": [
+      {
+       "header": "Fix first",
+       "question": "A figure changed. What should I do?",
+       "multiSelect": false,
+       "options": [
+        {
+         "label": "Fix the figures",
+         "description": "I find where the figure changed and fix the wording"
+        },
+        {
+         "label": "Try another period",
+         "description": "Test on a different month"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "kept": {
+   "about": "After the skill folders are saved with Cowork's own skill saving.",
+   "required": [
+    "names_text",
+    "run_prompt"
+   ],
+   "card": {
+    "type": "AdaptiveCard",
+    "version": "1.6",
+    "body": [
+     {
+      "type": "ColumnSet",
+      "columns": [
+       {
+        "type": "Column",
+        "width": "auto",
+        "verticalContentAlignment": "Center",
+        "items": [
+         {
+          "type": "Icon",
+          "name": "CheckmarkCircle",
+          "size": "Medium",
+          "color": "Default"
+         }
+        ]
+       },
+       {
+        "type": "Column",
+        "width": "stretch",
+        "items": [
+         {
+          "type": "TextBlock",
+          "text": "Your skill is ready",
+          "wrap": true,
+          "size": "Large",
+          "weight": "Bolder"
+         },
+         {
+          "type": "TextBlock",
+          "text": "From your next conversation.",
+          "wrap": true,
+          "isSubtle": true,
+          "spacing": "None"
+         }
+        ]
+       },
+       {
+        "type": "Column",
+        "width": "auto",
+        "items": [
+         {
+          "type": "Badge",
+          "text": "Kept",
+          "appearance": "Tint",
+          "shape": "Rounded",
+          "size": "Medium",
+          "style": "Good"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "FactSet",
+      "spacing": "Medium",
+      "facts": [
+       {
+        "title": "Saved",
+        "value": "{names_text}"
+       },
+       {
+        "title": "Where",
+        "value": "Your Cowork folder, in skills"
+       },
+       {
+        "title": "How to run it",
+        "value": "Say “{run_prompt}”"
+       },
+       {
+        "title": "Change or share it",
+        "value": "Customize, Skills, then the skill"
+       },
+       {
+        "title": "What it never does",
+        "value": "Send anything, or change a figure"
+       }
+      ]
+     },
+     {
+      "$if": "sample",
+      "do": [
+       {
+        "type": "TextBlock",
+        "text": "Built from the invented sample. To fit your own pack, say “Show me what good looks like” and pick your latest version.",
+        "wrap": true,
+        "isSubtle": true,
+        "size": "Small",
+        "spacing": "Medium"
+       }
+      ]
+     }
+    ]
+   },
+   "questions": [
+    {
+     "header": "Next step",
+     "question": "What next?",
+     "multiSelect": false,
+     "options": [
+      {
+       "label": "Is it worth it?",
+       "description": "The measure that moves, cash and running cost"
+      },
+      {
+       "label": "Put it on a rhythm",
+       "description": "Run it on a schedule or when an email arrives"
+      },
+      {
+       "label": "Show me the next one",
+       "description": "Another thing I could make for you"
+      }
+     ]
+    }
+   ]
+  },
+  "proposal": {
+   "about": "Something else: what I would build from the person's own document or description.",
+   "required": [
+    "doc_title",
+    "closest",
+    "main_name",
+    "helpers_text",
+    "lines"
+   ],
+   "card": {
+    "type": "AdaptiveCard",
+    "version": "1.6",
+    "body": [
+     {
+      "type": "ColumnSet",
+      "columns": [
+       {
+        "type": "Column",
+        "width": "auto",
+        "verticalContentAlignment": "Center",
+        "items": [
+         {
+          "type": "Icon",
+          "name": "Lightbulb",
+          "size": "Medium",
+          "color": "Default"
+         }
+        ]
+       },
+       {
+        "type": "Column",
+        "width": "stretch",
+        "items": [
+         {
+          "type": "TextBlock",
+          "text": "Here is what I would build",
+          "wrap": true,
+          "size": "Large",
+          "weight": "Bolder"
+         },
+         {
+          "type": "TextBlock",
+          "text": "From your {doc_title}",
+          "wrap": true,
+          "isSubtle": true,
+          "spacing": "None"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "FactSet",
+      "spacing": "Medium",
+      "facts": [
+       {
+        "title": "Closest recipe",
+        "value": "{closest}"
+       },
+       {
+        "title": "Main skill",
+        "value": "{main_name}"
+       },
+       {
+        "title": "Helper skills",
+        "value": "{helpers_text}"
+       },
+       {
+        "title": "Every figure",
+        "value": "From a script, never typed by hand"
+       },
+       {
+        "title": "Sends",
+        "value": "Nothing"
+       }
+      ]
+     },
+     {
+      "$for": "lines",
+      "as": "line",
+      "$limit": 3,
+      "do": [
+       {
+        "type": "ColumnSet",
+        "spacing": "Small",
+        "columns": [
+         {
+          "type": "Column",
+          "width": "auto",
+          "items": [
+           {
+            "type": "Icon",
+            "name": "CheckmarkCircle",
+            "size": "Small",
+            "color": "Default"
+           }
+          ]
+         },
+         {
+          "type": "Column",
+          "width": "stretch",
+          "items": [
+           {
+            "type": "TextBlock",
+            "text": "{line}",
+            "wrap": true,
+            "size": "Small"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "questions": [
+    {
+     "header": "Your call",
+     "question": "Would you like this?",
+     "multiSelect": false,
+     "options": [
+      {
+       "label": "Yes, make it mine",
+       "description": "I learn from your example, then build it"
+      },
+      {
+       "label": "Change something",
+       "description": "Tell me what to change first"
+      },
+      {
+       "label": "Not now",
+       "description": "Nothing is built or kept"
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

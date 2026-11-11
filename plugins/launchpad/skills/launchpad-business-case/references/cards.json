@@ -1,0 +1,482 @@
+{
+ "name": "Card templates for launchpad-business-case",
+ "version": "2.0.0",
+ "picture_prefix": "https://scott-adams.ai/cowork-cookbook/docs/assets/",
+ "icons": [
+  "Apps",
+  "ArrowRight",
+  "ArrowSync",
+  "Book",
+  "BuildingBank",
+  "Calendar",
+  "CalendarLtr",
+  "CheckmarkCircle",
+  "Circle",
+  "ClipboardTask",
+  "Clock",
+  "DataBarVertical",
+  "Delete",
+  "DocumentBulletList",
+  "DocumentText",
+  "Edit",
+  "Eye",
+  "Flash",
+  "Info",
+  "Lightbulb",
+  "Mail",
+  "Money",
+  "Open",
+  "People",
+  "Person",
+  "QuestionCircle",
+  "Rocket",
+  "Save",
+  "Search",
+  "ShieldCheckmark",
+  "Sparkle",
+  "Table",
+  "Target",
+  "TaskListLtr",
+  "Warning",
+  "Wrench"
+ ],
+ "pictures": {
+  "banner": {
+   "url": "https://scott-adams.ai/cowork-cookbook/docs/assets/v2/launchpad-welcome-banner-mono.png",
+   "alt": "Launchpad for Cowork banner"
+  },
+  "menu": {
+   "url": "https://scott-adams.ai/cowork-cookbook/docs/assets/v2/launchpad-picture-menu-mono.png",
+   "alt": "What I could make for you: variance commentary, budget round app, MBR brief and committee paper"
+  },
+  "variance": {
+   "url": "https://scott-adams.ai/cowork-cookbook/docs/assets/v1/launchpad-variance-commentary-example.png",
+   "alt": "Example: October variance commentary, a draft for review with an evidence status on every material line and two questions drafted for owners, not sent"
+  },
+  "budget_app": {
+   "url": "https://scott-adams.ai/cowork-cookbook/docs/assets/v1/launchpad-budget-round-app-mock.png",
+   "alt": "Example app: a budget round with tiles for submitted, in review, overdue and gap to target, and a table of cost centres by owner and status"
+  },
+  "mbr": {
+   "url": "https://scott-adams.ai/cowork-cookbook/docs/assets/v2/launchpad-mbr-brief-example.png",
+   "alt": "Example: one-page MBR brief for November, with what moved since last month, questions for each business and open actions from last time"
+  },
+  "committee": {
+   "url": "https://scott-adams.ai/cowork-cookbook/docs/assets/v2/launchpad-committee-paper-example.png",
+   "alt": "Example: committee paper front sheet with decision sought, recommendation, risks and next steps, beside a coaching review with one mandatory and two recommended findings"
+  }
+ },
+ "templates": {
+  "sizing_questions": {
+   "about": "Question only: the four sizing questions in one question card.",
+   "required": [],
+   "questions": [
+    {
+     "header": "How often",
+     "question": "How often do you produce it?",
+     "multiSelect": false,
+     "options": [
+      {
+       "label": "Weekly",
+       "description": "About 52 times a year"
+      },
+      {
+       "label": "Monthly",
+       "description": "12 times a year"
+      },
+      {
+       "label": "Quarterly",
+       "description": "Four times a year"
+      }
+     ]
+    },
+    {
+     "header": "People",
+     "question": "How many people touch it?",
+     "multiSelect": false,
+     "options": [
+      {
+       "label": "1 to 2",
+       "description": "You and perhaps one other"
+      },
+      {
+       "label": "3 to 5",
+       "description": "A small team"
+      },
+      {
+       "label": "6 or more",
+       "description": "Several teams or reviewers"
+      }
+     ]
+    },
+    {
+     "header": "If late",
+     "question": "What happens when it is late or wrong?",
+     "multiSelect": true,
+     "options": [
+      {
+       "label": "Rework rounds",
+       "description": "It goes round again before it is accepted"
+      },
+      {
+       "label": "Contractors or overtime",
+       "description": "Extra paid help to get it done"
+      },
+      {
+       "label": "Missed deadlines",
+       "description": "It lands after it was needed"
+      },
+      {
+       "label": "Questions from the board or a regulator",
+       "description": "Hard questions about what it says"
+      }
+     ]
+    },
+    {
+     "header": "Spend",
+     "question": "Any outside spend that could stop if this ran well? Optional, for example US$30,000 a year on contractors.",
+     "options": []
+    }
+   ]
+  },
+  "case": {
+   "about": "The case card. Merge case.py output.",
+   "required": [
+    "recipe_title",
+    "measure_headline",
+    "cash_text",
+    "cost_text",
+    "net_text",
+    "told",
+    "working",
+    "assumptions",
+    "cost_badge"
+   ],
+   "card": {
+    "type": "AdaptiveCard",
+    "version": "1.6",
+    "body": [
+     {
+      "type": "ColumnSet",
+      "columns": [
+       {
+        "type": "Column",
+        "width": "auto",
+        "verticalContentAlignment": "Center",
+        "items": [
+         {
+          "type": "Icon",
+          "name": "DataBarVertical",
+          "size": "Medium",
+          "color": "Default"
+         }
+        ]
+       },
+       {
+        "type": "Column",
+        "width": "stretch",
+        "items": [
+         {
+          "type": "TextBlock",
+          "text": "Is it worth it?",
+          "wrap": true,
+          "size": "Large",
+          "weight": "Bolder"
+         },
+         {
+          "type": "TextBlock",
+          "text": "{recipe_title}. Worked out by a script, with every assumption stated.",
+          "wrap": true,
+          "isSubtle": true,
+          "spacing": "None"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "Container",
+      "spacing": "Medium",
+      "items": [
+       {
+        "type": "TextBlock",
+        "text": "The measure that moves",
+        "wrap": true,
+        "isSubtle": true,
+        "size": "Small"
+       },
+       {
+        "type": "TextBlock",
+        "text": "{measure_headline}",
+        "wrap": true,
+        "size": "Medium",
+        "weight": "Bolder",
+        "spacing": "None"
+       },
+       {
+        "$if": "measure_also",
+        "do": [
+         {
+          "type": "TextBlock",
+          "text": "Also watch: {measure_also}",
+          "wrap": true,
+          "size": "Small",
+          "spacing": "Small"
+         }
+        ]
+       },
+       {
+        "type": "TextBlock",
+        "text": "{measure_why}",
+        "wrap": true,
+        "isSubtle": true,
+        "size": "Small",
+        "spacing": "Small"
+       }
+      ]
+     },
+     {
+      "type": "Table",
+      "firstRowAsHeaders": true,
+      "showGridLines": true,
+      "spacing": "Medium",
+      "columns": [
+       {
+        "width": 40
+       },
+       {
+        "width": 60
+       }
+      ],
+      "rows": [
+       {
+        "type": "TableRow",
+        "cells": [
+         {
+          "type": "TableCell",
+          "items": [
+           {
+            "type": "TextBlock",
+            "text": "Money",
+            "wrap": true,
+            "size": "Small",
+            "weight": "Bolder"
+           }
+          ]
+         },
+         {
+          "type": "TableCell",
+          "items": [
+           {
+            "type": "TextBlock",
+            "text": "A year",
+            "wrap": true,
+            "size": "Small",
+            "weight": "Bolder"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "type": "TableRow",
+        "cells": [
+         {
+          "type": "TableCell",
+          "items": [
+           {
+            "type": "TextBlock",
+            "text": "Cash that can stop",
+            "wrap": true,
+            "size": "Small"
+           }
+          ]
+         },
+         {
+          "type": "TableCell",
+          "items": [
+           {
+            "type": "TextBlock",
+            "text": "{cash_text}",
+            "wrap": true,
+            "size": "Small"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "type": "TableRow",
+        "cells": [
+         {
+          "type": "TableCell",
+          "items": [
+           {
+            "type": "TextBlock",
+            "text": "Cowork running cost",
+            "wrap": true,
+            "size": "Small"
+           }
+          ]
+         },
+         {
+          "type": "TableCell",
+          "items": [
+           {
+            "type": "TextBlock",
+            "text": "{cost_text}",
+            "wrap": true,
+            "size": "Small"
+           },
+           {
+            "type": "Badge",
+            "text": "{cost_badge}",
+            "appearance": "Tint",
+            "shape": "Rounded",
+            "size": "Medium",
+            "style": "Default"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "type": "TableRow",
+        "cells": [
+         {
+          "type": "TableCell",
+          "items": [
+           {
+            "type": "TextBlock",
+            "text": "Net a year",
+            "wrap": true,
+            "size": "Small",
+            "weight": "Bolder"
+           }
+          ]
+         },
+         {
+          "type": "TableCell",
+          "items": [
+           {
+            "type": "TextBlock",
+            "text": "{net_text}",
+            "wrap": true,
+            "size": "Small",
+            "weight": "Bolder"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "FactSet",
+      "spacing": "Medium",
+      "facts": [
+       {
+        "$for": "told",
+        "as": "f",
+        "do": [
+         {
+          "title": "{f.title}",
+          "value": "{f.value}"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "Accordion",
+      "spacing": "Medium",
+      "pages": [
+       {
+        "type": "AccordionPage",
+        "headerTitle": "How this is worked out",
+        "headerIconName": "Wrench",
+        "isExpanded": false,
+        "items": [
+         {
+          "$for": "working",
+          "as": "w",
+          "do": [
+           {
+            "type": "TextBlock",
+            "text": "{w}",
+            "wrap": true,
+            "size": "Small"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "type": "AccordionPage",
+        "headerTitle": "Assumptions",
+        "headerIconName": "Info",
+        "isExpanded": false,
+        "items": [
+         {
+          "$for": "assumptions",
+          "as": "a",
+          "do": [
+           {
+            "type": "TextBlock",
+            "text": "{a}",
+            "wrap": true,
+            "size": "Small"
+           }
+          ]
+         },
+         {
+          "$for": "notes",
+          "as": "n",
+          "do": [
+           {
+            "type": "TextBlock",
+            "text": "{n}",
+            "wrap": true,
+            "size": "Small",
+            "isSubtle": true
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "type": "TextBlock",
+      "text": "Cash appears only where real spend can stop. Time is never turned into money.",
+      "wrap": true,
+      "isSubtle": true,
+      "size": "Small",
+      "spacing": "Small"
+     }
+    ]
+   },
+   "questions": [
+    {
+     "header": "Next step",
+     "question": "What would you like to do?",
+     "multiSelect": false,
+     "options": [
+      {
+       "label": "Draft the full brief",
+       "description": "A Word brief for your manager, working shown"
+      },
+      {
+       "label": "Change an answer",
+       "description": "Work it out again with new answers"
+      },
+      {
+       "label": "Not now",
+       "description": "Nothing is drafted or kept"
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

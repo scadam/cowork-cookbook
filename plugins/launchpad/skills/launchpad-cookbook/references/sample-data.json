@@ -1,0 +1,97 @@
+{
+  "label": "Invented sample data",
+  "about": "Invented variance data for Contoso Asset Management, a fictional company. Every figure, owner and explanation is made up. Used for the sample route and to check the scripts.",
+  "recipe": "variance-commentary",
+  "entity": "Contoso Asset Management",
+  "unit": "US$m",
+  "current": "October 2026",
+  "test_period": "September 2026",
+  "periods": {
+    "October 2026": {
+      "entity": "Contoso Asset Management",
+      "period": "October 2026",
+      "unit": "US$m",
+      "threshold": 3.0,
+      "control_totals": {"income_actual": 470.2, "income_budget": 468.1, "cost_actual": 250.3, "cost_budget": 248.0},
+      "lines": [
+        {"line": "Base fees", "type": "income", "actual": 412.6, "budget": 405.0, "owner": "Distribution finance partner",
+         "explanation": {"text": "Average assets under management were 1.9% above budget after net inflows into fixed income funds.",
+                         "status": "Supported", "evidence": "October assets under management report: average assets 1.9% above budget."}},
+        {"line": "Performance fees", "type": "income", "actual": 18.2, "budget": 25.0, "owner": "Investment finance partner",
+         "explanation": {"text": "Two equity strategies finished the period below their hurdle rates.",
+                         "status": "Partly supported",
+                         "evidence": "October fund performance report shows one equity strategy below its hurdle rate; a second is not named.",
+                         "gap": "The fund performance report shows one equity strategy below its hurdle rate. Which second strategy finished below its hurdle, and what was its fee impact?"}},
+        {"line": "Technology services", "type": "income", "actual": 39.4, "budget": 38.1, "owner": "Technology finance partner",
+         "explanation": {"text": "Two new platform clients went live in October.", "status": "Supported",
+                         "evidence": "Client onboarding log for October."}},
+        {"line": "Compensation", "type": "cost", "actual": 201.4, "budget": 196.0, "owner": "People costs finance partner",
+         "explanation": {"text": "", "status": "Awaiting owner", "asked_on": "Tue 3 Nov"}},
+        {"line": "General and administration", "type": "cost", "actual": 48.9, "budget": 52.0, "owner": "Operations finance partner",
+         "explanation": {"text": "Professional fees were lower because two projects were deferred.", "status": "Not supported",
+                         "evidence": "The ledger shows professional fees on budget; the underspend sits in premises costs.",
+                         "gap": "The ledger shows professional fees on budget and the underspend in premises costs. What drove the 3.1 underspend?"}}
+      ]
+    },
+    "September 2026": {
+      "entity": "Contoso Asset Management",
+      "period": "September 2026",
+      "unit": "US$m",
+      "threshold": 3.0,
+      "control_totals": {"income_actual": 461.4, "income_budget": 458.3, "cost_actual": 251.3, "cost_budget": 248.0},
+      "lines": [
+        {"line": "Base fees", "type": "income", "actual": 401.3, "budget": 395.2, "owner": "Distribution finance partner",
+         "explanation": {"text": "Average assets under management were higher after net inflows into fixed income funds.",
+                         "status": "Supported", "evidence": "September assets under management report."}},
+        {"line": "Performance fees", "type": "income", "actual": 21.6, "budget": 25.0, "owner": "Investment finance partner",
+         "explanation": {"text": "One equity strategy finished below its hurdle rate.", "status": "Supported",
+                         "evidence": "September fund performance report."}},
+        {"line": "Technology services", "type": "income", "actual": 38.5, "budget": 38.1, "owner": "Technology finance partner",
+         "explanation": {"text": "In line with plan.", "status": "Supported", "evidence": "Client billing summary."}},
+        {"line": "Compensation", "type": "cost", "actual": 200.2, "budget": 196.0, "owner": "People costs finance partner",
+         "explanation": {"text": "The annual pay award was paid in September but budgeted for October.", "status": "Supported",
+                         "evidence": "September payroll journal summary."}},
+        {"line": "General and administration", "type": "cost", "actual": 51.1, "budget": 52.0, "owner": "Operations finance partner",
+         "explanation": {"text": "In line with plan.", "status": "Supported", "evidence": "Ledger detail."}}
+      ],
+      "approved_commentary": {
+        "period": "September 2026",
+        "source": "The commentary that was sent (invented sample)",
+        "lines": [
+          {"line": "Base fees", "figure": 6.1, "status": "Supported",
+           "text": "Base fees: 6.1 above budget. Average assets under management were higher after net inflows into fixed income funds. Source: September assets under management report."},
+          {"line": "Performance fees", "figure": -3.4, "status": "Supported",
+           "text": "Performance fees: 3.4 below budget. One equity strategy finished below its hurdle rate. Source: September fund performance report."},
+          {"line": "Compensation", "figure": -4.2, "status": "Supported",
+           "text": "Compensation: 4.2 above budget. The annual pay award was paid in September but budgeted for October. Source: September payroll journal summary."}
+        ],
+        "questions": []
+      }
+    }
+  },
+  "house_style": {
+    "document_title": "Monthly management pack",
+    "skill_name": "monthly-variance-commentary",
+    "audience": "the Chief Financial Officer and the executive committee",
+    "cadence": "monthly",
+    "sections": ["Headline", "Revenue", "Costs", "Lines not commented", "Sign-off"],
+    "tone": "One entry per material line: the line, the figure against budget, the driver in one sentence, then the source. US$m to one decimal place. Say above or below budget, never favourable or adverse.",
+    "threshold": "Comment on lines at or above US$3m against budget.",
+    "template": "A headline paragraph, then Revenue and Costs, then one line saying smaller lines are not commented, then the sign-off.",
+    "sign_off": "Prepared by FP&A. Reviewed by the Financial Controller.",
+    "owners": ["Distribution finance partner", "Investment finance partner", "Technology finance partner", "People costs finance partner", "Operations finance partner"],
+    "inputs": ["Locked-period ledger extract", "Approved budget", "Explanations from budget owners", "Last month's pack"],
+    "example_lines": [
+      "Base fees: 6.1 above budget. Average assets under management were higher after net inflows into fixed income funds. Source: September assets under management report."
+    ],
+    "learned_from": "September 2026 commentary (invented sample)"
+  },
+  "pack_template": [
+    "1. Summary and headline",
+    "2. Income statement against budget",
+    "3. Variance commentary",
+    "4. Open questions",
+    "5. Sources and sign-off"
+  ],
+  "prior_month_commentary": "Contoso Asset Management: September 2026 management commentary (US$m)\n\nHeadline\nThe result was 0.2 below budget. Fee income was ahead on higher assets under management; compensation was above budget because the pay award was paid early.\n\nRevenue\nBase fees: 6.1 above budget. Average assets under management were higher after net inflows into fixed income funds. Source: September assets under management report.\nPerformance fees: 3.4 below budget. One equity strategy finished below its hurdle rate. Source: September fund performance report.\n\nCosts\nCompensation: 4.2 above budget. The annual pay award was paid in September but budgeted for October. Source: September payroll journal summary.\n\nLines below US$3m are not commented.\n\nPrepared by FP&A. Reviewed by the Financial Controller."
+}
