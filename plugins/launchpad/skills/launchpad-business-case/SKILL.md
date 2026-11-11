@@ -12,7 +12,7 @@ description: >-
 metadata:
   category: analysis
   icon: DataBarVertical
-  version: "2.1.1"
+  version: "2.2.0"
 ---
 
 # Launchpad: is it worth it?

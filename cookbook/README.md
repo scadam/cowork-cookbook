@@ -1,4 +1,10 @@
-# Recipes
+# The Cowork Cookbook
+
+- **Recipes** (`recipes/`): pieces of recurring work written in full, with a skill starting point, an example, sample data and the business-case questions.
+- **Financial services** (`financial-services.md`): hand-written entries, each with what you get, what changes and a short film where there is one.
+- **The cookbook by industry** (`industries/`): kinds of work by industry, with examples and the roles that do them.
+
+## Recipes
 
 Each recipe is one piece of recurring work, written so that Cowork starts from a proven design rather than a blank page.
 
@@ -16,3 +22,7 @@ Each recipe is one piece of recurring work, written so that Cowork starts from a
 - Figures in examples and sample data are invented, and say so.
 - Office files and PDFs carry no sensitivity labels.
 - A recipe's skill stays within 19 companion files, 5 MB per file and 10 MB in total.
+
+## The cookbook by industry
+
+Launchpad for Cowork reads the same cookbook from inside the plugin and picks what to show from the person's role, industry and country. Nothing about other organisations is shown or counted.

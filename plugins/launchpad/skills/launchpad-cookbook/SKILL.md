@@ -14,7 +14,7 @@ description: >-
 metadata:
   category: productivity
   icon: Book
-  version: "2.1.1"
+  version: "2.2.0"
 ---
 
 # Launchpad: the cookbook
@@ -60,7 +60,8 @@ mkdir -p working/launchpad
 ```
 Use full paths in every command. To show a card: write the data to `working/launchpad/<step>.json`,
 run `python3 <skill>/scripts/cards.py build <template> --data <file> [--merge <script output>]`,
-fix any errors in the data, then call `render_ui` with the returned card exactly (its `type`,
+fix any errors in the data (the person's own words, such as their document's own title or what they
+typed, go in `theirs` in the data or `working/launchpad/theirs.json` and are shown as they wrote them), then call `render_ui` with the returned card exactly (its `type`,
 `version` and `body`) and, in the same reply, `AskUserQuestion` with the returned `questions`.
 Templates: `offer`, `would_you_like`, `app_mockup`, `good_looks_like`, `building`, `test_result`,
 `kept`, `proposal`.
@@ -174,18 +175,20 @@ keep it, and hand over to launchpad-routines for Fridays.
 ### From the wider cookbook: film, value, co-develop
 Use this for a choice from "People like you" (a `catalogue` id in choices.json), when the person asks what others do, and when rank.py says the recipes are `exhausted`.
 
-1. No id yet: run `python3 <skill>/scripts/catalogue.py people` with the options in its help (role, sector, their words, `--patterns`, `--signals`, `--exclude`). Show its `card` and `questions` unchanged.
+1. No id yet: run `python3 <skill>/scripts/catalogue.py people` with the options in its help (`--role`, `--industry`, `--region`, `--said`, `--patterns`, `--signals`, `--exclude`). Industry and region come as in launchpad-start; `catalogue.py industries` lists the industry names. Show its `card` and `questions` unchanged.
 2. For the chosen id: `python3 <skill>/scripts/catalogue.py entry --id <id> --out working/launchpad/entry.json`. Show its `card` and `questions` unchanged. The card carries the film link, what they would get, what changes, what to measure and where money can come from. Never add figures of your own, and never say how many other organisations do this.
 3. **Co-develop it:**
    - If `design.caution` is set, say it before reading anything.
    - If `design.recipe` is set, continue at step 2 ("Would you like this?") for that recipe.
-   - Otherwise continue at step 3 ("Show me what good looks like"), then build with `--recipe generic` as in "Something else" below, using `design` in place of the person's description: its inputs, outputs, checks and who decides become the skill's sections. Test and keep as usual.
+   - If `design.kind` is `routine`, hand over to launchpad-routines with the design.
+   - Otherwise continue at step 3 ("Show me what good looks like"), then build with `--recipe generic` as in "Something else" below, using `design` in place of the person's description: its inputs, outputs, checks, who decides and `steps` become the skill's sections. Test and keep as usual.
 4. **Show me another:** run step 1 again with `--exclude` set to the ids already shown.
 
 ### Something else
 Accept a document (fresh OK to read that one file), a picture of a page, or a description. Run
-`rank.py --said "<their words>"`. If a recipe matches, use it; if none does, use
-`--recipe generic`. Build `proposal` (closest recipe or "None, so I use the general pattern", the
+`rank.py --said "<their words>"`. If a recipe matches, use it; if none does, run
+`catalogue.py find --said "<their words>" [--industry ...] [--role ...]`, take the closest entry's
+`design` from `catalogue.py entry --id <id>` as the starting shape, and use `--recipe generic`. Build `proposal` (closest recipe or "None, so I use the general pattern", the
 main skill name, helpers, three lines on what it does), then steps 3 to 6.
 
 ## Is it worth making into a skill?

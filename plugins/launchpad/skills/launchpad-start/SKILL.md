@@ -5,14 +5,15 @@ description: >-
   asks the person's OK, then looks only at meeting titles, sent-mail subjects and file names to
   show "Is this your work?" and suggest what Cowork could make, and keeps a profile only with OK.
   Use when someone says "Get me started", "Get me started with Cowork", "Onboard me", "I'm new to
-  Cowork", "What can Cowork do for me?", "Where do I start?", "What do people like me do with Cowork?" or "Start Launchpad", and for "Show my
+  Cowork", "What can Cowork do for me?", "Where do I start?", "What do people like me do with Cowork?",
+  "What do people in my industry do with Cowork?" or "Start Launchpad", and for "Show my
   Launchpad profile", "Change my profile" or "Forget my profile". Do not use for a specific piece of
   work (use launchpad-cookbook instead), for routines or schedules (use launchpad-routines instead)
   or for how-to questions about Cowork (use launchpad-how-do-i instead).
 metadata:
   category: productivity
   icon: Rocket
-  version: "2.1.1"
+  version: "2.2.0"
 ---
 
 # Launchpad: get started
@@ -71,6 +72,10 @@ mkdir -p working/launchpad
 2. Run `python3 <skill>/scripts/cards.py build <template> --data <file> [--merge <script output>]`.
    `--merge` adds a script's output on top, so every number comes from a script.
 3. If it prints errors, fix the data and run it again. Never edit the card JSON by hand.
+   The person's own words (their titles, their role and what they typed) are shown as they wrote
+   them: signals.py and patterns.py keep them in `working/launchpad/theirs.json`, and anything else of
+   theirs that you show (a word they typed, a document's own title) goes in `theirs` in the data. The
+   checks then apply only to your own wording.
 4. Call `render_ui` with the returned card exactly: its `type`, `version` and `body`.
 5. In the same reply, call `AskUserQuestion` with the returned `questions` exactly.
    Question-only templates (`ask_me`, `profile_delete_confirm`) skip `render_ui`.
@@ -143,17 +148,18 @@ offers up to four suggestions ranked by rank.py; free text covers anything else.
 - Record the chosen suggestions (their `recipe` ids, and `signal` for your own work) in choices.json.
 
 ### 3b. "People like you"
-Their own work may not light the flame, so follow "Is this your work?" with what people in roles like theirs do with Cowork. Show it when they pick nothing, say "keep looking" or ask what other people do, and offer it in one line after they pick ("Say 'show me what people like me do' at any time").
+Their own work may not light the flame, so follow "Is this your work?" with what people in roles like theirs, in their industry, do with Cowork. Show it when they pick nothing, say "keep looking" or ask what other people do, and offer it in one line after they pick ("Say 'show me what people like me do' at any time").
 
 ```bash
 python3 <skill>/scripts/catalogue.py people --role "<their role, in their words>" \
-  [--sector banking|capital-markets|asset-wealth|insurance|payments] \
+  [--industry "<their industry or kind of organisation, in plain words>"] [--region "<their country>"] \
   [--patterns working/launchpad/patterns.json] [--signals working/launchpad/signals.json] \
   [--said "<their words>"] [--exclude id,id] --out working/launchpad/people.json
 ```
 
 Show the returned `card` with `render_ui` and the returned `questions` with `AskUserQuestion`, both unchanged. Each entry shows what they would get, what changes, a short film where there is one, and "Why you" from their own titles when their work matches.
-- Role and sector come from what the person said or from titles already read. If the sector is unknown, leave it out. Do not read more to find it.
+- Role comes from their profile or what they said. Industry comes from what they said, from their organisation when it is well known (an asset manager, a water utility, a bank), or from titles already read; `catalogue.py industries` lists the names it knows. Region comes from their profile's country or time zone. Leave out anything unknown. Do not read more to find it.
+- The cookbook covers financial services in depth and every other industry by role. If `industry` comes back empty, the card shows work that suits any organisation.
 - Never say how many other organisations do something, and never name one.
 - When they pick one, find its id in `labels`, record it in choices.json as `catalogue` and load launchpad-cookbook, which shows the film and the value and offers to co-develop it.
 - "Keep looking": run it again with `--exclude` set to the ids already shown.

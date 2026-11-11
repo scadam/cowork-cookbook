@@ -267,7 +267,65 @@ def expand(node, ctx: dict, where: str, probs: Problems):
 
 
 # ---------------------------------------------------------------- checking
+# ---------------------------------------------------------------- the person's own words
+# Titles, file names, the role the person gave and what they typed are shown as they wrote them.
+# The wording rules are for what Launchpad writes, so the person's own words are set aside first.
+THEIRS: list = []
+THEIRS_FILE = Path("working/launchpad/theirs.json")
+THEIR_KEYS = ("theirs", "role", "industry", "their_words")
+
+
+def set_theirs(values) -> None:
+    """Remember the person's own words (strings, lists or dicts of them, nested)."""
+    global THEIRS
+    found = set()
+
+    def walk(v):
+        if isinstance(v, str):
+            v = re.sub(r"\s+", " ", v).strip()
+            if len(v) >= 3 and re.search(r"[A-Za-z0-9]", v):
+                found.add(v)
+        elif isinstance(v, (list, tuple, set)):
+            for x in v:
+                walk(x)
+        elif isinstance(v, dict):
+            for x in v.values():
+                walk(x)
+    walk(values)
+    THEIRS = sorted(found, key=len, reverse=True)
+
+
+def theirs_in(data) -> list:
+    """The parts of card data that are the person's own words."""
+    out = []
+    if isinstance(data, dict):
+        for key in THEIR_KEYS:
+            if key in data:
+                out.append(data[key])
+        draft = data.get("profile_draft")
+        if isinstance(draft, dict):
+            out.append(draft.get("role"))
+    return out
+
+
+def saved_theirs() -> list:
+    try:
+        return [json.loads(THEIRS_FILE.read_text(encoding="utf-8"))] if THEIRS_FILE.exists() else []
+    except (OSError, ValueError):
+        return []
+
+
+def without_theirs(text: str) -> str:
+    low = text.lower()
+    for v in THEIRS:
+        if v.lower() in low:
+            text = re.sub(re.escape(v), " ", text, flags=re.I)
+            low = text.lower()
+    return text
+
+
 def check_text(where: str, text: str, probs: Problems) -> None:
+    text = without_theirs(text)
     for pattern, why in HYGIENE:
         m = pattern.search(text)
         if m:
@@ -624,9 +682,13 @@ def main(argv=None) -> int:
     b.add_argument("--data", help="JSON data file (default: stdin)")
     b.add_argument("--merge", action="append", default=[],
                    help="more JSON files merged on top, in order (for script outputs)")
+    b.add_argument("--theirs", action="append", default=[],
+                   help="JSON file of the person's own words, shown as they wrote them")
     c = sub.add_parser("check", help="check a card (and questions) built elsewhere")
     c.add_argument("card")
     c.add_argument("--questions")
+    c.add_argument("--theirs", action="append", default=[],
+                   help="JSON file of the person's own words, shown as they wrote them")
     args = parser.parse_args(argv)
 
     try:
@@ -642,6 +704,7 @@ def main(argv=None) -> int:
     if args.cmd == "check":
         probs = Problems()
         try:
+            set_theirs(saved_theirs() + [read_json(f) for f in args.theirs])
             card = read_json(args.card)
             check_card(card, config(templates), probs)
             if args.questions:
@@ -659,6 +722,7 @@ def main(argv=None) -> int:
             if not isinstance(more, dict):
                 raise ValueError(f"{extra} must hold a JSON object")
             data.update(more)
+        set_theirs(saved_theirs() + [read_json(f) for f in args.theirs] + theirs_in(data))
     except (OSError, ValueError) as exc:
         return emit({"errors": [f"cannot read data: {exc}"]}, 1)
     result, probs = build(args.template, data, templates)

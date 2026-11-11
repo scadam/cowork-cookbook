@@ -13,7 +13,7 @@ description: >-
 metadata:
   category: productivity
   icon: CalendarLtr
-  version: "2.1.1"
+  version: "2.2.0"
 ---
 
 # Launchpad: my priorities and my day

@@ -143,9 +143,22 @@ def build(disc: dict) -> dict:
             "fit": "Strong fit" if passed == 3 else "Good fit" if passed == 2 else "Ask first",
             "points": points, "text": key + " " + " ".join(n.lower() for n in names)})
     patterns.sort(key=lambda p: -p["points"])
+    theirs = sorted({p["work"] for p in patterns[:8]} | {p["signs"]["meeting"] for p in patterns[:8] if p["signs"]["meeting"]})
     return {"as_of": disc.get("as_of"), "sample": bool(disc.get("sample")),
             "source_line": "From file names, meeting titles and counts only. Nothing was opened.",
-            "left_out": skipped, "patterns": patterns[:8]}
+            "left_out": skipped, "patterns": patterns[:8], "theirs": theirs}
+
+
+def save_theirs(out_path: str, words) -> None:
+    """Keep the person's own words beside the result, so the card checker shows them as they wrote them."""
+    path = Path(out_path).resolve().parent / "theirs.json"
+    have = []
+    try:
+        have = json.loads(path.read_text(encoding="utf-8")) if path.exists() else []
+    except (OSError, ValueError):
+        have = []
+    merged = sorted({w for w in list(have if isinstance(have, list) else []) + list(words) if isinstance(w, str) and w.strip()})
+    path.write_text(json.dumps(merged, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
 
 
 def main(argv=None) -> int:
@@ -158,9 +171,11 @@ def main(argv=None) -> int:
     except (OSError, ValueError) as exc:
         print(json.dumps({"errors": [f"could not read the look file: {exc}"]}))
         return 1
-    out = json.dumps(build(disc), ensure_ascii=False, indent=1)
+    result = build(disc)
+    out = json.dumps(result, ensure_ascii=False, indent=1)
     if a.out:
         Path(a.out).write_text(out + "\n", encoding="utf-8")
+        save_theirs(a.out, result.get("theirs", []))
     print(out)
     return 0
 

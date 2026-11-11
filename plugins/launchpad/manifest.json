@@ -1,7 +1,7 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/teams/v1.29/MicrosoftTeams.schema.json",
   "manifestVersion": "1.29",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "id": "ea8e58e9-fdf8-4ee7-afc2-acd724ab540f",
   "developer": {
     "name": "Cowork and Agents GBB",

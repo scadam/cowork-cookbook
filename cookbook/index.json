@@ -1,124 +1,142 @@
 {
-  "version": "0.2.0",
-  "as_of": "2026-11-11",
-  "picture_base": "https://scott-adams.ai/cowork-cookbook/docs/assets/",
-  "recipes": [
-    {
-      "id": "variance-commentary",
-      "title": "Month-end variance commentary",
-      "function": "Finance",
-      "kind_of_work": "Finance, accounting & reporting",
-      "for_whom": [
-        "Finance director",
-        "FP&A manager",
-        "Financial controller"
-      ],
-      "job_to_be_done": "As someone who closes the month, I want a sourced first draft of the variance commentary so that review starts from evidence rather than a blank page.",
-      "signals": {
-        "file_names": [
-          "variance",
-          "flux",
-          "month-end pack",
-          "management accounts"
-        ],
-        "meeting_titles": [
-          "month-end close",
-          "close review"
-        ],
-        "email_subjects": [
-          "variance",
-          "commentary",
-          "close"
-        ]
-      },
-      "makes": "skill",
-      "output": "Commentary in the house template. Every statement has a source and an evidence status. Questions to owners are drafted, not sent.",
-      "preview_picture": "v1/launchpad-variance-commentary-example.png",
-      "pack": "recipes/variance-commentary/"
-    },
-    {
-      "id": "budget-round-app",
-      "title": "Budget round app",
-      "function": "Finance",
-      "kind_of_work": "Finance, accounting & reporting",
-      "for_whom": [
-        "Finance director",
-        "FP&A manager"
-      ],
-      "job_to_be_done": "As someone running the budget round, I want each owner to update their own line so that I can see who is late without chasing anyone.",
-      "signals": {
-        "file_names": [
-          "budget submissions",
-          "tracker",
-          "status"
-        ],
-        "email_subjects": [
-          "status",
-          "chaser",
-          "reminder",
-          "overdue"
-        ],
-        "other": [
-          "a spreadsheet edited by many people",
-          "several copies of the same tracker"
-        ]
-      },
-      "makes": "app",
-      "output": "An app built from the tracker's own columns, plus a weekly routine that drafts the summary.",
-      "preview_picture": "v1/launchpad-budget-round-app-mock.png",
-      "pack": "recipes/budget-round-app/"
-    },
-    {
-      "id": "mbr-brief",
-      "title": "Monthly business review brief",
-      "function": "Finance",
-      "kind_of_work": "Executive, board & governance",
-      "for_whom": [
-        "Finance director",
-        "Chief of staff"
-      ],
-      "job_to_be_done": "As someone preparing for the monthly business review, I want a one-page brief the evening before so that I go in with the right questions.",
-      "signals": {
-        "meeting_titles": [
-          "MBR",
-          "monthly business review",
-          "QBR",
-          "forecast review"
-        ]
-      },
-      "makes": "routine",
-      "output": "A one-page brief: what moved since last month, and the questions to put to each business.",
-      "preview_picture": "v2/launchpad-mbr-brief-example.png",
-      "pack": "recipes/mbr-brief/"
-    },
-    {
-      "id": "committee-paper",
-      "title": "Committee paper",
-      "function": "Governance",
-      "kind_of_work": "Executive, board & governance",
-      "for_whom": [
-        "Finance director",
-        "Company secretary",
-        "Paper author"
-      ],
-      "job_to_be_done": "As a paper author, I want a full first draft in the committee template so that the paper reaches the committee first time.",
-      "signals": {
-        "meeting_titles": [
-          "Audit Committee",
-          "Risk Committee",
-          "Board",
-          "ExCo"
-        ],
-        "file_names": [
-          "paper",
-          "board pack",
-          "committee"
-        ]
-      },
-      "makes": "skill",
-      "output": "A draft in the committee template, with a front sheet stating the decision sought and a coaching review against the paper standard.",
-      "preview_picture": "v2/launchpad-committee-paper-example.png",
-      "pack": "recipes/committee-paper/"
-    }
+ "version": "2.2.0",
+ "as_of": "2026-11-11",
+ "picture_base": "https://scott-adams.ai/cowork-cookbook/docs/assets/",
+ "recipes": [
+  {
+   "id": "variance-commentary",
+   "title": "Month-end variance commentary",
+   "function": "Finance",
+   "kind_of_work": "Finance, accounting & reporting",
+   "for_whom": [
+    "Finance director",
+    "FP&A manager",
+    "Financial controller"
+   ],
+   "job_to_be_done": "As someone who closes the month, I want a sourced first draft of the variance commentary so that review starts from evidence rather than a blank page.",
+   "signals": {
+    "file_names": [
+     "variance",
+     "flux",
+     "month-end pack",
+     "management accounts"
+    ],
+    "meeting_titles": [
+     "month-end close",
+     "close review"
+    ],
+    "email_subjects": [
+     "variance",
+     "commentary",
+     "close"
+    ]
+   },
+   "makes": "skill",
+   "output": "Commentary in the house template. Every statement has a source and an evidence status. Questions to owners are drafted, not sent.",
+   "preview_picture": "v1/launchpad-variance-commentary-example.png",
+   "pack": "recipes/variance-commentary/"
+  },
+  {
+   "id": "budget-round-app",
+   "title": "Budget round app",
+   "function": "Finance",
+   "kind_of_work": "Finance, accounting & reporting",
+   "for_whom": [
+    "Finance director",
+    "FP&A manager"
+   ],
+   "job_to_be_done": "As someone running the budget round, I want each owner to update their own line so that I can see who is late without chasing anyone.",
+   "signals": {
+    "file_names": [
+     "budget submissions",
+     "tracker",
+     "status"
+    ],
+    "email_subjects": [
+     "status",
+     "chaser",
+     "reminder",
+     "overdue"
+    ],
+    "other": [
+     "a spreadsheet edited by many people",
+     "several copies of the same tracker"
+    ]
+   },
+   "makes": "app",
+   "output": "An app built from the tracker's own columns, plus a weekly routine that drafts the summary.",
+   "preview_picture": "v1/launchpad-budget-round-app-mock.png",
+   "pack": "recipes/budget-round-app/"
+  },
+  {
+   "id": "mbr-brief",
+   "title": "Monthly business review brief",
+   "function": "Finance",
+   "kind_of_work": "Executive, board & governance",
+   "for_whom": [
+    "Finance director",
+    "Chief of staff"
+   ],
+   "job_to_be_done": "As someone preparing for the monthly business review, I want a one-page brief the evening before so that I go in with the right questions.",
+   "signals": {
+    "meeting_titles": [
+     "MBR",
+     "monthly business review",
+     "QBR",
+     "forecast review"
+    ]
+   },
+   "makes": "routine",
+   "output": "A one-page brief: what moved since last month, and the questions to put to each business.",
+   "preview_picture": "v2/launchpad-mbr-brief-example.png",
+   "pack": "recipes/mbr-brief/"
+  },
+  {
+   "id": "committee-paper",
+   "title": "Committee paper",
+   "function": "Governance",
+   "kind_of_work": "Executive, board & governance",
+   "for_whom": [
+    "Finance director",
+    "Company secretary",
+    "Paper author"
+   ],
+   "job_to_be_done": "As a paper author, I want a full first draft in the committee template so that the paper reaches the committee first time.",
+   "signals": {
+    "meeting_titles": [
+     "Audit Committee",
+     "Risk Committee",
+     "Board",
+     "ExCo"
+    ],
+    "file_names": [
+     "paper",
+     "board pack",
+     "committee"
+    ]
+   },
+   "makes": "skill",
+   "output": "A draft in the committee template, with a front sheet stating the decision sought and a coaching review against the paper standard.",
+   "preview_picture": "v2/launchpad-committee-paper-example.png",
+   "pack": "recipes/committee-paper/"
+  }
+ ],
+ "library": {
+  "kinds_of_work": 55,
+  "industries": 74,
+  "regions": 11,
+  "pages": [
+   "industries/financial-services.md",
+   "industries/professional-services.md",
+   "industries/technology.md",
+   "industries/telecoms-media.md",
+   "industries/energy.md",
+   "industries/manufacturing.md",
+   "industries/consumer-retail.md",
+   "industries/health.md",
+   "industries/public-sector.md",
+   "industries/transport.md",
+   "industries/property.md"
   ]
+ }
 }

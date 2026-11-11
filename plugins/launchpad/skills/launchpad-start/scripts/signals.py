@@ -18,6 +18,7 @@ from __future__ import annotations
 
 import argparse
 import json
+from pathlib import Path
 import re
 import sys
 from collections import Counter, defaultdict
@@ -433,6 +434,13 @@ def finish(signals, titles, as_of, sample, counts, skipped_sensitive, skipped_no
     if skipped_sensitive:
         out["skipped_line"] = (f"I left out {plural(skipped_sensitive, 'item')} that looked private, "
                                "confidential or personal.")
+    theirs = set()
+    for s in signals:
+        theirs.add(s["work"])
+        theirs.add(series_title(s["work"]))
+        theirs.update(str(x) for x in s.get("items", []) if x)
+    theirs.update(d["what"] for d in deliverables)
+    out["theirs"] = sorted(t for t in theirs if t)
     return out
 
 
@@ -460,7 +468,20 @@ def build_from_stated(stated: dict) -> dict:
         {"what": s["work"], "how_often": s.get("how_often", "Not found yet"), "for_whom": "Not found yet",
          "inputs": "Not found yet"} for s in signals if s["type"] == "stated_document"]
     out["profile_draft"]["rhythms"] = [s["work"] for s in signals if s["type"] == "stated_meeting"]
+    out["theirs"] = sorted(set(out.get("theirs", [])) | {x for x in (role, document, meeting) if x})
     return out
+
+
+def save_theirs(out_path: str, words) -> None:
+    """Keep the person's own words beside the result, so the card checker shows them as they wrote them."""
+    path = Path(out_path).resolve().parent / "theirs.json"
+    have = []
+    try:
+        have = json.loads(path.read_text(encoding="utf-8")) if path.exists() else []
+    except (OSError, ValueError):
+        have = []
+    merged = sorted({w for w in list(have if isinstance(have, list) else []) + list(words) if isinstance(w, str) and w.strip()})
+    path.write_text(json.dumps(merged, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
 
 
 def main(argv=None) -> int:
@@ -481,6 +502,7 @@ def main(argv=None) -> int:
     if args.out:
         with open(args.out, "w", encoding="utf-8") as fh:
             fh.write(text + "\n")
+        save_theirs(args.out, result.get("theirs", []))
     print(text)
     return 0
 

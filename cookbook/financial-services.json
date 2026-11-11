@@ -1,14 +1,17 @@
 {
  "name": "Cowork Cookbook: financial services",
- "version": "2.1.1",
+ "version": "2.2.0",
  "as_of": "2026-11-11",
+ "film_prefix": "https://scott-adams.ai/cowork-cookbook/docs/films/#",
+ "note": "Hand-written cookbook entries. They come first for financial services, and the 'any' ones suit any organisation. Weights only order entries and are never shown.",
  "sectors": {
   "banking": "Banking",
   "capital-markets": "Capital markets",
   "asset-wealth": "Asset and wealth management",
   "insurance": "Insurance",
   "payments": "Payments and fintech",
-  "all": "All of financial services"
+  "all": "All of financial services",
+  "any": "Any organisation"
  },
  "films": {
   "bids-and-questionnaires": "Tenders and questionnaires answered from your approved library",
@@ -88,7 +91,35 @@
     "who_decides": "The subject experts and compliance approve the answers. You send the response.",
     "recipe": null,
     "caution": null
-   }
+   },
+   "weight": 0.8,
+   "lib_kind": "bids-questionnaires",
+   "match_roles": [
+    "Asset-management RFP/DDQ & institutional client-reporting specialist",
+    "Business banking relationship manager",
+    "Client onboarding specialist",
+    "RFP writer",
+    "DDQ specialist",
+    "Procurement",
+    "SME and corporate relationship manager",
+    "Corporate banker",
+    "Client coverage lead",
+    "M&A associate",
+    "ECM/DCM analyst",
+    "Coverage banker (associate/VP)",
+    "SME relationship manager",
+    "Corporate & SME relationship manager",
+    "Mass-litigation and legal-claims case analyst",
+    "Corporate & commercial relationship manager",
+    "Commercial relationship manager",
+    "Commercial banker",
+    "Treasury-management officer",
+    "Investment-banking deal execution analyst",
+    "Associate",
+    "Security GRC analyst",
+    "IT risk analyst",
+    "Control evidence manager"
+   ]
   },
   {
    "id": "treasury-rfp",
@@ -160,7 +191,26 @@
     "who_decides": "The bid director decides whether to bid and approves the response.",
     "recipe": null,
     "caution": null
-   }
+   },
+   "weight": 0.8,
+   "lib_kind": "bids-questionnaires",
+   "match_roles": [
+    "Business banking relationship manager",
+    "SME and corporate relationship manager",
+    "Relationship manager",
+    "Corporate banker",
+    "Client coverage lead",
+    "SME relationship manager",
+    "Corporate & SME relationship manager",
+    "Mass-litigation and legal-claims case analyst",
+    "Corporate & commercial relationship manager",
+    "Commercial relationship manager",
+    "Commercial banker",
+    "Treasury-management officer",
+    "Security GRC analyst",
+    "IT risk analyst",
+    "Control evidence manager"
+   ]
   },
   {
    "id": "investor-questionnaires",
@@ -229,7 +279,21 @@
     "who_decides": "Product specialists and compliance approve. You send the response.",
     "recipe": null,
     "caution": null
-   }
+   },
+   "weight": 0.8,
+   "lib_kind": "bids-questionnaires",
+   "match_roles": [
+    "Asset-management RFP/DDQ & institutional client-reporting specialist",
+    "Client onboarding specialist",
+    "RFP writer",
+    "DDQ specialist",
+    "Procurement",
+    "M&A associate",
+    "ECM/DCM analyst",
+    "Coverage banker (associate/VP)",
+    "Investment-banking deal execution analyst",
+    "Associate"
+   ]
   },
   {
    "id": "scheme-tenders",
@@ -296,7 +360,15 @@
     "who_decides": "Underwriting and pricing decide terms. The head of group schemes approves the response.",
     "recipe": null,
     "caution": null
-   }
+   },
+   "weight": 0.5,
+   "lib_kind": "bids-questionnaires",
+   "match_roles": [
+    "Wealth, segregated-fund and advisor sales-support specialist",
+    "Employee benefits and provident-fund account manager",
+    "Commercial lines producer",
+    "Sales executive"
+   ]
   },
   {
    "id": "complaint-files",
@@ -362,7 +434,36 @@
     "who_decides": "The handler decides liability, the outcome and any redress.",
     "recipe": null,
     "caution": "Start with past, decided cases with personal details removed."
-   }
+   },
+   "weight": 0.5,
+   "lib_kind": "case-files",
+   "match_roles": [
+    "Complaints and IDR case handler",
+    "Customer operations and complaints specialist",
+    "Financial consumer protection & complaints handler",
+    "Complaints analyst, disputes analyst, customer remediation analyst",
+    "Complaints and internal dispute resolution analyst",
+    "Complaints and fair-dealing analyst",
+    "Disability, life and group benefits claims case manager",
+    "Ombudsman (ouvidoria) and complaints analyst",
+    "Large-loss adjuster",
+    "Litigation claims specialist",
+    "Broker and partner distribution manager",
+    "Partner performance packs",
+    "In-house legal counsel",
+    "Market conduct and fair-treatment-of-customers compliance officer",
+    "In-house counsel",
+    "Regulatory lawyer",
+    "Claims handler, technical claims handler",
+    "In-house counsel, insurance legal counsel",
+    "Life and health claims assessor and case manager",
+    "Agency distribution support and agency compliance analyst",
+    "Mass-litigation and legal-claims case analyst",
+    "Complaints & consumer-protection case handler",
+    "Branch manager, banking-center manager, retail market manager",
+    "Claims consultant",
+    "Staff counsel, coverage counsel, corporate counsel, senior paralegal"
+   ]
   },
   {
    "id": "claim-files",
@@ -377,7 +478,9 @@
    "roles": [
     "Complex claims handler",
     "Claims technical manager",
-    "Head of claims operations"
+    "Head of claims operations",
+    "Claims case manager",
+    "Claims assessor"
    ],
    "kind": "skill",
    "icon": "DocumentText",
@@ -428,7 +531,36 @@
     "who_decides": "The handler decides coverage, reserves and settlement.",
     "recipe": null,
     "caution": "Start with past, decided claims with personal details removed."
-   }
+   },
+   "weight": 0.5,
+   "lib_kind": "case-files",
+   "match_roles": [
+    "Complaints and IDR case handler",
+    "Customer operations and complaints specialist",
+    "Disability, life and group benefits claims case manager",
+    "Large-loss adjuster",
+    "Litigation claims specialist",
+    "Broker and partner distribution manager",
+    "Partner performance packs",
+    "In-house legal counsel",
+    "Market conduct and fair-treatment-of-customers compliance officer",
+    "Claims handler, technical claims handler",
+    "In-house counsel, insurance legal counsel",
+    "Life and health claims assessor and case manager",
+    "Agency distribution support and agency compliance analyst",
+    "Claims consultant",
+    "Staff counsel, coverage counsel, corporate counsel, senior paralegal",
+    "Market-conduct analyst",
+    "Compliance analyst",
+    "Regulatory response specialist",
+    "Senior claim analyst",
+    "Policy service specialist",
+    "In-force service analyst",
+    "Policy operations team leader",
+    "Operations supervisor",
+    "Life underwriter",
+    "Annuity underwriter"
+   ]
   },
   {
    "id": "client-reviews",
@@ -495,7 +627,28 @@
     "who_decides": "The adviser decides the advice and sends the note.",
     "recipe": null,
     "caution": null
-   }
+   },
+   "weight": 0.5,
+   "lib_kind": "account-review",
+   "match_roles": [
+    "SME and corporate relationship manager",
+    "Commercial credit analyst",
+    "Underwriter",
+    "Portfolio manager",
+    "Credit officer support",
+    "Fund investment professional",
+    "Credit risk analyst",
+    "Commercial underwriter",
+    "Credit officer",
+    "Corporate banker",
+    "Client coverage lead",
+    "Sales-trader",
+    "Client coverage specialist",
+    "Commercial relationship manager",
+    "Commercial banker",
+    "Treasury-management officer",
+    "Private banker, wealth advisor, trust officer, relationship advisor"
+   ]
   },
   {
    "id": "regulatory-change",
@@ -511,7 +664,8 @@
     "Regulatory affairs adviser",
     "Compliance officer",
     "Head of compliance advisory",
-    "Chief risk officer"
+    "Chief risk officer",
+    "Regulatory change analyst"
    ],
    "kind": "skill",
    "icon": "ShieldCheckmark",
@@ -565,7 +719,36 @@
     "who_decides": "Legal interprets. The head of compliance approves the assessment.",
     "recipe": null,
     "caution": null
-   }
+   },
+   "weight": 0.7,
+   "lib_kind": "regulatory-change",
+   "match_roles": [
+    "Conduct and regulatory compliance officer",
+    "Compliance officer (regulatory compliance and conduct)",
+    "Regulatory compliance officer",
+    "In-house legal counsel and legal operations",
+    "Technology change and regulatory change project management office",
+    "Compliance and conduct risk analyst",
+    "IT planning and regulatory-change PMO",
+    "Compliance & KYC officer",
+    "Tax & structuring specialist",
+    "Regulatory-change and transformation PMO analyst",
+    "Market conduct and fair-treatment-of-customers compliance officer",
+    "Conduct-risk adviser",
+    "Monitoring lead",
+    "Regulatory change BA",
+    "PMO lead",
+    "Transformation analyst",
+    "KYC/AML analyst",
+    "Transaction-monitoring investigator",
+    "Compliance advisory officer",
+    "ISDA/CSA counsel",
+    "Transaction lawyer",
+    "Regulatory reporting analyst",
+    "COREP/FINREP analyst",
+    "MiFIR/EMIR reporting specialist",
+    "Customer operations and complaints specialist"
+   ]
   },
   {
    "id": "regulator-requests",
@@ -631,7 +814,36 @@
     "who_decides": "Legal and the accountable executive approve and send.",
     "recipe": null,
     "caution": null
-   }
+   },
+   "weight": 0.5,
+   "lib_kind": "regulator-response",
+   "match_roles": [
+    "Regulatory reporting analyst",
+    "Regulatory reporting and capital analyst",
+    "Regulatory and financial reporting analyst",
+    "In-house legal counsel",
+    "Compliance officer (regulatory compliance and conduct)",
+    "Internal auditor",
+    "Banking legal counsel",
+    "Actuarial analyst",
+    "Statutory scheme case manager",
+    "Individual life and living-benefits underwriter",
+    "Prudential reporting manager",
+    "M&A associate",
+    "ECM/DCM analyst",
+    "Coverage banker (associate/VP)",
+    "COREP/FINREP analyst",
+    "MiFIR/EMIR reporting specialist",
+    "Conduct and regulatory compliance officer",
+    "IFRS 17 reporting analyst",
+    "Life and health claims assessor and case manager",
+    "Individual life and health underwriter",
+    "Agency distribution support and agency compliance analyst",
+    "Actuarial valuation and solvency reporting actuary",
+    "Regulatory compliance and conduct officer",
+    "Outsourcing and third-party risk analyst",
+    "Digital lending and conduct compliance analyst"
+   ]
   },
   {
    "id": "promotions-audit",
@@ -698,7 +910,36 @@
     "who_decides": "The approver decides each fix.",
     "recipe": null,
     "caution": null
-   }
+   },
+   "weight": 0.5,
+   "lib_kind": "compliance-review",
+   "match_roles": [
+    "Operational risk and resilience analyst",
+    "Conduct and regulatory compliance officer",
+    "Compliance officer",
+    "Tax & structuring specialist",
+    "Regulatory compliance officer",
+    "Conduct-risk adviser",
+    "Monitoring lead",
+    "Operational risk analyst",
+    "Resilience lead",
+    "Incident RCA owner",
+    "Operational resilience manager",
+    "ICT risk manager",
+    "Regulatory compliance and conduct officer",
+    "Operational & IT risk and electronic-finance security analyst",
+    "Internal auditor",
+    "Market-conduct analyst",
+    "Compliance analyst",
+    "Regulatory response specialist",
+    "Operational and technology risk analyst",
+    "Compliance & KYC officer",
+    "Resilience analyst",
+    "Credit risk analyst",
+    "Commercial underwriter",
+    "Credit officer",
+    "Agency distribution support and agency compliance analyst"
+   ]
   },
   {
    "id": "reconciliation-breaks",
@@ -717,7 +958,9 @@
    "roles": [
     "Operations control analyst",
     "Reconciliations lead",
-    "Financial controller"
+    "Financial controller",
+    "Trade support analyst",
+    "Settlements specialist"
    ],
    "kind": "skill",
    "icon": "Table",
@@ -769,7 +1012,31 @@
     "who_decides": "The control owner accepts or rejects each explanation.",
     "recipe": null,
     "caution": null
-   }
+   },
+   "weight": 0.5,
+   "lib_kind": "reconciliation",
+   "match_roles": [
+    "Investment operations & middle-office specialist",
+    "Regulatory reporting analyst",
+    "Prudential reporting manager",
+    "Middle-office analyst",
+    "Bancassurance and broker partnership manager",
+    "Relationship-manager",
+    "Treasury & middle-office specialist",
+    "Investment operations & securities-services analyst",
+    "Treasury reconciliation analyst",
+    "Settlement accountant",
+    "Close and audit analyst",
+    "Crypto operations specialist",
+    "Brokerage operations analyst",
+    "Listing review coordinator",
+    "Policy service specialist",
+    "In-force service analyst",
+    "Financial reporting analyst",
+    "FP&A analyst",
+    "PAS business analyst",
+    "Product owner"
+   ]
   },
   {
    "id": "committee-papers",
@@ -778,7 +1045,8 @@
    "choice_description": "A full draft, then a coaching review",
    "area": "horizontal",
    "sectors": [
-    "all"
+    "all",
+    "any"
    ],
    "function": "Governance",
    "roles": [
@@ -786,7 +1054,8 @@
     "Company secretary",
     "Committee chair",
     "Chief risk officer",
-    "Finance director"
+    "Finance director",
+    "Investment professional"
    ],
    "kind": "skill",
    "icon": "BuildingBank",
@@ -840,7 +1109,36 @@
     "who_decides": "The author owns the paper. The secretariat decides readiness.",
     "recipe": "committee-paper",
     "caution": null
-   }
+   },
+   "weight": 0.9,
+   "lib_kind": "board-paper",
+   "match_roles": [
+    "Internal auditor",
+    "IT planning and regulatory-change PMO",
+    "Board & investment committee secretariat officer",
+    "Compliance officer",
+    "Technology change and regulatory change project management office",
+    "Procurement, outsourcing and third-party risk analyst",
+    "Conduct and regulatory compliance officer",
+    "Strategy, planning and management-accounting analyst (FP&A)",
+    "Direct investment professional",
+    "Investment risk manager",
+    "Regulatory compliance officer",
+    "PMO and technology-risk analyst",
+    "Financial & regulatory reporting analyst",
+    "Treasury ALM & liquidity analyst",
+    "Operational risk and resilience analyst",
+    "Planning and management accounting analyst",
+    "Business and commercial credit analyst",
+    "Operational and technology risk analyst",
+    "Credit analyst and credit risk reviewer (corporate and SME)",
+    "Public markets analyst & portfolio manager",
+    "Investment legal counsel",
+    "Sustainability & ESG investment specialist",
+    "Regulatory-change and transformation PMO analyst",
+    "Finance planning and performance analyst",
+    "Resilience analyst"
+   ]
   },
   {
    "id": "variance-commentary",
@@ -849,7 +1147,8 @@
    "choice_description": "A sourced first draft in your house style",
    "area": "horizontal",
    "sectors": [
-    "all"
+    "all",
+    "any"
    ],
    "function": "Finance",
    "roles": [
@@ -908,7 +1207,36 @@
     "who_decides": "The controller approves the pack.",
     "recipe": "variance-commentary",
     "caution": null
-   }
+   },
+   "weight": 0.9,
+   "lib_kind": "variance-commentary",
+   "match_roles": [
+    "FP&A analyst",
+    "FP&A and business-unit finance analyst",
+    "Regulatory reporting analyst",
+    "Financial reporting analyst",
+    "Strategy, planning and management-accounting analyst (FP&A)",
+    "Product controller",
+    "FP&A analyst, finance business partner, controllership analyst",
+    "FP&A & management accounting analyst",
+    "Business-unit finance partner",
+    "Planning and management accounting analyst",
+    "FP&A and finance business partner",
+    "Pricing and product manager",
+    "Regulatory reporting and capital analyst",
+    "Management-reporting preparer",
+    "Finance planning and performance analyst",
+    "Planning manager",
+    "Prudential reporting manager",
+    "COREP/FINREP analyst",
+    "MiFIR/EMIR reporting specialist",
+    "FP&A partner, finance business partner",
+    "IFRS 17 reporting analyst",
+    "FP&A, business planning and management reporting analyst",
+    "Management accounting analyst",
+    "Financial & regulatory reporting analyst",
+    "Asset-management RFP/DDQ & institutional client-reporting specialist"
+   ]
   },
   {
    "id": "audit-requests",
@@ -917,7 +1245,8 @@
    "choice_description": "Each request mapped to evidence, gaps flagged",
    "area": "horizontal",
    "sectors": [
-    "all"
+    "all",
+    "any"
    ],
    "function": "Finance and controls",
    "roles": [
@@ -978,7 +1307,22 @@
     "who_decides": "Management reviews and releases evidence to the auditor.",
     "recipe": null,
     "caution": null
-   }
+   },
+   "weight": 0.7,
+   "lib_kind": "audit-evidence",
+   "match_roles": [
+    "Audit evidence preparer",
+    "PMO and technology-risk analyst",
+    "Investment operations & middle-office specialist",
+    "Actuarial valuation and IFRS 17 reporting actuary",
+    "Reserving actuary, capital actuary",
+    "Investment operations & securities-services analyst",
+    "Security GRC analyst",
+    "IT risk analyst",
+    "Control evidence manager",
+    "Wholesale underwriter",
+    "MGA program underwriter"
+   ]
   },
   {
    "id": "access-reviews",
@@ -987,7 +1331,8 @@
    "choice_description": "Attestation packs and an exception list",
    "area": "horizontal",
    "sectors": [
-    "all"
+    "all",
+    "any"
    ],
    "function": "Technology risk",
    "roles": [
@@ -1046,7 +1391,15 @@
     "who_decides": "Managers attest. The control owner decides exceptions.",
     "recipe": null,
     "caution": null
-   }
+   },
+   "weight": 0.5,
+   "lib_kind": "access-review",
+   "match_roles": [
+    "Statutory scheme case manager",
+    "Security GRC analyst",
+    "IT risk analyst",
+    "Control evidence manager"
+   ]
   },
   {
    "id": "invoice-exceptions",
@@ -1055,7 +1408,8 @@
    "choice_description": "Order, receipt, invoice and contract assembled",
    "area": "horizontal",
    "sectors": [
-    "all"
+    "all",
+    "any"
    ],
    "function": "Procurement and payables",
    "roles": [
@@ -1113,7 +1467,18 @@
     "who_decides": "The buyer decides each exception.",
     "recipe": null,
     "caution": null
-   }
+   },
+   "weight": 0.5,
+   "lib_kind": "supplier-exceptions",
+   "match_roles": [
+    "Vendor-evidence coordinator",
+    "Regulatory-change and transformation PMO analyst",
+    "Outsourcing and third-party risk analyst",
+    "Commercial lines account manager",
+    "Renewal account manager",
+    "Policy processing specialist",
+    "Certificate specialist"
+   ]
   },
   {
    "id": "disputes-chronology",
@@ -1122,7 +1487,8 @@
    "choice_description": "Sourced chronology, issues and a first memo",
    "area": "horizontal",
    "sectors": [
-    "all"
+    "all",
+    "any"
    ],
    "function": "Legal",
    "roles": [
@@ -1181,7 +1547,36 @@
     "who_decides": "The supervising lawyer reviews and gives the advice.",
     "recipe": null,
     "caution": null
-   }
+   },
+   "weight": 0.5,
+   "lib_kind": "case-files",
+   "match_roles": [
+    "Complaints and IDR case handler",
+    "Customer operations and complaints specialist",
+    "Financial consumer protection & complaints handler",
+    "Complaints analyst, disputes analyst, customer remediation analyst",
+    "Disputes specialist",
+    "Chargebacks analyst",
+    "Payment operations specialist",
+    "Escalations specialist",
+    "Complaint operations analyst",
+    "Tier-2 support lead",
+    "Complaints and internal dispute resolution analyst",
+    "Complaints and fair-dealing analyst",
+    "Disability, life and group benefits claims case manager",
+    "Customer grievance and internal ombudsman support analyst",
+    "Ombudsman (ouvidoria) and complaints analyst",
+    "Collections specialist",
+    "Loan servicing specialist",
+    "Hardship operations analyst",
+    "Large-loss adjuster",
+    "Litigation claims specialist",
+    "Broker and partner distribution manager",
+    "Partner performance packs",
+    "In-house legal counsel",
+    "Market conduct and fair-treatment-of-customers compliance officer",
+    "Regulatory lawyer"
+   ]
   },
   {
    "id": "technology-choice",
@@ -1190,7 +1585,8 @@
    "choice_description": "Each task sorted, costed and given a measure",
    "area": "horizontal",
    "sectors": [
-    "all"
+    "all",
+    "any"
    ],
    "function": "AI programme and operations",
    "roles": [
@@ -1249,7 +1645,10 @@
     "who_decides": "The sponsor decides which tasks to fund.",
     "recipe": null,
     "caution": null
-   }
+   },
+   "weight": 0.5,
+   "lib_kind": "business-case",
+   "match_roles": []
   },
   {
    "id": "renewal-packs",
@@ -1260,13 +1659,17 @@
    "sectors": [
     "payments",
     "capital-markets",
-    "all"
+    "all",
+    "any",
+    "insurance"
    ],
    "function": "Account management",
    "roles": [
     "Account manager",
     "Customer success manager",
-    "Head of client service"
+    "Head of client service",
+    "Commercial lines account manager",
+    "Group benefits account manager"
    ],
    "kind": "skill",
    "icon": "People",
@@ -1316,7 +1719,36 @@
     "who_decides": "The account manager reviews and sends.",
     "recipe": null,
     "caution": null
-   }
+   },
+   "weight": 0.5,
+   "lib_kind": "account-review",
+   "match_roles": [
+    "Commercial lines underwriter",
+    "SME and corporate relationship manager",
+    "Commercial credit analyst",
+    "Underwriter",
+    "Portfolio manager",
+    "Credit officer support",
+    "Renewal account manager",
+    "Vendor-evidence coordinator",
+    "Fund investment professional",
+    "Credit risk analyst",
+    "Commercial underwriter",
+    "Credit officer",
+    "Relationship manager",
+    "Corporate banker",
+    "Client coverage lead",
+    "Sales-trader",
+    "Client coverage specialist",
+    "Commercial underwriter, specialty underwriter",
+    "Broker relationship manager, distribution manager",
+    "Employee benefits and provident-fund account manager",
+    "Bancassurance and broker partnership manager",
+    "Relationship-manager",
+    "Commercial relationship manager",
+    "Commercial banker",
+    "Treasury-management officer"
+   ]
   },
   {
    "id": "tracker-app",
@@ -1325,7 +1757,8 @@
    "choice_description": "Owners update their own lines",
    "area": "horizontal",
    "sectors": [
-    "all"
+    "all",
+    "any"
    ],
    "function": "Any team running a round of submissions",
    "roles": [
@@ -1387,7 +1820,27 @@
     "who_decides": "You decide who can use the app.",
     "recipe": "budget-round-app",
     "caution": null
-   }
+   },
+   "weight": 0.5,
+   "lib_kind": "tracker-app",
+   "match_roles": [
+    "Procurement, outsourcing and third-party risk analyst",
+    "Complaints and internal dispute resolution analyst",
+    "Complaints and fair-dealing analyst",
+    "M&A associate",
+    "ECM/DCM analyst",
+    "Coverage banker (associate/VP)",
+    "Agency distribution support and agency compliance analyst",
+    "Compliance officer",
+    "IT planning and regulatory-change PMO",
+    "Banking legal counsel",
+    "Investment-banking deal execution analyst",
+    "Associate",
+    "In-house legal counsel & paralegal",
+    "Disputes specialist",
+    "Chargebacks analyst",
+    "Payment operations specialist"
+   ]
   },
   {
    "id": "review-brief",
@@ -1396,7 +1849,8 @@
    "choice_description": "One page, the evening before",
    "area": "horizontal",
    "sectors": [
-    "all"
+    "all",
+    "any"
    ],
    "function": "Any leader preparing for a recurring review",
    "roles": [
@@ -1457,7 +1911,22 @@
     "who_decides": "You decide what to ask.",
     "recipe": "mbr-brief",
     "caution": null
-   }
+   },
+   "weight": 0.5,
+   "lib_kind": "executive-brief",
+   "match_roles": [
+    "FP&A and finance business partner",
+    "Executive assistant",
+    "Business manager support",
+    "Chief-of-staff support",
+    "Procurement, outsourcing and third-party risk analyst",
+    "Direct and platform investment professional",
+    "Corporate affairs & stakeholder reporting manager",
+    "Regulatory compliance monitoring & testing analyst",
+    "Credit risk analyst",
+    "Underwriting policy analyst",
+    "Model governance analyst"
+   ]
   },
   {
    "id": "market-pack",
@@ -1466,7 +1935,8 @@
    "choice_description": "Cited evidence for one decision",
    "area": "horizontal",
    "sectors": [
-    "all"
+    "all",
+    "any"
    ],
    "function": "Strategy and product",
    "roles": [
@@ -1523,7 +1993,1153 @@
     "who_decides": "The decision owner decides.",
     "recipe": null,
     "caution": null
-   }
+   },
+   "weight": 0.5,
+   "lib_kind": "market-intelligence",
+   "match_roles": [
+    "Corporate affairs & stakeholder reporting manager",
+    "Credit risk analyst",
+    "Product development and product filing specialist",
+    "Portfolio research analyst",
+    "Pricing actuary, reserving actuary, actuarial analyst",
+    "SIU investigator, fraud analyst, special investigations specialist",
+    "Product development manager",
+    "Filing manager"
+   ]
+  },
+  {
+   "id": "kyc-reviews",
+   "title": "Periodic KYC and due diligence review files",
+   "short": "Prepare KYC review files",
+   "choice_description": "Facts reconciled, rationale drafted for the analyst",
+   "area": "vertical",
+   "sectors": [
+    "banking",
+    "payments",
+    "capital-markets",
+    "asset-wealth"
+   ],
+   "function": "Financial crime",
+   "roles": [
+    "KYC analyst",
+    "AML investigator",
+    "Financial crime operations lead",
+    "Quality control reviewer"
+   ],
+   "kind": "skill",
+   "icon": "ShieldCheckmark",
+   "what_you_get": "A draft review file for each case: ownership, screening and adverse-media facts reconciled, stale evidence flagged and the risk-rating rationale drafted for the analyst.",
+   "what_changes": "Review files reach quality control complete, so the backlog falls and every rationale has its evidence.",
+   "measure": "Reviews completed by their due date; files returned by quality control",
+   "money": "Contractors brought in to clear review backlogs",
+   "fit": [
+    "Reviews come round on a fixed cycle for every customer",
+    "An analyst concludes and quality control samples the file",
+    "The financial crime function relies on the file being complete"
+   ],
+   "film": "case-and-matter-files",
+   "signals": {
+    "file_names": [
+     "kyc",
+     "periodic review",
+     "edd",
+     "cdd",
+     "due diligence file",
+     "risk rating"
+    ],
+    "meeting_titles": [
+     "kyc review",
+     "periodic review",
+     "financial crime"
+    ],
+    "email_subjects": [
+     "kyc",
+     "periodic review",
+     "edd",
+     "refresh"
+    ]
+   },
+   "design": {
+    "inputs": [
+     "The case record and prior review",
+     "Ownership evidence and registry extracts",
+     "Screening and adverse-media results",
+     "Your risk-rating policy"
+    ],
+    "outputs": [
+     "Draft review file",
+     "Exceptions note",
+     "Evidence map"
+    ],
+    "checks": [
+     "Every fact cites its source and date",
+     "Stale evidence is flagged",
+     "Ratings, exits and reporting decisions are left for people"
+    ],
+    "who_decides": "The KYC analyst concludes, and the financial crime function decides ratings and escalations.",
+    "recipe": null,
+    "caution": "Start with past files, with personal details removed, before any live case."
+   },
+   "weight": 0.85,
+   "lib_kind": "financial-crime",
+   "match_roles": [
+    "AML/CFT, sanctions and KYC analyst",
+    "AML and fraud risk analyst",
+    "AML/ATF and KYC analyst",
+    "Financial-crime operations lead",
+    "AML/CFT and KYC analyst",
+    "AML & financial-crime investigator",
+    "KYC & sanctions officer",
+    "BSA/AML investigator, fraud investigator, financial-crimes analyst",
+    "Transaction monitoring analyst",
+    "Sanctions case analyst",
+    "Financial crime analyst",
+    "Financial crime investigator",
+    "AML onboarding due-diligence analyst",
+    "KYC operations analyst",
+    "Onboarding exceptions analyst",
+    "EDD analyst",
+    "Fraud operations analyst",
+    "Fraud strategy analyst",
+    "Scam investigation specialist",
+    "Compliance & KYC officer",
+    "Relationship manager",
+    "KYC/AML analyst",
+    "Transaction-monitoring investigator",
+    "Compliance advisory officer",
+    "Corporate banker"
+   ]
+  },
+  {
+   "id": "rcsa-summary",
+   "title": "Risk and control self-assessment summaries",
+   "short": "Summarise the RCSA",
+   "choice_description": "Control gaps grouped, evidence indexed",
+   "area": "vertical",
+   "sectors": [
+    "banking",
+    "insurance",
+    "capital-markets",
+    "asset-wealth",
+    "payments"
+   ],
+   "function": "Operational risk",
+   "roles": [
+    "Operational risk analyst",
+    "Risk and control manager",
+    "Head of operational risk",
+    "Control owner"
+   ],
+   "kind": "skill",
+   "icon": "Warning",
+   "what_you_get": "A quarterly consolidation of self-assessments with control gaps grouped, repeat issues and overdue actions listed, an evidence index and questions for owners.",
+   "what_changes": "Each quarter's summary arrives with cited evidence and a clear owner action list by the first review meeting.",
+   "measure": "Summaries ready for the first review meeting; actions with a named owner",
+   "money": null,
+   "fit": [
+    "It comes round every quarter",
+    "The head of operational risk signs it off",
+    "Risk committees rely on it"
+   ],
+   "film": null,
+   "signals": {
+    "file_names": [
+     "rcsa",
+     "control self-assessment",
+     "control gap",
+     "key risk indicator"
+    ],
+    "meeting_titles": [
+     "rcsa",
+     "operational risk",
+     "risk and control"
+    ],
+    "email_subjects": [
+     "rcsa",
+     "self-assessment",
+     "control gap"
+    ]
+   },
+   "design": {
+    "inputs": [
+     "Self-assessment records",
+     "Control library extract",
+     "Audit issue updates",
+     "Key risk indicators"
+    ],
+    "outputs": [
+     "Consolidated summary",
+     "Control gaps by owner",
+     "Evidence index"
+    ],
+    "checks": [
+     "Every gap points to its evidence",
+     "Ratings are left for the risk owner",
+     "Overdue actions are listed by owner"
+    ],
+    "who_decides": "The head of operational risk signs off, and control owners confirm their actions.",
+    "recipe": null,
+    "caution": null
+   },
+   "weight": 0.8,
+   "lib_kind": "risk-assessment",
+   "match_roles": [
+    "Procurement, outsourcing and third-party risk analyst",
+    "Investment risk manager",
+    "Operational risk and resilience analyst",
+    "Regulatory reporting analyst",
+    "Regulatory reporting and capital analyst",
+    "Internal auditor",
+    "Credit risk analyst",
+    "Operational resilience manager",
+    "ICT risk manager",
+    "Treasury ALM & liquidity analyst",
+    "Credit risk analyst & underwriter",
+    "Operational and technology risk analyst",
+    "Investment strategist & macro economist",
+    "Finance planning and performance analyst",
+    "Resilience analyst",
+    "FP&A analyst",
+    "Finance business partner",
+    "Planning manager",
+    "In-house counsel",
+    "Regulatory lawyer",
+    "Commercial underwriter",
+    "Credit officer",
+    "Resilience lead",
+    "Incident RCA owner",
+    "Market risk manager"
+   ]
+  },
+  {
+   "id": "programme-raid",
+   "title": "Weekly programme status and RAID log updates",
+   "short": "Draft the programme status",
+   "choice_description": "Status and RAID changes from the week's updates",
+   "area": "horizontal",
+   "sectors": [
+    "all",
+    "any"
+   ],
+   "function": "Programmes and change",
+   "roles": [
+    "Programme manager",
+    "PMO lead",
+    "Regulatory change analyst",
+    "Transformation lead"
+   ],
+   "kind": "skill",
+   "icon": "TaskListLtr",
+   "what_you_get": "A draft status report and RAID update from the plan, the logs and the week's updates, with late or missing updates flagged by owner.",
+   "what_changes": "Status reports agree with the plan and the logs, so steering time goes on decisions.",
+   "measure": "Reports issued on the agreed day; status corrected after review",
+   "money": null,
+   "fit": [
+    "It comes round every week",
+    "The programme manager reviews it",
+    "Sponsors and steering wait for it"
+   ],
+   "film": null,
+   "signals": {
+    "file_names": [
+     "status report",
+     "raid",
+     "raid log",
+     "programme status",
+     "program status",
+     "weekly status"
+    ],
+    "meeting_titles": [
+     "steering",
+     "programme board",
+     "program review",
+     "weekly status"
+    ],
+    "email_subjects": [
+     "status update",
+     "raid",
+     "weekly update"
+    ]
+   },
+   "design": {
+    "inputs": [
+     "Plan or work-management export",
+     "RAID log",
+     "The week's updates by email and Teams"
+    ],
+    "outputs": [
+     "Draft status report",
+     "RAID log changes",
+     "Late updates by owner"
+    ],
+    "checks": [
+     "Status matches the plan and the logs",
+     "Risks are never closed by the draft",
+     "Late updates are flagged by owner"
+    ],
+    "who_decides": "The programme manager approves, and the sponsor approves anything regulated.",
+    "recipe": null,
+    "caution": null
+   },
+   "weight": 0.8,
+   "lib_kind": "programme-status",
+   "match_roles": [
+    "IT planning and regulatory-change PMO",
+    "PMO analyst, project manager, business analyst",
+    "Technology change and regulatory change project management office",
+    "Statutory scheme case manager",
+    "Sustainability & ESG investment specialist",
+    "Regulatory-change and transformation PMO analyst",
+    "In-house legal counsel",
+    "Disability, life and group benefits claims case manager",
+    "Individual life and living-benefits underwriter",
+    "PMO and technology-risk analyst",
+    "Regulatory change BA",
+    "Transformation analyst",
+    "Individual life and health underwriter",
+    "IT governance and technology-change PMO",
+    "PMO",
+    "Investment-banking deal execution analyst",
+    "Associate",
+    "In-house legal counsel & paralegal",
+    "Internal audit & assurance analyst",
+    "Product manager",
+    "Launch readiness owner",
+    "Product operations manager",
+    "Wholesale underwriter",
+    "MGA program underwriter",
+    "Claims consultant"
+   ]
+  },
+  {
+   "id": "client-call-prep",
+   "title": "Client meeting briefs and call reports",
+   "short": "Prepare client meetings",
+   "choice_description": "A brief before, a call report after",
+   "area": "vertical",
+   "sectors": [
+    "banking",
+    "capital-markets",
+    "asset-wealth",
+    "insurance",
+    "payments"
+   ],
+   "function": "Relationship management",
+   "roles": [
+    "Relationship manager",
+    "Commercial banker",
+    "Private banker",
+    "Client service lead"
+   ],
+   "kind": "skill",
+   "icon": "People",
+   "what_you_get": "A one-page brief before each client meeting from your records and recent news, then a draft call report and follow-up actions after it.",
+   "what_changes": "Every priority meeting starts prepared, and commitments made in the room are on record the same day.",
+   "measure": "Priority meetings with a brief; call reports filed on time",
+   "money": null,
+   "fit": [
+    "It comes round with every client meeting",
+    "The team lead spot-checks call reports",
+    "Clients wait for the follow-up"
+   ],
+   "film": null,
+   "signals": {
+    "file_names": [
+     "call report",
+     "meeting brief",
+     "client brief",
+     "account plan"
+    ],
+    "meeting_titles": [
+     "client meeting",
+     "client call",
+     "client visit",
+     "review meeting"
+    ],
+    "email_subjects": [
+     "meeting prep",
+     "follow-up",
+     "call report"
+    ]
+   },
+   "design": {
+    "inputs": [
+     "Client records and notes",
+     "Recent news and filings",
+     "Prior proposals and email"
+    ],
+    "outputs": [
+     "Meeting brief",
+     "Draft call report",
+     "Drafted follow-ups"
+    ],
+    "checks": [
+     "Every fact cites its source",
+     "Advice and commitments stay with you",
+     "Follow-ups are drafted, never sent"
+    ],
+    "who_decides": "You own the meeting, the advice and any commitment.",
+    "recipe": null,
+    "caution": null
+   },
+   "weight": 0.8,
+   "lib_kind": "client-meeting",
+   "match_roles": [
+    "Business banking relationship manager",
+    "Distribution sales desk analyst",
+    "SME and corporate relationship manager",
+    "Wealth management private banker",
+    "Sales executive",
+    "Broker and partner distribution manager",
+    "Partner performance packs",
+    "Portfolio management & stewardship professional",
+    "Nominee-director briefs",
+    "Corporate banker",
+    "Client coverage lead",
+    "Portfolio manager",
+    "Investment specialist",
+    "Product specialist",
+    "Client advisor",
+    "Sales-trader",
+    "Client coverage specialist",
+    "Broker relationship manager, distribution manager",
+    "Private & priority banking relationship manager",
+    "Commercial relationship manager",
+    "Treasury-management officer",
+    "Private banker, wealth advisor, trust officer, relationship advisor",
+    "Wealth-management financial advisor & client associate",
+    "Partner-bank oversight manager",
+    "Licensing program manager"
+   ]
+  },
+  {
+   "id": "credit-memos",
+   "title": "Credit applications and credit memos",
+   "short": "Draft a credit memo",
+   "choice_description": "Spreads reconciled, gaps and questions listed",
+   "area": "vertical",
+   "sectors": [
+    "banking",
+    "payments"
+   ],
+   "function": "Credit and lending",
+   "roles": [
+    "Relationship manager",
+    "Credit analyst",
+    "Credit officer",
+    "Lending manager"
+   ],
+   "kind": "skill",
+   "icon": "BuildingBank",
+   "what_you_get": "A draft credit memo with financials reconciled to the spreads, covenants and collateral checked, gaps flagged and questions listed for approval.",
+   "what_changes": "Applications reach credit complete, so rework falls and every recommendation has its evidence.",
+   "measure": "Applications approved without rework; information requests after submission",
+   "money": null,
+   "fit": [
+    "Applications and annual reviews come round all year",
+    "Credit risk assesses independently and a committee decides",
+    "The client waits for the decision"
+   ],
+   "film": null,
+   "signals": {
+    "file_names": [
+     "credit memo",
+     "credit application",
+     "annual review",
+     "covenant",
+     "facility"
+    ],
+    "meeting_titles": [
+     "credit committee",
+     "deal review",
+     "credit review"
+    ],
+    "email_subjects": [
+     "credit memo",
+     "covenant",
+     "facility request"
+    ]
+   },
+   "design": {
+    "inputs": [
+     "Client financials and spreads",
+     "Facility request and prior approvals",
+     "Collateral and covenant records"
+    ],
+    "outputs": [
+     "Draft credit memo",
+     "Covenant and collateral checks",
+     "Approval questions"
+    ],
+    "checks": [
+     "Every figure ties to the financials",
+     "Ratings and decisions stay with credit",
+     "Missing information is listed"
+    ],
+    "who_decides": "Credit risk assesses independently and the credit committee decides.",
+    "recipe": null,
+    "caution": null
+   },
+   "weight": 0.8,
+   "lib_kind": "credit-underwriting",
+   "match_roles": [
+    "Retail lending officer",
+    "Business and commercial credit analyst",
+    "Credit analyst and credit risk reviewer (corporate and SME)",
+    "Credit risk analyst",
+    "Credit analyst and credit risk reviewer",
+    "Commercial credit analyst",
+    "Underwriter",
+    "Portfolio manager",
+    "Credit officer support",
+    "Business banking relationship manager",
+    "SME and corporate relationship manager",
+    "Credit underwriting and credit risk analyst",
+    "Corporate & SME relationship manager",
+    "Trade finance & FX operations specialist",
+    "Banking legal counsel",
+    "Corporate & commercial relationship manager",
+    "Commercial underwriter",
+    "Corporate banker",
+    "Client coverage lead",
+    "Digital lending and conduct compliance analyst",
+    "Co-lending and lending service provider onboarding analyst",
+    "SME relationship manager",
+    "Credit review analyst",
+    "Sustainable finance & ESG specialist",
+    "Trade finance operations specialist"
+   ]
+  },
+  {
+   "id": "compliance-monitoring",
+   "title": "Compliance monitoring reviews",
+   "short": "Draft a monitoring review",
+   "choice_description": "Each test mapped to evidence, findings left to you",
+   "area": "vertical",
+   "sectors": [
+    "banking",
+    "insurance",
+    "capital-markets",
+    "asset-wealth",
+    "payments"
+   ],
+   "function": "Compliance",
+   "roles": [
+    "Compliance monitoring manager",
+    "Compliance officer",
+    "Conduct risk adviser",
+    "Head of compliance"
+   ],
+   "kind": "skill",
+   "icon": "ShieldCheckmark",
+   "what_you_get": "A draft thematic review with each test mapped to its evidence, exceptions and gaps flagged, and findings and ratings left for the reviewer.",
+   "what_changes": "Reviews close on plan with evidence behind every finding, and ratings stay with the people accountable.",
+   "measure": "Reviews completed on plan; findings challenged for missing evidence",
+   "money": null,
+   "fit": [
+    "Reviews follow the monitoring plan",
+    "The head of compliance approves findings",
+    "Committees and regulators rely on it"
+   ],
+   "film": null,
+   "signals": {
+    "file_names": [
+     "monitoring review",
+     "thematic review",
+     "compliance monitoring",
+     "consumer duty",
+     "file review"
+    ],
+    "meeting_titles": [
+     "compliance monitoring",
+     "thematic review",
+     "consumer duty"
+    ],
+    "email_subjects": [
+     "monitoring review",
+     "thematic",
+     "file review"
+    ]
+   },
+   "design": {
+    "inputs": [
+     "Monitoring plan and test criteria",
+     "Sample files",
+     "Policies and rule text"
+    ],
+    "outputs": [
+     "Draft review report",
+     "Evidence pack",
+     "Exceptions list"
+    ],
+    "checks": [
+     "Each finding points to its evidence",
+     "Ratings and breach decisions are left blank",
+     "Sample gaps are listed"
+    ],
+    "who_decides": "The monitoring manager and head of compliance approve findings and ratings.",
+    "recipe": null,
+    "caution": null
+   },
+   "weight": 0.75,
+   "lib_kind": "compliance-review",
+   "match_roles": [
+    "Operational risk and resilience analyst",
+    "Conduct and regulatory compliance officer",
+    "Tax & structuring specialist",
+    "Regulatory compliance officer",
+    "Credit risk analyst",
+    "Conduct-risk adviser",
+    "Monitoring lead",
+    "Operational risk analyst",
+    "Resilience lead",
+    "Incident RCA owner",
+    "Operational resilience manager",
+    "ICT risk manager",
+    "Regulatory compliance and conduct officer",
+    "Operational & IT risk and electronic-finance security analyst",
+    "Internal auditor",
+    "Market-conduct analyst",
+    "Compliance analyst",
+    "Regulatory response specialist",
+    "Operational and technology risk analyst",
+    "Compliance & KYC officer",
+    "Resilience analyst",
+    "Commercial underwriter",
+    "Credit officer",
+    "Agency distribution support and agency compliance analyst",
+    "Trade finance & FX operations specialist"
+   ]
+  },
+  {
+   "id": "submission-triage",
+   "title": "Underwriting submission triage and risk summaries",
+   "short": "Triage broker submissions",
+   "choice_description": "Appetite check and a risk summary per submission",
+   "area": "vertical",
+   "sectors": [
+    "insurance"
+   ],
+   "function": "Underwriting",
+   "roles": [
+    "Commercial underwriter",
+    "Specialty underwriter",
+    "Underwriting assistant",
+    "Head of underwriting"
+   ],
+   "kind": "skill",
+   "icon": "Target",
+   "what_you_get": "For each broker submission, an appetite check, a risk summary from the schedule, loss history and survey, and the missing information listed for the broker.",
+   "what_changes": "Underwriters spend their time on risks inside appetite, and every broker gets a clear answer on what is missing.",
+   "measure": "Submissions answered inside the broker's deadline; quotes withdrawn later for missing information",
+   "money": "Premium won on submissions that were going unanswered",
+   "fit": [
+    "Submissions arrive every day",
+    "The underwriter with authority decides",
+    "Brokers wait for an answer"
+   ],
+   "film": null,
+   "signals": {
+    "file_names": [
+     "submission",
+     "schedule of values",
+     "loss run",
+     "loss history",
+     "survey",
+     "slip"
+    ],
+    "meeting_titles": [
+     "underwriting",
+     "referral",
+     "renewal"
+    ],
+    "email_subjects": [
+     "submission",
+     "new business",
+     "quote request",
+     "renewal"
+    ]
+   },
+   "design": {
+    "inputs": [
+     "Broker email and attachments",
+     "Underwriting guidelines and appetite",
+     "Schedule of values, loss history and survey"
+    ],
+    "outputs": [
+     "Appetite check",
+     "Risk summary",
+     "Missing-information request, drafted"
+    ],
+    "checks": [
+     "Every fact cites the submission",
+     "Appetite comes from your guidelines",
+     "Quote, decline or refer stays with the underwriter"
+    ],
+    "who_decides": "The underwriter with delegated authority decides to quote, decline or refer.",
+    "recipe": null,
+    "caution": null
+   },
+   "weight": 0.8,
+   "lib_kind": "credit-underwriting",
+   "match_roles": [
+    "Commercial lines underwriter",
+    "Commercial underwriter, specialty underwriter",
+    "Wholesale underwriter",
+    "MGA program underwriter",
+    "Middle-market underwriter",
+    "Individual life and health underwriter",
+    "Investment and asset-liability management analyst",
+    "Life underwriter",
+    "Annuity underwriter"
+   ]
+  },
+  {
+   "id": "reserving-memo",
+   "title": "Reserve roll-forward and analysis-of-change memos",
+   "short": "Draft the reserving memo",
+   "choice_description": "Movements explained, tie-outs listed",
+   "area": "vertical",
+   "sectors": [
+    "insurance"
+   ],
+   "function": "Actuarial",
+   "roles": [
+    "Valuation actuary",
+    "Actuarial analyst",
+    "Reserving manager",
+    "Appointed actuary"
+   ],
+   "kind": "skill",
+   "icon": "DataBarVertical",
+   "what_you_get": "A quarterly memo draft with the roll-forward by product line, movements attributed to their drivers, tie-outs to the ledger and exhibits, and unexplained differences listed.",
+   "what_changes": "The memo reaches the valuation lead with drivers drafted and tie-out exceptions already listed.",
+   "measure": "Memos signed on the close timetable; differences found at review",
+   "money": null,
+   "fit": [
+    "It comes round every quarter",
+    "The appointed actuary signs",
+    "The close timetable is fixed"
+   ],
+   "film": null,
+   "signals": {
+    "file_names": [
+     "reserve",
+     "roll-forward",
+     "analysis of change",
+     "valuation memo",
+     "reserving"
+    ],
+    "meeting_titles": [
+     "reserving committee",
+     "valuation review",
+     "quarter close"
+    ],
+    "email_subjects": [
+     "reserves",
+     "roll-forward",
+     "valuation"
+    ]
+   },
+   "design": {
+    "inputs": [
+     "Projection and model exports",
+     "Ledger reserve balances",
+     "Prior memo and model change log"
+    ],
+    "outputs": [
+     "Draft memo",
+     "Movement narrative",
+     "Tie-out exception list"
+    ],
+    "checks": [
+     "Every figure ties to the export or ledger",
+     "Figures are never changed",
+     "Assumptions and sign-off stay with the actuary"
+    ],
+    "who_decides": "The valuation lead reviews and the appointed actuary signs.",
+    "recipe": null,
+    "caution": null
+   },
+   "weight": 0.75,
+   "lib_kind": "financial-reporting",
+   "match_roles": [
+    "Reserving actuary, capital actuary",
+    "FP&A analyst",
+    "Financial reporting analyst",
+    "Regulatory and financial reporting analyst",
+    "Regulatory reporting analyst",
+    "IFRS 17 reporting analyst",
+    "Actuarial valuation and solvency reporting actuary",
+    "Pricing actuary, reserving actuary, actuarial analyst",
+    "Pricing and product manager",
+    "Wealth, segregated-fund and advisor sales-support specialist",
+    "Actuarial valuation and IFRS 17 reporting actuary",
+    "Claims handler, technical claims handler",
+    "FP&A and business-unit finance analyst",
+    "Product development and product filing specialist",
+    "Business-unit finance partner",
+    "Valuation analyst",
+    "Pricing analyst"
+   ]
+  },
+  {
+   "id": "valuation-pack",
+   "title": "Quarterly valuation memos and mark review packs",
+   "short": "Prepare the valuation pack",
+   "choice_description": "Mark bridge reconciled, questions for committee",
+   "area": "vertical",
+   "sectors": [
+    "asset-wealth",
+    "capital-markets"
+   ],
+   "function": "Fund finance and valuation",
+   "roles": [
+    "Valuation analyst",
+    "Fund finance manager",
+    "Portfolio analyst",
+    "Head of valuation"
+   ],
+   "kind": "skill",
+   "icon": "DataBarVertical",
+   "what_you_get": "A draft valuation memo for each holding with the model roll-forward and comparables reconciled, a mark bridge, policy triggers flagged and questions for the committee.",
+   "what_changes": "Every mark reaches the committee with cited inputs and a reconciled bridge, so discussion is about judgement.",
+   "measure": "Packs ready for the committee date; marks revisited for missing evidence",
+   "money": "External valuation support on routine marks",
+   "fit": [
+    "It comes round every quarter",
+    "The valuation committee approves marks",
+    "Investors and auditors rely on it"
+   ],
+   "film": null,
+   "signals": {
+    "file_names": [
+     "valuation",
+     "mark review",
+     "nav",
+     "dcf",
+     "comparables",
+     "portfolio company"
+    ],
+    "meeting_titles": [
+     "valuation committee",
+     "mark review",
+     "quarter-end valuation"
+    ],
+    "email_subjects": [
+     "valuation",
+     "marks",
+     "gp statement",
+     "nav"
+    ]
+   },
+   "design": {
+    "inputs": [
+     "Portfolio company accounts and capital statements",
+     "Comparable company data",
+     "Prior memo and valuation policy"
+    ],
+    "outputs": [
+     "Draft memo per holding",
+     "Mark bridge",
+     "Committee questions"
+    ],
+    "checks": [
+     "Every input is cited and dated",
+     "Marks are proposed, never approved",
+     "Policy triggers are flagged"
+    ],
+    "who_decides": "The valuation committee approves marks.",
+    "recipe": null,
+    "caution": null
+   },
+   "weight": 0.75,
+   "lib_kind": "financial-reporting",
+   "match_roles": [
+    "Valuation & performance reporting analyst",
+    "Public markets analyst & portfolio manager",
+    "Investment operations & middle-office specialist",
+    "Portfolio manager",
+    "Investment specialist",
+    "Product specialist",
+    "Credit & public markets analyst and portfolio manager",
+    "Investment risk manager",
+    "Portfolio research analyst",
+    "Investment operations & securities-services analyst"
+   ]
+  },
+  {
+   "id": "fincrime-committee",
+   "title": "Financial crime metrics digest for the committee",
+   "short": "Draft the committee digest",
+   "choice_description": "Metrics reconciled, trends and approval questions",
+   "area": "vertical",
+   "sectors": [
+    "banking",
+    "payments"
+   ],
+   "function": "Financial crime",
+   "roles": [
+    "Financial crime MI lead",
+    "AML programme manager",
+    "MLRO office",
+    "Compliance officer"
+   ],
+   "kind": "skill",
+   "icon": "DataBarVertical",
+   "what_you_get": "A monthly digest with alert and case metrics reconciled, typology and tuning trends summarised, exceptions flagged and a source appendix, with no case content.",
+   "what_changes": "The committee sees reconciled metrics and clear approval questions every month.",
+   "measure": "Digests issued before the committee; metrics corrected after issue",
+   "money": null,
+   "fit": [
+    "It comes round every month",
+    "The MLRO approves it",
+    "The committee waits for it"
+   ],
+   "film": "governance-and-value",
+   "signals": {
+    "file_names": [
+     "aml mi",
+     "financial crime mi",
+     "typology",
+     "committee pack",
+     "metrics"
+    ],
+    "meeting_titles": [
+     "financial crime committee",
+     "aml committee",
+     "bsa committee"
+    ],
+    "email_subjects": [
+     "aml metrics",
+     "mi pack",
+     "typology"
+    ]
+   },
+   "design": {
+    "inputs": [
+     "Alert and case metrics",
+     "Typology notes",
+     "Tuning results",
+     "Regulatory updates"
+    ],
+    "outputs": [
+     "Committee digest",
+     "Source appendix",
+     "Approval questions"
+    ],
+    "checks": [
+     "Case content is never included",
+     "Every metric ties to its source",
+     "Approval stays with the MLRO"
+    ],
+    "who_decides": "The MLRO reviews and approves the digest.",
+    "recipe": null,
+    "caution": null
+   },
+   "weight": 0.7,
+   "lib_kind": "board-paper",
+   "match_roles": [
+    "Internal auditor",
+    "IT planning and regulatory-change PMO",
+    "Technology change and regulatory change project management office",
+    "Procurement, outsourcing and third-party risk analyst",
+    "Strategy, planning and management-accounting analyst (FP&A)",
+    "Regulatory compliance officer",
+    "Financial & regulatory reporting analyst",
+    "Treasury ALM & liquidity analyst",
+    "Operational risk and resilience analyst",
+    "Planning and management accounting analyst",
+    "Business and commercial credit analyst",
+    "Operational and technology risk analyst",
+    "Credit analyst and credit risk reviewer (corporate and SME)",
+    "Regulatory-change and transformation PMO analyst",
+    "Finance planning and performance analyst",
+    "Resilience analyst",
+    "FP&A analyst",
+    "Finance business partner",
+    "Planning manager",
+    "Audit manager",
+    "Issue-validation lead",
+    "Credit risk analyst",
+    "Commercial underwriter",
+    "Credit officer",
+    "Conduct-risk adviser"
+   ]
+  },
+  {
+   "id": "pitch-refresh",
+   "title": "Pitch book and client meeting-prep refreshes",
+   "short": "Refresh a pitch book",
+   "choice_description": "Exhibits refreshed, stale data flagged",
+   "area": "vertical",
+   "sectors": [
+    "capital-markets"
+   ],
+   "function": "Investment banking and coverage",
+   "roles": [
+    "Investment banking analyst",
+    "Investment banking associate",
+    "Coverage banker",
+    "Vice president"
+   ],
+   "kind": "skill",
+   "icon": "DocumentBulletList",
+   "what_you_get": "A refreshed pitch with company facts, multiples and deal exhibits updated from your exports, talking points drafted, and stale data and changed exhibits flagged.",
+   "what_changes": "Pitches reach review with exhibits current and every claim sourced.",
+   "measure": "Pitches ready for review on the day planned; exhibits corrected at review",
+   "money": null,
+   "fit": [
+    "It comes round with every client meeting and pursuit",
+    "The deal team and a principal review it",
+    "The client meeting date is fixed"
+   ],
+   "film": null,
+   "signals": {
+    "file_names": [
+     "pitch book",
+     "pitchbook",
+     "pitch deck",
+     "comps",
+     "precedents",
+     "tearsheet"
+    ],
+    "meeting_titles": [
+     "pitch",
+     "client meeting",
+     "deal team"
+    ],
+    "email_subjects": [
+     "pitch",
+     "comps",
+     "deck refresh"
+    ]
+   },
+   "design": {
+    "inputs": [
+     "Market data and precedent exports",
+     "Prior pitch materials",
+     "Relationship notes"
+    ],
+    "outputs": [
+     "Refreshed pitch",
+     "Exhibit change log",
+     "Meeting-prep note"
+    ],
+    "checks": [
+     "Every figure cites its export and date",
+     "Stale data is flagged",
+     "External use is approved by the principal"
+    ],
+    "who_decides": "The deal team reviews, and a registered principal approves external use.",
+    "recipe": null,
+    "caution": null
+   },
+   "weight": 0.7,
+   "lib_kind": "client-meeting",
+   "match_roles": [
+    "Portfolio manager",
+    "Investment specialist",
+    "Product specialist",
+    "Client advisor",
+    "Relationship manager",
+    "Private banker",
+    "Sales-trader",
+    "Client coverage specialist",
+    "Wealth-management financial advisor & client associate"
+   ]
+  },
+  {
+   "id": "audit-workpapers",
+   "title": "Internal audit planning memos and working papers",
+   "short": "Draft audit working papers",
+   "choice_description": "Samples mapped to evidence, conclusions left to you",
+   "area": "horizontal",
+   "sectors": [
+    "all",
+    "any"
+   ],
+   "function": "Internal audit",
+   "roles": [
+    "Internal auditor",
+    "Audit manager",
+    "IT auditor",
+    "Head of internal audit"
+   ],
+   "kind": "skill",
+   "icon": "ClipboardTask",
+   "what_you_get": "Draft planning memos and working papers with each sample mapped to its control objective and evidence, gaps and contradictions flagged, and questions for the reviewer.",
+   "what_changes": "Working papers reach the audit manager complete, so review loops fall and judgement stays with the auditor.",
+   "measure": "Working papers accepted at first review; review notes per file",
+   "money": "Co-sourced audit spend on routine fieldwork",
+   "fit": [
+    "It comes round with every audit",
+    "The audit manager reviews it",
+    "The audit report waits on it"
+   ],
+   "film": null,
+   "signals": {
+    "file_names": [
+     "workpaper",
+     "working paper",
+     "audit programme",
+     "audit plan",
+     "walkthrough",
+     "test of controls"
+    ],
+    "meeting_titles": [
+     "audit planning",
+     "fieldwork",
+     "audit closing"
+    ],
+    "email_subjects": [
+     "workpaper",
+     "audit evidence",
+     "walkthrough"
+    ]
+   },
+   "design": {
+    "inputs": [
+     "Audit programme and risk-control matrix",
+     "Evidence samples",
+     "Prior findings and interview notes"
+    ],
+    "outputs": [
+     "Draft working papers",
+     "Evidence map",
+     "Reviewer questions"
+    ],
+    "checks": [
+     "Every conclusion points to evidence",
+     "Conclusions and ratings are left for the auditor",
+     "Contradictions are listed"
+    ],
+    "who_decides": "The audit manager approves evidence sufficiency and conclusions.",
+    "recipe": null,
+    "caution": null
+   },
+   "weight": 0.75,
+   "lib_kind": "audit-workpapers",
+   "match_roles": [
+    "Issue-validation lead",
+    "Internal auditor, audit manager",
+    "Internal auditor (risk-based internal audit)",
+    "Compliance officer (regulatory compliance and conduct)",
+    "Internal auditor and inspector",
+    "Branch and head-office inspections",
+    "Operational-risk analyst",
+    "Model-risk validation analyst",
+    "Compliance and conduct risk analyst",
+    "Shari'ah governance & Islamic product officer",
+    "Regulatory compliance analyst",
+    "Regulatory-change analyst",
+    "Compliance testing analyst",
+    "Regulatory compliance monitoring & testing analyst",
+    "Internal audit & assurance analyst",
+    "Compliance officer",
+    "Compliance testing manager",
+    "Regulatory change manager"
+   ]
   }
  ]
 }
